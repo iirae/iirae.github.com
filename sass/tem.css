@@ -1,6 +1,6 @@
 .wrap { padding-left: 260px; height: 100%; }
 
-header { position: fixed; top: 0; left: 0; padding-top: 200px; width: 260px; height: 100%; font-family: "Lato", sans-serif; background: #f2f2f2; }
+header { position: fixed; top: 0; left: 0; padding-top: 200px; width: 260px; height: 100%; font-family: "Lato", sans-serif; -webkit-box-shadow: 2px 0 2px 0 rgba(95, 95, 95, 0.35); -moz-box-shadow: 2px 0 2px 0 rgba(95, 95, 95, 0.35); box-shadow: 2px 0 2px 0 rgba(95, 95, 95, 0.35); }
 header h1 { padding: 10px 45px; }
 
 nav { line-height: 2em; }
