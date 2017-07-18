@@ -1,11 +1,14 @@
 @charset "UTF-8";
 
 $font-lato:'Lato', sans-serif;
+$font-roboto:'Roboto', sans-serif;
+$font-raleway:'Raleway', sans-serif;
 $gray:rgb(124, 112, 107);
 $black:#333;
 $wei700:700;
 $wei400:400;
 
+$rem35:3.5rem;
 $rem2:2rem;
 $rem15:1.5rem;
 $rem13:1.3rem;
@@ -16,6 +19,7 @@ $p15:15px;
 $p20:20px;
 $p30:30px;
 $p40:40px;
+$p60:60px;
 
 .wrap {
   padding-left:260px;
@@ -52,17 +56,20 @@ nav {
 
 .container {
   height:100%;
-  background:url('../images/danang.jpg') no-repeat 0 0;
+  background:url('../images/danang.jpg') no-repeat 0 50%;
+  background-size:cover;
   .contents {
     height:100%;
   }
   section {
-    height:100%;
+    padding:20px 0;
+    box-sizing:border-box;
   }
 }
 
 .start {
   position:relative;
+  height:100%;
   .title {
     position:absolute;
     top:50%;
@@ -81,6 +88,65 @@ nav {
     }
     p {
       font-size:$rem1;
+    }
+  }
+}
+
+.project {
+  text-align:center;
+  h2 {
+    position:relative;
+    display:inline-block;
+    margin-bottom:$p60;
+    padding:0 80px 20px;
+    font-family:$font-raleway;
+    font-size:$rem35;
+    color:$black;
+    text-align:center;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    &:after {
+      position:absolute;
+      left:0;
+      bottom:0;
+      display:block;
+      content:"";
+      width:100%;
+      height:4px;
+      background:#565656;
+
+    }
+  }
+  .projectList {
+    display:flex;
+    display:-webkit-flex;
+    flex-wrap:wrap;
+    -webkit-justify-content:center;
+    justify-content:center;
+    margin:0 auto;
+    padding:30px 0;
+    width:70%;
+    background:#f2f2f2;
+    li {
+      padding:20px 3%;
+      width:44%;
+      .visual {
+        overflow:hidden;
+        display:block;
+        height:300px;
+        img {
+          width:100%;
+          transition:transform 0.7s;
+          -webkit-transition:transform 0.7s;
+          -moz-transition:transform 0.7s;
+          -o-transition:transform 0.7s;
+        }
+        &:hover img {
+          -ms-transform: scale(1.1, 1.1);
+          -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+        }
+      }
     }
   }
 }
