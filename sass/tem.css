@@ -170,13 +170,20 @@ nav {
         line-height: 1.5em;
         opacity: 0; }
       .project .projectList > li:hover .description {
-        opacity: 1;
-        transition: all .4s ease-in-out;
-        -webkit-transition: all .4s ease-in-out;
-        -moz-transition: all .4s ease-in-out;
-        -o-transition: all .4s ease-in-out; }
+        opacity: 1; }
 
 .btnLink {
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #e2e2e2;
+  background: #fff;
+  transition: background .4s ease-in-out;
+  -webkit-transition: background .4s ease-in-out;
+  -moz-transition: background .4s ease-in-out;
+  -o-transition: background .4s ease-in-out; }
+  .btnLink:hover {
+    color: #fff;
+    background: #000; }
 
 /*# sourceMappingURL=tem.css.map */

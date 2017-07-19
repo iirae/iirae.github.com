@@ -223,13 +223,13 @@ nav {
         color:#fff;
         line-height:1.5em;
         opacity:0;
-      }
-      &:hover .description {
-        opacity:1;
         transition:all .4s ease-in-out;
         -webkit-transition:all .4s ease-in-out;
         -moz-transition:all .4s ease-in-out;
         -o-transition:all .4s ease-in-out;
+      }
+      &:hover .description {
+        opacity:1;
       }
     }
   }
@@ -237,5 +237,16 @@ nav {
 
 .btnLink {
   font-family:$font-roboto;
-
+  display:inline-block;
+  padding:10px 20px;
+  border:1px solid #e2e2e2;
+  background:#fff;
+  transition:background .4s ease-in-out;
+  -webkit-transition:background .4s ease-in-out;
+  -moz-transition:background .4s ease-in-out;
+  -o-transition:background .4s ease-in-out;
+  &:hover {
+    color:#fff;
+    background:#000;
+  }
 }
