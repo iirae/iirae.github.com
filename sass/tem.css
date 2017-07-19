@@ -65,6 +65,9 @@ nav {
   font-family: "Raleway", sans-serif; }
   .about h2 {
     padding-right: 80px; }
+    .about h2 .material-icons {
+      position: relative;
+      top: 3px; }
   .about ul {
     line-height: 2; }
     .about ul:first-of-type {
@@ -157,18 +160,22 @@ nav {
         width: 90%;
         height: 268px;
         border: 1px solid #f3f3f3; }
-      .project .projectList > li .information:hover:before, .project .projectList > li .information:hover:after {
+      .project .projectList > li:hover .information:before, .project .projectList > li:hover .information:after {
         opacity: 0.7; }
       .project .projectList > li .description {
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 70%;
         font-family: "Raleway", sans-serif;
         color: #fff;
         line-height: 1.5em;
-        opacity: 0; }
+        opacity: 0;
+        transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out; }
       .project .projectList > li:hover .description {
         opacity: 1; }
 
@@ -185,5 +192,10 @@ nav {
   .btnLink:hover {
     color: #fff;
     background: #000; }
+  .btnLink .material-icons {
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    color: #c2c2c2; }
 
 /*# sourceMappingURL=tem.css.map */
