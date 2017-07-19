@@ -22,10 +22,12 @@ $p40:40px;
 $p60:60px;
 
 .wrap {
-  padding-left:260px;
+  padding:0 0 50px 260px;
   height:100%;
+  box-sizing:border-box;
 }
 header {
+  z-index:2;
   position:fixed;
   top:0;
   left:0;
@@ -62,9 +64,22 @@ nav {
     height:100%;
   }
   section {
-    margin:0 auto;
+    margin:0 auto 60px;
     max-width:1120px;
     box-sizing:border-box;
+  }
+}
+
+footer {
+  position:fixed;
+  bottom:0;
+  left:260px;
+  width:calc(100% - 270px);
+  width:-webkit-calc(100% - 270px);
+  padding:20px 20px 10px;
+  background:#fff url(//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/slash_dividers.png) repeat-x 50% 0;
+  p {
+    text-align:center;
   }
 }
 
