@@ -33,7 +33,8 @@ nav {
   .container .contents {
     height: 100%; }
   .container section {
-    padding: 20px 0;
+    margin: 0 auto;
+    max-width: 1120px;
     box-sizing: border-box; }
 
 .start {
@@ -57,11 +58,34 @@ nav {
     .start .title p {
       font-size: 1rem; }
 
+.about {
+  display: flex;
+  display: -webkit-flex;
+  padding: 100px 0 150px;
+  font-family: "Raleway", sans-serif; }
+  .about h2 {
+    padding-right: 80px; }
+  .about ul {
+    line-height: 2; }
+    .about ul:first-of-type {
+      position: relative;
+      margin-right: 80px;
+      padding-right: 80px; }
+    .about ul:first-of-type:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      content: "";
+      width: 1px;
+      height: 100%;
+      background: #e2e2e2; }
+
 .project {
+  padding: 20px 0;
   text-align: center; }
   .project h2 {
     position: relative;
-    display: inline-block;
     margin-bottom: 60px;
     padding: 0 80px 20px;
     font-family: "Raleway", sans-serif;
@@ -85,26 +109,74 @@ nav {
     flex-wrap: wrap;
     -webkit-justify-content: center;
     justify-content: center;
-    margin: 0 auto;
-    padding: 30px 0;
-    width: 70%;
-    background: #f2f2f2; }
-    .project .projectList li {
-      padding: 20px 3%;
-      width: 44%; }
-      .project .projectList li .visual {
+    margin: 0 auto 30px; }
+    .project .projectList > li {
+      position: relative;
+      margin: 0 3%;
+      padding: 60px 0 20px;
+      width: 44%;
+      border-bottom: 1px solid #e2e2e2; }
+      .project .projectList > li .visual {
         overflow: hidden;
         display: block;
-        height: 300px; }
-        .project .projectList li .visual img {
-          width: 100%;
-          transition: transform 0.7s;
-          -webkit-transition: transform 0.7s;
-          -moz-transition: transform 0.7s;
-          -o-transition: transform 0.7s; }
-        .project .projectList li .visual:hover img {
+        height: 300px;
+        border: 1px solid #f2f2f2;
+        /*img {
+          width:100%;
+          transition:transform 0.7s;
+          -webkit-transition:transform 0.7s;
+          -moz-transition:transform 0.7s;
+          -o-transition:transform 0.7s;
+        }
+        &:hover img {
           -ms-transform: scale(1.1, 1.1);
           -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1); }
+          transform: scale(1.1, 1.1);
+        }*/ }
+      .project .projectList > li figcaption {
+        padding: 20px 0;
+        font-family: "Roboto", sans-serif; }
+      .project .projectList > li .information:before, .project .projectList > li .information:after {
+        transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        position: absolute;
+        display: block;
+        content: "";
+        opacity: 0; }
+      .project .projectList > li .information:before {
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        background: #000; }
+      .project .projectList > li .information:after {
+        top: 75px;
+        left: 5%;
+        width: 90%;
+        height: 268px;
+        border: 1px solid #f3f3f3; }
+      .project .projectList > li .information:hover:before, .project .projectList > li .information:hover:after {
+        opacity: 0.7; }
+      .project .projectList > li .description {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        font-family: "Raleway", sans-serif;
+        color: #fff;
+        line-height: 1.5em;
+        opacity: 0; }
+      .project .projectList > li:hover .description {
+        opacity: 1;
+        transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out; }
+
+.btnLink {
+  font-family: "Roboto", sans-serif; }
 
 /*# sourceMappingURL=tem.css.map */
