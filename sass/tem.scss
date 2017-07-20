@@ -108,7 +108,7 @@ footer {
   }
 }
 
-.about {
+.about, .contact {
   display:flex;
   display:-webkit-flex;
   padding:100px 0 150px;
@@ -137,6 +137,10 @@ footer {
       height:100%;
       background:#e2e2e2;
     }
+  }
+  a {
+    line-height:28px;
+    vertical-align:bottom;
   }
 }
 
