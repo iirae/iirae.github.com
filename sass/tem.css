@@ -163,6 +163,11 @@ footer {
     color: #7f7f7f;
     background: #e2e2e2; }
 
+@media all and (max-width: 320px) {
+  .about dl:first-of-type {
+    margin-bottom: 10px; }
+  .about dl:first-of-type:after {
+    display: none; } }
 @media all and (max-width: 767px) {
   body {
     font-size: 12px; }
@@ -175,17 +180,18 @@ footer {
     align-items: baseline; }
     header h1 {
       margin-right: 20px;
-      padding: 10px 15px; }
+      padding: 10px 10px; }
     header nav li a {
       padding: 10px; }
 
   .container section {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    padding-top: 50px; }
   .container .start {
     height: 250px; }
 
   .about, .contact {
-    padding: 20px 30px; }
+    padding: 20px 30px 0; }
 
   .about {
     display: block; }
@@ -193,6 +199,7 @@ footer {
       margin-bottom: 15px; }
     .about dl dt {
       margin-right: 20px;
+      width: 35px;
       font-weight: 700; }
     .about dl:first-of-type {
       margin-right: 20px;
