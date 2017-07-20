@@ -1,6 +1,4 @@
 .wrap {
-  padding: 0 0 42px 260px;
-  height: 100%;
   box-sizing: border-box; }
 
 header {
@@ -8,9 +6,6 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 200px;
-  width: 260px;
-  height: 100%;
   font-family: "Lato", sans-serif;
   -webkit-box-shadow: 2px 0 2px 0 rgba(95, 95, 95, 0.35);
   -moz-box-shadow: 2px 0 2px 0 rgba(95, 95, 95, 0.35);
@@ -29,23 +24,16 @@ nav {
         text-decoration: underline; }
 
 .container {
-  height: 100%;
-  background: url("../images/img_think.jpeg") no-repeat 0 50%;
-  background-size: cover; }
+  height: 100%; }
   .container .contents {
     height: 100%; }
   .container section {
     margin: 0 auto 60px;
-    max-width: 1120px;
     box-sizing: border-box; }
 
 footer {
   position: fixed;
   bottom: 0;
-  left: 260px;
-  width: calc(100% - 270px);
-  width: -webkit-calc(100% - 270px);
-  padding: 20px 20px 10px;
   background: #fff url("../images/bg_footer.png") repeat-x 0 0; }
   footer p {
     text-align: center;
@@ -53,7 +41,9 @@ footer {
 
 .start {
   position: relative;
-  height: 100%; }
+  height: 100%;
+  background: url("../images/img_think.jpeg") no-repeat 50% 50%;
+  background-size: cover; }
   .start .title {
     position: absolute;
     top: 50%;
@@ -75,39 +65,27 @@ footer {
 .about, .contact {
   display: flex;
   display: -webkit-flex;
-  padding: 100px 0 150px;
   font-family: "Raleway", sans-serif; }
-  .about h2, .contact h2 {
-    padding-right: 80px; }
-    .about h2 .material-icons, .contact h2 .material-icons {
-      position: relative;
-      top: 3px; }
+  .about h2 .material-icons, .contact h2 .material-icons {
+    position: relative;
+    top: 3px; }
   .about dl, .contact dl {
+    display: inline-block;
     line-height: 2; }
-    .about dl:after, .contact dl:after {
-      display: block;
-      content: "";
-      clear: both; }
     .about dl dt, .about dl dd, .contact dl dt, .contact dl dd {
       float: left; }
-    .about dl dt, .contact dl dt {
-      padding-right: 30px;
-      font-weight: 700; }
-    .about dl:first-of-type, .contact dl:first-of-type {
-      position: relative;
-      margin-right: 50px;
-      padding-right: 80px; }
-    .about dl:first-of-type:after, .contact dl:first-of-type:after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      display: block;
-      content: "";
-      width: 1px;
-      height: 100%;
-      background: #e2e2e2; }
+  .about dl:first-of-type, .contact dl:first-of-type {
+    position: relative; }
+  .about dl:first-of-type:after, .contact dl:first-of-type:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #e2e2e2; }
   .about a, .contact a {
-    line-height: 28px;
     vertical-align: bottom; }
 
 .project {
@@ -147,59 +125,15 @@ footer {
         overflow: hidden;
         display: block;
         height: 300px;
-        border: 1px solid #f2f2f2;
-        /*img {
-          width:100%;
-          transition:transform 0.7s;
-          -webkit-transition:transform 0.7s;
-          -moz-transition:transform 0.7s;
-          -o-transition:transform 0.7s;
-        }
-        &:hover img {
-          -ms-transform: scale(1.1, 1.1);
-          -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
-        }*/ }
+        border: 1px solid #f2f2f2; }
       .project .projectList > li figcaption {
         padding: 20px 0;
         font-family: "Roboto", sans-serif; }
-      .project .projectList > li .information:before, .project .projectList > li .information:after {
-        transition: all .4s ease-in-out;
-        -webkit-transition: all .4s ease-in-out;
-        -moz-transition: all .4s ease-in-out;
-        -o-transition: all .4s ease-in-out;
-        position: absolute;
-        display: block;
-        content: "";
-        opacity: 0; }
-      .project .projectList > li .information:before {
-        top: 60px;
-        left: 0;
-        width: 100%;
-        height: 300px;
-        background: #000; }
-      .project .projectList > li .information:after {
-        top: 75px;
-        left: 5%;
-        width: 90%;
-        height: 268px;
-        border: 1px solid #f3f3f3; }
-      .project .projectList > li:hover .information:before, .project .projectList > li:hover .information:after {
-        opacity: 0.7; }
+      .project .projectList > li .information {
+        word-break: keep-all; }
       .project .projectList > li .description {
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70%;
         font-family: "Raleway", sans-serif;
-        color: #fff;
-        line-height: 1.5em;
-        opacity: 0;
-        transition: all .4s ease-in-out;
-        -webkit-transition: all .4s ease-in-out;
-        -moz-transition: all .4s ease-in-out;
-        -o-transition: all .4s ease-in-out; }
+        line-height: 1.5em; }
       .project .projectList > li:hover .description {
         opacity: 1; }
 
@@ -228,5 +162,237 @@ footer {
   .btnLink.disabled:hover {
     color: #7f7f7f;
     background: #e2e2e2; }
+
+@media all and (max-width: 767px) {
+  body {
+    font-size: 12px; }
+
+  .wrap {
+    padding-bottom: 45px; }
+
+  header {
+    -webkit-align-items: baseline;
+    align-items: baseline; }
+    header h1 {
+      margin-right: 20px;
+      padding: 10px 15px; }
+    header nav li a {
+      padding: 10px; }
+
+  .container section {
+    margin-bottom: 20px; }
+  .container .start {
+    height: 250px; }
+
+  .about, .contact {
+    padding: 20px 30px; }
+
+  .about {
+    display: block; }
+    .about h2 {
+      margin-bottom: 15px; }
+    .about dl dt {
+      margin-right: 20px;
+      font-weight: 700; }
+    .about dl:first-of-type {
+      margin-right: 20px;
+      padding-right: 30px; }
+
+  .project {
+    padding: 0 20px; }
+    .project h2 {
+      margin-bottom: 0;
+      padding: 0 30px 20px;
+      font-size: 2rem; }
+    .project .projectList {
+      display: block;
+      margin-bottom: 0; }
+      .project .projectList > li {
+        padding-top: 20px;
+        width: 88%; }
+        .project .projectList > li .visual,
+        .project .projectList > li .information:before,
+        .project .projectList > li .information:after {
+          height: 200px; }
+
+  .contact {
+    -webkit-align-items: baseline;
+    align-items: baseline; }
+    .contact h2 {
+      margin-right: 30px; }
+    .contact a {
+      line-height: 28px; }
+
+  footer {
+    left: 0;
+    width: 100%;
+    padding: 20px 20px 10px; } }
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .container .start {
+    height: 350px; } }
+@media all and (min-width: 768px) and (max-width: 1059px) {
+  body {
+    font-size: 11px; }
+
+  .wrap {
+    padding-bottom: 45px; }
+
+  .container section {
+    margin-bottom: 20px;
+    padding-top: 50px;
+    width: 100%; }
+
+  .about, .contact {
+    padding: 10px 20px 20px 40px; }
+    .about h2, .contact h2 {
+      padding-right: 50px; }
+    .about dl, .contact dl {
+      font-size: 0.9rem; }
+      .about dl dt, .contact dl dt {
+        padding-right: 30px;
+        font-weight: 700; }
+      .about dl:first-of-type, .contact dl:first-of-type {
+        margin-right: 50px;
+        padding-right: 80px; }
+    .about a, .contact a {
+      line-height: 28px; }
+
+  .project {
+    padding: 0 20px; }
+    .project h2 {
+      margin-bottom: 0;
+      padding: 0 30px 20px;
+      font-size: 2rem; }
+    .project .projectList > li {
+      padding-top: 30px; }
+      .project .projectList > li .visual,
+      .project .projectList > li .information:before,
+      .project .projectList > li .information:after {
+        height: 200px; }
+
+  footer {
+    left: 0;
+    width: 100%;
+    padding: 20px 20px 10px; } }
+@media all and (max-width: 1059px) {
+  header {
+    display: flex;
+    display: -webkit-flex;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background: #fff; }
+    header nav ul {
+      display: flex;
+      display: -webkit-flex; }
+
+  .project .projectList > li .information {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    color: #8d8d8d;
+    border-radius: 5px; } }
+@media all and (min-width: 1060px) {
+  .wrap {
+    padding: 0 0 42px 260px;
+    height: 100%; }
+
+  header {
+    padding-top: 200px;
+    width: 260px;
+    height: 100%; }
+
+  .about h2 {
+    padding-right: 80px; }
+  .about dl:first-of-type {
+    margin-right: 50px;
+    padding-right: 80px; }
+  .about dl dt {
+    font-weight: 700;
+    margin-right: 30px; }
+
+  .projectList {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    margin: 0 auto 30px; }
+    .projectList > li {
+      margin: 0 3%;
+      padding: 60px 0 20px;
+      width: 44%; }
+      .projectList > li .visual {
+        height: 300px;
+        border: 1px solid #f2f2f2; }
+      .projectList > li figcaption {
+        padding: 20px 0;
+        font-weight: 700; }
+      .projectList > li .information:before, .projectList > li .information:after {
+        transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        position: absolute;
+        display: block;
+        content: "";
+        opacity: 0; }
+      .projectList > li .information:before {
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        background: #000; }
+      .projectList > li .information:after {
+        top: 75px;
+        left: 5%;
+        width: 90%;
+        height: 268px;
+        border: 1px solid #f3f3f3; }
+      .projectList > li:hover .information:before, .projectList > li:hover .information:after {
+        opacity: 0.7; }
+      .projectList > li .description {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        font-family: "Raleway", sans-serif;
+        color: #fff;
+        line-height: 1.5em;
+        opacity: 0;
+        transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out; }
+      .projectList > li:hover .description {
+        opacity: 1; }
+
+  footer {
+    left: 260px;
+    width: calc(100% - 270px);
+    width: -webkit-calc(100% - 270px);
+    padding: 20px 20px 10px; } }
+@media all and (min-width: 1024px) and (max-width: 1379px) {
+  .container section {
+    width: 764px; }
+  .container .start {
+    width: 100%; } }
+@media all and (min-width: 1380px) {
+  .container section {
+    width: 1120px; }
+  .container .start {
+    width: 100%; }
+
+  .about, .contact {
+    padding: 100px 0 150px; }
+    .about h2, .contact h2 {
+      padding-right: 80px; }
+      .about h2 .material-icons, .contact h2 .material-icons {
+        top: 3px; }
+    .about dl dt, .contact dl dt {
+      padding-right: 30px; }
+    .about dl:first-of-type, .contact dl:first-of-type {
+      margin-right: 50px;
+      padding-right: 80px; }
+    .about a, .contact a {
+      line-height: 28px; } }
 
 /*# sourceMappingURL=tem.css.map */
