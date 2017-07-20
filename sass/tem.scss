@@ -121,8 +121,18 @@ footer {
       top:3px;
     }
   }
-  ul {
+  dl {
     line-height:2;
+    &:after {display:block;content:"";clear:both;}
+    dt, dd {
+      float:left;
+    }
+    dt {
+      font-weight:700;
+    }
+    dd {
+
+    }
     &:first-of-type {
       position:relative;
       margin-right:80px;

@@ -82,13 +82,21 @@ footer {
     .about h2 .material-icons, .contact h2 .material-icons {
       position: relative;
       top: 3px; }
-  .about ul, .contact ul {
+  .about dl, .contact dl {
     line-height: 2; }
-    .about ul:first-of-type, .contact ul:first-of-type {
+    .about dl:after, .contact dl:after {
+      display: block;
+      content: "";
+      clear: both; }
+    .about dl dt, .about dl dd, .contact dl dt, .contact dl dd {
+      float: left; }
+    .about dl dt, .contact dl dt {
+      font-weight: 700; }
+    .about dl:first-of-type, .contact dl:first-of-type {
       position: relative;
       margin-right: 80px;
       padding-right: 80px; }
-    .about ul:first-of-type:after, .contact ul:first-of-type:after {
+    .about dl:first-of-type:after, .contact dl:first-of-type:after {
       position: absolute;
       top: 0;
       right: 0;
