@@ -128,6 +128,7 @@ footer {
       float:left;
     }
     dt {
+      padding-right:30px;
       font-weight:700;
     }
     dd {
@@ -135,7 +136,7 @@ footer {
     }
     &:first-of-type {
       position:relative;
-      margin-right:80px;
+      margin-right:50px;
       padding-right:80px;
     }
     &:first-of-type:after {

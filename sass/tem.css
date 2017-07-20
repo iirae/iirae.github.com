@@ -91,10 +91,11 @@ footer {
     .about dl dt, .about dl dd, .contact dl dt, .contact dl dd {
       float: left; }
     .about dl dt, .contact dl dt {
+      padding-right: 30px;
       font-weight: 700; }
     .about dl:first-of-type, .contact dl:first-of-type {
       position: relative;
-      margin-right: 80px;
+      margin-right: 50px;
       padding-right: 80px; }
     .about dl:first-of-type:after, .contact dl:first-of-type:after {
       position: absolute;
