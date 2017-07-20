@@ -1,0 +1,25 @@
+{
+  "name": "iirae.github.com",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss-compile": "node-sass -rw sass/scss -o sass/css",
+    "watch": "npm run scss-compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iirae/iirae.github.com.git"
+  },
+  "author": "kim dohee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iirae/iirae.github.com/issues"
+  },
+  "homepage": "https://github.com/iirae/iirae.github.com#readme"
+}

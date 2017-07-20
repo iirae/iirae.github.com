@@ -46,10 +46,10 @@ footer {
   width: calc(100% - 270px);
   width: -webkit-calc(100% - 270px);
   padding: 20px 20px 10px;
-  background: #fff url(//storage.googleapis.com/cr-resource/image/ca88a4ffad44d88281a70309eb5a61cd/kaa1910/slash_dividers.png) repeat-x 50% 0; }
+  background: #fff url("../images/bg_footer.png") repeat-x 0 0; }
   footer p {
     text-align: center;
-    font-size: 0.9rem; }
+    font-size: 0.8rem; }
 
 .start {
   position: relative;
@@ -127,8 +127,6 @@ footer {
     display: flex;
     display: -webkit-flex;
     flex-wrap: wrap;
-    -webkit-justify-content: center;
-    justify-content: center;
     margin: 0 auto 30px; }
     .project .projectList > li {
       position: relative;
@@ -214,5 +212,12 @@ footer {
     top: -2px;
     vertical-align: middle;
     color: #c2c2c2; }
+
+.btnLink.disabled {
+  color: #7f7f7f;
+  background: #e2e2e2; }
+  .btnLink.disabled:hover {
+    color: #7f7f7f;
+    background: #e2e2e2; }
 
 /*# sourceMappingURL=tem.css.map */
