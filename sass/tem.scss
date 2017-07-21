@@ -415,10 +415,12 @@ footer {
     .projectList {
       & > li {
         .information {
-          margin-bottom:20px;
           padding:10px 20px;
           color:#8d8d8d;
           border-radius:5px;
+        }
+        .btnLink {
+          margin-top:15px;
         }
       }
     }

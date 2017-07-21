@@ -295,10 +295,11 @@ footer {
       display: -webkit-flex; }
 
   .project .projectList > li .information {
-    margin-bottom: 20px;
     padding: 10px 20px;
     color: #8d8d8d;
-    border-radius: 5px; } }
+    border-radius: 5px; }
+  .project .projectList > li .btnLink {
+    margin-top: 15px; } }
 @media all and (min-width: 1060px) {
   .wrap {
     padding: 0 0 42px 260px;
