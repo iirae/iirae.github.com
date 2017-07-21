@@ -216,6 +216,7 @@ footer {
       display: block;
       margin-bottom: 0; }
       .project .projectList > li {
+        margin: 0 auto;
         padding-top: 20px;
         width: 88%; }
         .project .projectList > li .visual,
