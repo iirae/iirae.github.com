@@ -87,7 +87,7 @@ footer {
     height: 100%;
     background: #e2e2e2; }
   .about a, .contact a {
-    vertical-align: bottom; }
+    vertical-align: bottom; margin-left:20px; line-height:32px; }
 
 .project {
   padding: 20px 0;
