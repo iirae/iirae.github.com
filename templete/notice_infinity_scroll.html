@@ -13,7 +13,7 @@
     <!--<link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">-->
     <!--<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">-->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/jquery-1.11.3.min.js"></script>
     <!--<script type="text/javascript" src="./js/jquery.mobile-1.4.5.min.js"></script>-->
     <title>COD Labs</title>
     <style type="text/css">
@@ -77,7 +77,7 @@
         });
         
         function getData(){
-            $.getJSON("./json/notice.json", function(data){
+            $.getJSON("../json/board_list.json", function(data){
                for(i = pageCount*pageNum; i < data.length && i < (pageCount+1)*pageNum; i++){
                     board.append("<li><a href='" + data[i].link + "'><strong class='title'>" + data[i].subject + "</strong><span class='date'>" + data[i].date + "</span></a></li>");
                 }
