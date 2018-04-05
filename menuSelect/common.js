@@ -1,6 +1,5 @@
 $(function() {
     drawMenu(); //메뉴 가져오기
-    checkCurrentMenu();
 
     //snb 접고 펼치기
     $('#snb').on("click", "li > a", function(){
@@ -20,10 +19,6 @@ function drawMenu(e){
     var dataUrl = "../json/menu_list.json";
     var navHtml = "";
     var snbHtml = "";
-
-    var urlPath = window.location.pathname;
-    var path = urlPath.split("/");
-    var lastPath = path[path.length - 1];
 
     $.getJSON(dataUrl, function(data){
         $.each(data.menu, function (index, depth1) {
@@ -50,13 +45,14 @@ function drawMenu(e){
                     snbHtml += "</li>";
                 });
                 snbHtml += "</ul>";
+                navHtml += snbHtml;
             }
             navHtml += "</li>";
         });
         $("#nav").children("ul").html("").append(navHtml);
         $("#snb").children("ul").html("").append(snbHtml);
+        checkCurrentMenu();
     });
-
 }
 
 // 현재 페이지에 해당하는 메뉴에 selected 클래스 추가하기
@@ -64,14 +60,25 @@ function checkCurrentMenu(){
     var urlPath = window.location.pathname;
     var path = urlPath.split("/");
     var lastPath = path[path.length - 1];
-console.log($("#snb a"));
-    $("#snb a").each(function () {
-        console.log('1');
+
+    $("#nav li").removeClass("expandable");
+    $("#nav a").each(function () {
         var thisHref = $(this).attr('href');
         if(thisHref === lastPath){
-            $(this).parent('li').addClass('selected');
+            $(this).parents('li').addClass('selected');
+            return false;
         }
-        return false;
+    });
+
+    $("#snb a").each(function () {
+        var thisHref = $(this).attr('href');
+        if(thisHref === lastPath){
+            $(this).parents('li').addClass('selected');
+            if($(this).parents('.depth2 > li').hasClass('expandable')){
+                $(this).parents('.depth2 > li').removeClass('expandable').addClass('collapsible');
+            }
+            return false;
+        }
     });
 
 
