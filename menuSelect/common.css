@@ -32,7 +32,7 @@ article,aside,details,figcaption,figure,footer,header,main,hgroup,menu,nav,secti
 
 /* layout */
 body {}
-.header {display:flex; display:-webkit-flex; display:-ms-flexbox; flex-direction:column; /*height:70px;*/ background:#193047;}
+.header {display:flex; display:-webkit-flex; display:-ms-flexbox; flex-direction:column; min-width:1440px; /*height:70px;*/ background:#193047;}
 .header .headTop {display:flex; display:-webkit-flex; padding:5px 0 3px; background:#fff;}
 .header .headTop h1 {-webkit-flex:1; -ms-flex:1; flex:1; text-align:center;}
 .header .headTop h1 img {width:100px;}
