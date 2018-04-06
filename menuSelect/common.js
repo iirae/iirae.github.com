@@ -40,13 +40,36 @@ function drawMenu(e){
         });
 
         //현재 url과 매칭되는 메뉴 찾기
-        $.each(menuArr, function(index, menu){
-            console.log($(this));
-            if($(menu).url === lastPath){
-                var menuId =  $(menu).id;
-                topParent = menuId.splice(1,2);
+        $.each(data.menu, function (index, depth1) {
+            if(depth1.url === lastPath){
+                var menuId = depth1.id;
+                topParent = menuId.slice(0,2);
+                console.log(topParent);
+            } else {
+                $.each(depth1.children, function (index2, depth2) {
+                    if(depth2.url === lastPath){
+                        var menuId = depth2.id;
+                        topParent = menuId.slice(1,2);
+                    } else {
+                        $.each(depth2.children, function (index3, depth3) {
+                            if(depth3.url === lastPath){
+                                var menuId = depth3.id;
+                                topParent = menuId.slice(1,2);
+                            }
+                        });
+                    }
+                });
             }
         });
+
+        /*$.each(menuArr, function(index, menu){
+            console.log(typeof menuArr);
+            if($(menu).url === lastPath){
+                var menuId =  $(menu).id;
+                topParent = menuId.slice(1,2);
+                console.log(topParent);
+            }
+        });*/
     });
 
     /*menuArr.filter(function(item){
