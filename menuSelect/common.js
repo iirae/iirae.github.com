@@ -40,37 +40,40 @@ function drawMenu(e){
         });
 
         //현재 url과 매칭되는 메뉴 찾기
-        $.each(data.menu, function (index, depth1) {
-            if(depth1.url === lastPath){
-                var menuId = depth1.id;
-                topParent = menuId.slice(0,2);
-                console.log(topParent);
-            } else {
-                $.each(depth1.children, function (index2, depth2) {
-                    if(depth2.url === lastPath){
-                        var menuId = depth2.id;
-                        topParent = menuId.slice(1,2);
-                    } else {
-                        $.each(depth2.children, function (index3, depth3) {
-                            if(depth3.url === lastPath){
-                                var menuId = depth3.id;
-                                topParent = menuId.slice(1,2);
-                            }
-                        });
-                    }
-                });
+        $.each(menuArr, function(index, menu){
+            if(menu.url === lastPath){
+                var menuId =  menu.id;
+                topParent = menuId.slice(0,2) + '0000';
             }
         });
 
-        /*$.each(menuArr, function(index, menu){
-            console.log(typeof menuArr);
-            if($(menu).url === lastPath){
-                var menuId =  $(menu).id;
-                topParent = menuId.slice(1,2);
-                console.log(topParent);
+        //메뉴 플랫구조로 담아두기
+        $.each(data.menu, function (index, depth1) {
+            if(depth1.id === topParent){
+                console.log(depth1.id);
+                snbHtml += "<ul class='depth2' data-parent-id='" + depth1.id +"'>";
+
+                $.each(depth1.children, function (index2, depth2) {
+                    // 소메뉴가 있다면 snb에 아래와 같이 그려라
+                    if(depth2.children !== undefined) {
+                        snbHtml += "<li class='expandable'><a href='#'>" + depth2.title + "</a>";
+
+                        snbHtml += "<ul class='depth3'>";
+                        $.each(depth2.children, function(index3, depth3) {
+                            snbHtml += "<li><a href='" + depth3.link + "'>" + depth3.title + "</a>";
+                        });
+                        snbHtml += "</ul>";
+                    } else {    //소메뉴가 없다면 아래와 같이 그려라
+                        snbHtml += "<li><a href='" + depth2.link + "'>" + depth2.title + "</a>";
+                    }
+                    snbHtml += "</li>";
+                });
+                snbHtml += "</ul>";
             }
-        });*/
+        });
     });
+    //$("#nav").children("ul").html("").append(navHtml);
+    $("#snb").children("ul").html("").append(snbHtml);
 
     /*menuArr.filter(function(item){
         return item.url === lastPath;
