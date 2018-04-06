@@ -31,23 +31,30 @@ article,aside,details,figcaption,figure,footer,header,main,hgroup,menu,nav,secti
 .blind {overflow:hidden; position:absolute; clip:rect(0 0 0 0); margin:-1px; width:1px; height:1px; color:transparent;}
 
 /* layout */
-body {}
-.header {display:flex; display:-webkit-flex; display:-ms-flexbox; flex-direction:column; min-width:1440px; /*height:70px;*/ background:#193047;}
+body {min-width:1440px;}
+.header {z-index:10; display:flex; display:-webkit-flex; display:-ms-flexbox; flex-direction:column; /*height:70px;*/ background:#193047;}
 .header .headTop {display:flex; display:-webkit-flex; padding:5px 0 3px; background:#fff;}
-.header .headTop h1 {-webkit-flex:1; -ms-flex:1; flex:1; text-align:center;}
+.header .headTop h1 {-webkit-flex:1; -ms-flex:1; flex:1; text-align:center; height:32px;}
 .header .headTop h1 img {width:100px;}
 .header .headTop .notice {-webkit-flex:6; flex:6; padding-left:60px; line-height:32px;}
 .header .headTop .notice .badge {display:inline-block; margin:-2px 4px 0 0; padding:3px 5px; font-size:12px; color:#fff; line-height:1.2;background:#fa6362; border-radius:3px;}
 .header .headTop .myInfo {-webkit-flex:2; flex:2; padding:5px 30px 0 0; text-align:right; font-size:13px; vertical-align:bottom;}
 .header .headTop .myInfo .userName {display:inline-block; margin-right:10px;}
 .header .headTop .myInfo .btnNormal {height:23px; line-height:23px; font-size:13px;}
-.header .nav {margin-left:30px; padding:7px 0;}
+.header .nav {position:relative; padding:7px 20px;}
+.header .nav:after {z-index:15; display:none; content:""; position:absolute; top:58px; left:0; width:100%; height:420px; background:rgba(0,0,0,0.6);}
+.header .nav:hover:after,
+.header .nav:hover .depth2 {display:block;}
 .header .nav > ul {display:flex; display:-webkit-flex; display:-ms-flexbox; align-items:stretch;}
-.header .nav > ul > li {justify-content:flex-end;}
-.header .nav > ul > li > ul {display:none;}
-.header .nav a {display:block; padding:10px 15px; font-size:17px; color:#fff;}
-.header .nav .selected > a {color:#fff; background:#023969; border-radius:10px;}
-.header .nav a:hover {color:#3C77EB;}
+.header .nav > ul > li {position:relative; flex-grow:1; justify-content:space-between;}
+.header .nav a {display:block; padding:10px 15px; font-size:17px; color:#fff; text-align:center;}
+.header .nav .selected > a {color:#fff; background:#3d81d6; border-radius:5px;}
+.header .nav > ul > li:hover {background:#023969;}
+.header .nav > ul > li:hover .depth2 {height:410px; background:rgba(0,0,0,0.5);}
+.header .nav .depth2 {display:none; z-index:20; position:absolute; top:51px; left:0; width:100%; padding:10px 0 0; font-size:14px;}
+.header .nav .depth2 a {font-size:15px;}
+.header .nav .depth2 a:hover {color:#3d81d6;}
+.header .nav .depth3 li {padding-left:20px;}
 
 .container {-webkit-flex:1; -ms-flex:1; flex:1; display:-webkit-flex; display:-moz-flex; display:-ms-flex; display:flex; -webkit-flex-direction:row;  -ms-flex-direction:row; flex-direction:row;}
 .snb {overflow:auto; -webkit-flex:1; -ms-flex:1; flex:1; border-right:1px solid #bbb;background:#f2f2f2;

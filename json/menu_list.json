@@ -1,285 +1,280 @@
 {
-    "menu": [
-        {
-            "title": "대메뉴 01",
-            "id": "menu01",
-            "link": "a.html",
-            "children": [
-                {
-                    "title": "중메뉴 01.1",
-                    "id": "menu0101",
-                    "link": "a.html"
-                },
-                {
-                    "title": "중메뉴 01.2",
-                    "id": "menu0102",
-                    "link": "",
-                    "children": [
-                        {
-                            "title": "소메뉴01.2.1",
-                            "id": "menu010201",
-                            "link": "a-1-1.html"
-                        },
-                        {
-                            "title": "소메뉴01.2.2",
-                            "id": "menu010202",
-                            "link": "a-1-2.html"
-                        }
-                    ]
-                }
-            ]
-        },
+        "menu": [
+            {
+                "title": "대메뉴 01",
+                "id": "010000",
+                "url": "a.html",
+                "children": [
+                    {
+                        "title": "중메뉴 01.1",
+                        "id": "010100",
+                        "url": "a.html"
+                    },
+                    {
+                        "title": "중메뉴 01.2",
+                        "id": "010200",
+                        "url": "a-1.html",
+                        "children": [
+                            {
+                                "title": "소메뉴01.2.1",
+                                "id": "010201",
+                                "url": "a-1-1.html"
+                            },
+                            {
+                                "title": "소메뉴01.2.2",
+                                "id": "010202",
+                                "url": "a-1-2.html"
+                            }
+                        ]
+                    }
+                ]
+            },
         {
             "title": "대메뉴 02",
-            "id": "menu02",
-            "link": "b.html",
+            "id": "020000",
+            "url": "b.html",
             "children": [
                 {
                     "title": "중메뉴 02.1",
-                    "id": "menu0201",
-                    "link": "b.html"
+                    "id": "020100",
+                    "url": "b.html"
                 },
                 {
                     "title": "중메뉴 02.2",
-                    "id": "menu0202",
-                    "link": "",
+                    "id": "020200",
+                    "url": "",
                     "children": [
                         {
                             "title": "소메뉴01.2.1",
-                            "id": "menu010201",
-                            "link": "b-1-1.html"
-                        },
-                        {
-                            "title": "소메뉴01.2.2",
-                            "id": "menu010202",
-                            "link": "b-1-2.html"
+                            "id": "020201",
+                            "url": "b-1-1.html"
                         }
                     ]
                 },
                 {
                     "title": "중메뉴 02.3",
-                    "id": "menu0203",
-                    "link": "b-2.html"
+                    "id": "020300",
+                    "url": "b-2.html"
                 }
             ]
         },
         {
             "title": "대메뉴 03",
-            "id": "menu03",
-            "link": "",
+            "id": "030000",
+            "url": "",
             "children": [
                 {
                     "title": "중메뉴 03.1",
-                    "id": "menu0301",
-                    "link": ""
+                    "id": "030100",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 03.2",
-                    "id": "menu0302",
-                    "link": ""
+                    "id": "030200",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 03.3",
-                    "id": "menu0303",
-                    "link": ""
+                    "id": "030300",
+                    "url": ""
                 }
             ]
         },
         {
             "title": "대메뉴 04",
-            "id": "menu04",
-            "link": "",
+            "id": "040000",
+            "url": "",
             "children": [
                 {
                     "title": "중메뉴 04.1",
-                    "id": "menu0401",
-                    "link": ""
+                    "id": "040100",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 04.2",
-                    "id": "menu0402",
-                    "link": ""
+                    "id": "040200",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 04.3",
-                    "id": "menu0403",
-                    "link": ""
+                    "id": "040300",
+                    "url": ""
                 }
             ]
         },
         {
             "title": "대메뉴 05",
-            "id": "menu05",
-            "link": "",
+            "id": "050000",
+            "url": "",
             "children": [
                 {
                     "title": "중메뉴 05.1",
-                    "id": "menu0501",
-                    "link": ""
+                    "id": "050100",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 05.2",
-                    "id": "menu0502",
-                    "link": ""
+                    "id": "050200",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 05.3",
-                    "id": "menu0503",
-                    "link": ""
+                    "id": "050300",
+                    "url": ""
                 }
             ]
         },
         {
             "title": "대메뉴 06",
-            "id": "menu06",
-            "link": "",
+            "id": "060000",
+            "url": "",
             "children": [
                 {
                     "title": "중메뉴 06.1",
-                    "id": "menu0601",
-                    "link": ""
+                    "id": "060100",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 06.2",
-                    "id": "menu0602",
-                    "link": ""
+                    "id": "060200",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 06.3",
-                    "id": "menu0603",
-                    "link": ""
+                    "id": "060300",
+                    "url": ""
                 }
             ]
         },
         {
             "title": "대메뉴 07",
-            "id": "menu07",
-            "link": "",
+            "id": "070000",
+            "url": "",
             "children": [
                 {
                     "title": "중메뉴 07.1",
-                    "id": "menu0701",
-                    "link": ""
+                    "id": "070100",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 07.2",
-                    "id": "menu0702",
-                    "link": ""
+                    "id": "070200",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 07.3",
-                    "id": "menu0703",
-                    "link": ""
+                    "id": "070300",
+                    "url": ""
                 }
             ]
         },
         {
             "title": "대메뉴 08",
-            "id": "menu08",
-            "link": "",
+            "id": "080000",
+            "url": "",
             "children": [
                 {
                     "title": "중메뉴 08.1",
-                    "id": "menu0801",
-                    "link": ""
+                    "id": "080100",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 08.2",
-                    "id": "menu0802",
-                    "link": ""
+                    "id": "080200",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 08.3",
-                    "id": "menu0803",
-                    "link": ""
+                    "id": "080300",
+                    "url": ""
                 }
             ]
         },
         {
             "title": "대메뉴 09",
-            "id": "menu09",
-            "link": "",
+            "id": "090000",
+            "url": "",
             "children": [
                 {
                     "title": "중메뉴 09.1",
-                    "id": "menu0901",
-                    "link": ""
+                    "id": "090100",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 09.2",
-                    "id": "menu0902",
-                    "link": ""
+                    "id": "090200",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 09.3",
-                    "id": "menu0903",
-                    "link": ""
+                    "id": "090300",
+                    "url": ""
                 }
             ]
         },
         {
             "title": "대메뉴 10",
-            "id": "menu10",
-            "link": "",
+            "id": "100000",
+            "url": "",
             "children": [
                 {
                     "title": "중메뉴 10.1",
-                    "id": "menu1001",
-                    "link": ""
+                    "id": "100100",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 10.2",
-                    "id": "menu1002",
-                    "link": ""
+                    "id": "100200",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 10.3",
-                    "id": "menu1003",
-                    "link": ""
+                    "id": "100300",
+                    "url": ""
                 }
             ]
         },
         {
             "title": "대메뉴 11",
-            "id": "menu11",
-            "link": "",
+            "id": "110000",
+            "url": "",
             "children": [
                 {
                     "title": "중메뉴 11.1",
-                    "id": "menu1101",
-                    "link": ""
+                    "id": "110100",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 11.2",
-                    "id": "menu1102",
-                    "link": ""
+                    "id": "110200",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 11.3",
-                    "id": "menu1103",
-                    "link": ""
+                    "id": "110300",
+                    "url": ""
                 }
             ]
         },
         {
             "title": "대메뉴 12",
-            "id": "menu12",
-            "link": "",
+            "id": "120000",
+            "url": "",
             "children": [
                 {
                     "title": "중메뉴 12.1",
-                    "id": "menu1201",
-                    "link": ""
+                    "id": "120100",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 12.2",
-                    "id": "menu1202",
-                    "link": ""
+                    "id": "120200",
+                    "url": ""
                 },
                 {
                     "title": "중메뉴 12.3",
-                    "id": "menu1203",
-                    "link": ""
+                    "id": "120300",
+                    "url": ""
                 }
             ]
         }
