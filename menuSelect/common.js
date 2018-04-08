@@ -47,10 +47,11 @@ function drawMenu(e){
             }
         });
 
-        //메뉴 플랫구조로 담아두기
+        //현재 페이지에 해당하는 대메뉴 + 하위메뉴를 그려라
         $.each(data.menu, function (index, depth1) {
+
             if(depth1.id === topParent){
-                console.log(depth1.id);
+                navHtml += "<li class='selected' data-id='" + depth1.id + "'><a href='" + depth1.url + "'>" + depth1.title + "</a></li>";
                 snbHtml += "<ul class='depth2' data-parent-id='" + depth1.id +"'>";
 
                 $.each(depth1.children, function (index2, depth2) {
@@ -60,74 +61,24 @@ function drawMenu(e){
 
                         snbHtml += "<ul class='depth3'>";
                         $.each(depth2.children, function(index3, depth3) {
-                            snbHtml += "<li><a href='" + depth3.link + "'>" + depth3.title + "</a>";
+                            snbHtml += "<li><a href='" + depth3.url + "'>" + depth3.title + "</a>";
                         });
                         snbHtml += "</ul>";
                     } else {    //소메뉴가 없다면 아래와 같이 그려라
-                        snbHtml += "<li><a href='" + depth2.link + "'>" + depth2.title + "</a>";
+                        snbHtml += "<li><a href='" + depth2.url + "'>" + depth2.title + "</a>";
                     }
                     snbHtml += "</li>";
                 });
                 snbHtml += "</ul>";
+            } else {
+                navHtml += "<li data-id='" + depth1.id + "'><a href='" + depth1.url + "'>" + depth1.title + "</a></li>";
             }
         });
-    });
-    //$("#nav").children("ul").html("").append(navHtml);
-    $("#snb").children("ul").html("").append(snbHtml);
-
-    /*menuArr.filter(function(item){
-        return item.url === lastPath;
-        console.log('1');
-    });*/
-
-    //GNB그리기
-    /*$.getJSON(dataUrl, function(data){
-                $.each(data.menu, function (index, depth1) {
-                    // 대메뉴는 nav에 그려라
-                    navHtml += "<li data-id='" + depth1.id + "'><a href='" + depth1.link + "'>" + depth1.title + "</a>";
-
-                    // 중메뉴가 있다면 nav에 그려라
-                    if(depth1.children !== undefined){
-                        navHtml += "<ul class='depth2'>";
-
-                        $.each(depth1.children, function (index2, depth2) {
-                            navHtml += "<li><a href='" + depth2.link + "'>" + depth2.title + "</a></li>";
-                        });
-
-                        navHtml += "</ul>";
-                    }
-                    navHtml += "</li>";
-                });
-
-                //SNB그리기
-                $.each(data.menu, function (index, depth1) {
-                    if(depth1.children !== undefined){
-                        snbHtml += "<ul class='depth2' data-parent-id='" + depth1.id +"' style='display:none;'>";
-
-                        $.each(depth1.children, function (index2, depth2) {
-                            // 소메뉴가 있다면 snb에 아래와 같이 그려라
-                            if(depth2.children !== undefined) {
-                                snbHtml += "<li class='expandable'><a href='#'>" + depth2.title + "</a>";
-
-                                snbHtml += "<ul class='depth3'>";
-                                $.each(depth2.children, function(index3, depth3) {
-                                    snbHtml += "<li><a href='" + depth3.link + "'>" + depth3.title + "</a>";
-                                });
-                                snbHtml += "</ul>";
-                            } else {    //소메뉴가 없다면 아래와 같이 그려라
-                                snbHtml += "<li><a href='" + depth2.link + "'>" + depth2.title + "</a>";
-                            }
-                            snbHtml += "</li>";
-                        });
-                        snbHtml += "</ul>";
-                    }
-                });
 
         $("#nav").children("ul").html("").append(navHtml);
         $("#snb").children("ul").html("").append(snbHtml);
-        checkCurrentMenu();
-        findSubMenu();
-    });*/
+        checkCurrentMenu()
+    });
 }
 
 // 현재 페이지에 해당하는 메뉴에 selected 클래스 추가하기
@@ -151,47 +102,7 @@ function checkCurrentMenu(){
             }
         }
     });
-
-    $("#nav a").each(function () {
-        var thisHref = $(this).attr('href');
-
-        if(thisHref === lastPath){
-            topMenu = $(this).parents('li');
-            topMenu.addClass('selected');
-            return false;
-            console.log(topMenu);
-        }
-    });
-
-
-    /*if(topMenu.data('id') === subMenu.data('parent-id')){
-        topMenu.addClass('selected');
-    }*/
 }
-
-//대메뉴에 해당하는 중메뉴 뿌려주기
-function findSubMenu(){
-    var thisSub, thisSubUl, thisId;
-
-    $("#nav li").each(function () {
-        if($(this).hasClass('selected')){
-            thisId = $(this).data('id');
-        }
-    });
-
-    $("#snb li").each(function () {
-        thisSub = $(this).hasClass('selected');
-        if(thisSub){
-            thisSubUl = $(this).parent('ul').data('parent-id');
-
-            if(thisId === thisSubUl){
-                $(this).parents('.depth2').show();
-                return false;
-            }
-        }
-    });
-}
-
 
 
 
