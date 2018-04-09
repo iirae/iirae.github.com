@@ -18,6 +18,7 @@ $(function() {
 function drawMenu(e){
     var dataUrl = "../json/menu_list.json";
     var menuArr = [];
+    var sortMenuArr = [];
     var topParent;
 
     var navHtml = "";
@@ -30,6 +31,7 @@ function drawMenu(e){
     $.getJSON(dataUrl, function(data){
         //메뉴 플랫구조로 담아두기
         $.each(data.menu, function (index, depth1) {
+            sortMenuArr.push(depth1);
             menuArr.push(depth1);
             $.each(depth1.children, function (index2, depth2) {
                 menuArr.push(depth2);
@@ -47,31 +49,48 @@ function drawMenu(e){
             }
         });
 
-        //현재 페이지에 해당하는 대메뉴 + 하위메뉴를 그려라
+        //순서 sorting 하기
         $.each(data.menu, function (index, depth1) {
-
+            sortMenuArr.sort(function(a, b){
+                return a.orderNum - b.orderNum;
+            });
+            $.each(depth1.children, function (index2, depth2) {
+                sortMenuArr.sort(function(a, b){
+                    return a.orderNum - b.orderNum;
+                });
+                $.each(depth2.children, function (index3, depth3) {
+                    sortMenuArr.sort(function(a, b){
+                        return a.orderNum - b.orderNum;
+                    });
+                });
+            });
+        });
+        console.log(sortMenuArr);
+        
+        //현재 페이지에 해당하는 대메뉴 + 하위메뉴를 그려라
+        $.each(sortMenuArr, function (index, depth1) {
             if(depth1.id === topParent){
-                navHtml += "<li class='selected' data-id='" + depth1.id + "'><a href='" + depth1.url + "'>" + depth1.title + "</a></li>";
+                navHtml += "<li class='selected' data-id='" + depth1.id + "' data-order-num='" + depth1.orderNum + "'><a href='" + depth1.url + "'>" + depth1.title + "</a></li>";
                 snbHtml += "<ul class='depth2' data-parent-id='" + depth1.id +"'>";
 
                 $.each(depth1.children, function (index2, depth2) {
                     // 소메뉴가 있다면 snb에 아래와 같이 그려라
                     if(depth2.children !== undefined) {
-                        snbHtml += "<li class='expandable'><a href='#'>" + depth2.title + "</a>";
+                        snbHtml += "<li class='expandable' data-order-num='" + depth2.orderNum + "'><a href='#'>" + depth2.title + "</a>";
 
                         snbHtml += "<ul class='depth3'>";
                         $.each(depth2.children, function(index3, depth3) {
-                            snbHtml += "<li><a href='" + depth3.url + "'>" + depth3.title + "</a>";
+                            snbHtml += "<li data-order-num='" + depth3.orderNum + "'><a href='" + depth3.url + "'>" + depth3.title + "</a>";
                         });
                         snbHtml += "</ul>";
                     } else {    //소메뉴가 없다면 아래와 같이 그려라
-                        snbHtml += "<li><a href='" + depth2.url + "'>" + depth2.title + "</a>";
+                        snbHtml += "<li data-order-num='" + depth2.orderNum + "'><a href='" + depth2.url + "'>" + depth2.title + "</a>";
                     }
                     snbHtml += "</li>";
                 });
                 snbHtml += "</ul>";
             } else {
-                navHtml += "<li data-id='" + depth1.id + "'><a href='" + depth1.url + "'>" + depth1.title + "</a></li>";
+                navHtml += "<li data-id='" + depth1.id + "' data-order-num='" + depth1.orderNum + "'><a href='" + depth1.url + "'>" + depth1.title + "</a></li>";
             }
         });
 
