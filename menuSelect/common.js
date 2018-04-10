@@ -50,23 +50,23 @@ function drawMenu(e){
         });
 
         //순서 sorting 하기
-        $.each(data.menu, function (index, depth1) {
-            sortMenuArr.sort(function(a, b){
+        sortMenuArr.sort(function(a, b){
+            return a.orderNum - b.orderNum;
+        });
+        $.each(sortMenuArr, function(index, depth1){
+            depth1.children.sort(function(a,b){
                 return a.orderNum - b.orderNum;
             });
-            $.each(depth1.children, function (index2, depth2) {
-                sortMenuArr.sort(function(a, b){
-                    return a.orderNum - b.orderNum;
-                });
-                $.each(depth2.children, function (index3, depth3) {
-                    sortMenuArr.sort(function(a, b){
+            $.each(depth1.children, function(index, depth2){
+                if(depth2.children !== undefined){
+                    depth2.children.sort(function(a,b){
                         return a.orderNum - b.orderNum;
                     });
-                });
+                }
             });
         });
-        console.log(sortMenuArr);
-        
+
+
         //현재 페이지에 해당하는 대메뉴 + 하위메뉴를 그려라
         $.each(sortMenuArr, function (index, depth1) {
             if(depth1.id === topParent){
