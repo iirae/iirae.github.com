@@ -71,7 +71,7 @@ function drawMenu(e){
         $.each(sortMenuArr, function (index, depth1) {
             if(depth1.id === topParent){
                 navHtml += "<li class='selected' data-id='" + depth1.id + "' data-order-num='" + depth1.orderNum + "'><a href='" + depth1.url + "'>" + depth1.title + "</a></li>";
-                snbHtml += "<ul class='depth2' data-parent-id='" + depth1.id +"'>";
+                snbHtml += "<ul class='depth2'>";
 
                 $.each(depth1.children, function (index2, depth2) {
                     // 소메뉴가 있다면 snb에 아래와 같이 그려라
@@ -128,7 +128,65 @@ function checkCurrentMenu(){
 
 
 
+//전체선택 클릭 이벤트
+$(".allChk").on({
+    click: function(e) {
+        var chkBoxes = $(".eachChk input");
+        var allChk = $("#chkAllAgree");
+        var $fChk = $(this);
+        var $input = $fChk.children("input");
 
+        ch($fChk, $input);
+        agreeAll(allChk, chkBoxes);
+        return false;
+    }, keydown: function (e) {
+        var chkBoxes = $(".eachChk input");
+        var allChk = $("#chkAllAgree");
+        var $fChk = $(this);
+        var $input = $fChk.children("input");
+
+        if(window.event) {
+            myKeyCode = event.keyCode;
+        } else if(e.which) {
+            myKeyCode = e.which;
+        }
+
+        if(myKeyCode === 32) {
+            ch($fChk, $input);
+            agreeAll(allChk, chkBoxes);
+            return false;
+        }
+        return true;
+    }
+});
+
+// 하위 체크박스 선택 시 확인 후 전체선택 checked
+$(".eachChk").on({
+    click: function(){
+        var allChk = $("input#chkAllAgree");
+        var eachChk = $(".eachChk input");
+        var targetInput = $(this).children("input");
+
+        checkEach(allChk, eachChk, targetInput);
+        return false;
+    }, keydown: function (e) {
+        var allChk = $("#chkAllAgree");
+        var eachChk = $(".eachChk input");
+        var targetInput = $(this).children("input");
+
+        if(window.event) {
+            myKeyCode = event.keyCode;
+        } else if(e.which) {
+            myKeyCode = e.which;
+        }
+
+        if(myKeyCode == 32) {
+            checkEach(allChk, eachChk, targetInput);
+            return false;
+        }
+        return true;
+    }
+});
 
 
 

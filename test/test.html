@@ -1,0 +1,173 @@
+<?php
+$id       = get_theme_mod( 'onepress_about_id', esc_html__('about', 'onepress') );
+$disable  = get_theme_mod( 'onepress_about_disable' ) == 1 ? true : false;
+$title    = get_theme_mod( 'onepress_about_title', esc_html__('About Us', 'onepress' ));
+$subtitle = get_theme_mod( 'onepress_about_subtitle', esc_html__('Section subtitle', 'onepress' ));
+$desc     = wp_kses_post( get_theme_mod( 'onepress_about_desc') );
+if ( onepress_is_selective_refresh() ) {
+    $disable = false;
+}
+// Get data
+$page_ids =  onepress_get_section_about_data();
+$content_source = get_theme_mod( 'onepress_about_content_source' );
+if ( ! empty( $page_ids ) ) {
+    ?>
+    <?php if (!$disable) { ?>
+        <?php if ( ! onepress_is_selective_refresh() ){ ?>
+        <section id="<?php if ($id != '') {
+            echo esc_attr( $id );
+        }; ?>" <?php do_action('onepress_section_atts', 'about'); ?> class="<?php echo esc_attr(apply_filters('onepress_section_class', 'section-about section-padding onepage-section', 'about')); ?>">
+        <?php } ?>
+
+            <?php do_action('onepress_section_before_inner', 'about'); ?>
+            <div class="<?php echo esc_attr( apply_filters( 'onepress_section_container_class', 'container', 'about' ) ); ?>">
+                <?php if ( $title || $subtitle || $desc ){ ?>
+                <div class="section-title-area">
+                    <?php if ($subtitle != '') {
+                        echo '<h5 class="section-subtitle">' . esc_html($subtitle) . '</h5>';
+                    } ?>
+                    <?php if ($title != '') {
+                        echo '<h2 class="section-title">' . esc_html($title) . '</h2>';
+                    } ?>
+                    <?php if ( $desc != '' ) {
+                        echo '<div class="section-desc">' . apply_filters( 'onepress_the_content', $desc ) . '</div>';
+                    } ?>
+                </div>
+                <?php } ?>
+                <div class="row">
+                    <?php
+                    if ( ! empty ( $page_ids ) ) {
+                        $col = 3;
+                        $num_col = 4;
+                        $n = count( $page_ids );
+                        if ($n < 4) {
+                            switch ($n) {
+                                case 3:
+                                    $col = 4;
+                                    $num_col = 3;
+                                    break;
+                                case 2:
+                                    $col = 6;
+                                    $num_col = 2;
+                                    break;
+                                default:
+                                    $col = 12;
+                                    $num_col = 1;
+                            }
+                        }
+
+                        // Layout columns
+                        $_layout = absint( get_theme_mod( 'onepress_about_layout', 3 ) );
+                        if ( $n > $_layout ) {
+                            $num_col = $_layout;
+                            $col = round( 12/ $_layout );
+                        }
+
+
+                        $j = 0;
+                        foreach ( $page_ids as $post_id => $settings ) {
+                            $post_id = $settings['content_page'];
+                            $post_id = apply_filters( 'wpml_object_id', $post_id, 'page', true );
+                            $post = get_post( $post_id );
+                            $class = 'col-lg-' . $col;
+                            if ($n == 1) {
+                                $class .= ' col-sm-12 ';
+                            } else {
+                                $class .= ' col-sm-6 ';
+                            }
+                            if ($j >= $num_col) {
+                                $j = 1;
+                                $class .= ' clearleft';
+                            } else {
+                                $j++;
+                            }
+                            ?>
+                            <div class="<?php echo esc_attr($class); ?> wow slideInUp">
+                                <?php if ( has_post_thumbnail( $post ) ) { ?>
+                                    <div class="about-image"><?php
+                                        if ($settings['enable_link']) {
+                                            echo '<a href="' . esc_url( get_permalink( $post )  ). '">';
+                                        }
+                                        echo get_the_post_thumbnail( $post, 'onepress-medium' );
+                                        if ($settings['enable_link']) {
+                                            echo '</a>';
+                                        }
+                                        ?></div>
+                                <?php } ?>
+                                <?php if (!$settings['hide_title']) { ?>
+                                    <h3><?php
+                                        if ($settings['enable_link']) {
+                                            echo '<a href="' .esc_url( get_permalink($post) ). '">';
+                                        }
+                                        echo get_the_title( $post );
+                                        if ($settings['enable_link']) {
+                                            echo '</a>';
+                                        }
+
+                                        ?></h3>
+                                <?php } ?>
+                                <?php
+                                if ( $content_source == 'excerpt' ) {
+                                    $excerpt = get_the_excerpt( $post );
+                                    echo apply_filters( 'the_excerpt', $excerpt  );
+                                } else {
+                                    $content = apply_filters( 'the_content', $post->post_content );
+                                    $content = str_replace( ']]>', ']]&gt;', $content );
+                                    echo $content;
+                                }
+
+                                ?>
+                            </div>
+                            <?php
+                        } // end foreach
+                        wp_reset_postdata();
+                    }// ! empty pages ids
+                    ?>
+                </div>
+
+</div><!-- container -->
+<div class="container history">
+	<div class="section-title-area">
+		<h2 class="section-title">HISTORY</h2>
+	</div>
+	<div class="row codHistory">
+    	<div class="col-sm-12 col-lg-5 wow slideInUp">
+			<ul>
+				<li>
+					<h3>2017</h3>
+					<dl>
+						<dt>04</dt>
+						<dd>(주)씨오디랩스 설립</dd>
+					</dl>
+				</li>
+				<li>
+					<h3>2018</h3>
+					<dl>
+						<dt>05</dt>
+						<dd>벤처기업 인증, 한국벤처캐피털협회 <a href="/wp-content/uploads/2018/05/ico_link.png"><img src="/wp-content/uploads/2018/05/ico_link.png" alt="벤쳐기업인증확인서 보기" /></a></dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div><!-- container -->
+<div class="container">
+
+                <div class="row codReadMore">
+                    <div class="col-sm-5 col-lg-5 wow slideInUp">
+                        <h3>Read More</h3>
+                        <p>"What do you need to start a business? Three simple things : Know your product better than anyone. Know your customer, and have a burning desire to succeed."<br /><span class="dirL">-Dave Thomas</span></p>
+                    </div>
+                    <div class="col-sm-7 col-lg-7 wow slideInUp ">
+                        <p>씨오디랩스는 전통적 화물운송업에 정보 기술을 활용하여 좀 더 나은 물류 환경을 만들고자 노력합니다. <br />단지 운송 플랫폼에만 머무르지 않고 차주와 화주, 협력사 모두에게 좋은 상생의 환경을 추구합니다.<br />반발짝 앞서는 효율적이고 투명한 물류시스템으로 업계에 혁신을 가져오겠습니다.</p>
+                        <p>또한 씨오디랩스는 보험, 결제, SMS, 소모품 등 다양한 협력사 구축을 통해 보다 폭 넓은 화물 운송 서비스와 차별화된 경험을 제공하고자 노력하고 있습니다.<br />씨오디 플랫폼은 새로운 시대에 알맞은 스마트한 물류 시스템을 지향합니다. 번거로운 절차나 비싸고 복잡한 장비도 필요없습니다. 모바일과 AI시대에 걸맞는 선도적인 플랫폼으로 국내 화물 운송시장의 혁신의 선두에 서겠습니다.</p>
+                        <p>참여자 모두가 이익을 얻을 수 있도록, 상생관계를 만들어 나갈 수 있도록 서비스 발전에 힘을 기울이겠습니다.</p>
+                    </div>                </div>
+            </div>
+<!--</div> container -->
+            <?php do_action('onepress_section_after_inner', 'about'); ?>
+        <?php if ( ! onepress_is_selective_refresh() ){ ?>
+        </section>
+        <?php } ?>
+    <?php }
+}

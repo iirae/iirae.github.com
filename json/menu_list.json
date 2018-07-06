@@ -16,31 +16,31 @@
                             "title": "소메뉴01.2.5",
                             "id": "010205",
                             "url": "a-1-1.html",
-                            "orderNum": 5
+                            "orderNum": "37"
                         },
                         {
                             "title": "소메뉴01.2.3",
                             "id": "010203",
                             "url": "a-1-2.html",
-                            "orderNum":3
+                            "orderNum":"11"
                         },
                         {
                             "title": "소메뉴01.2.4",
                             "id": "010204",
                             "url": "a-1-2.html",
-                            "orderNum": 4
+                            "orderNum": "23"
                         },
                         {
                             "title": "소메뉴01.2.2",
                             "id": "010202",
                             "url": "a-1-2.html",
-                            "orderNum": 2
+                            "orderNum": "9"
                         },
                         {
                             "title": "소메뉴01.2.1",
                             "id": "010201",
                             "url": "a-1-2.html",
-                            "orderNum": 1
+                            "orderNum": "1"
                         }
                     ]
                 },
@@ -77,9 +77,16 @@
                 "orderNum": 2,
                 "children": [
                     {
+                        "title": "소메뉴01.2.2",
+                        "id": "020202",
+                        "url": "b-1-2.html",
+                        "orderNum": 2
+                    },
+                    {
                         "title": "소메뉴01.2.1",
                         "id": "020201",
-                        "url": "b-1-1.html"
+                        "url": "b-1-1.html",
+                        "orderNum": 1
                     }
                 ]
             }
