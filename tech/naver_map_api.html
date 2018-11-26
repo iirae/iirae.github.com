@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>간단한 지도 표시하기</title>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=CnGqYxIDz6P3CqZi9xnd"></script>
+</head>
+
+<body>
+<input type="file" id="getfile" accept="text/*">
+<div id="wrap" class="section">
+    <div id="map" style="width:100%;height:600px;"></div>
+</div>
+
+<script id="code">
+    //지도 표시
+    var map = new naver.maps.Map('map', {
+        zoom: 5,
+        center: new naver.maps.LatLng(37.3614483, 127.1114883)
+    });
+
+    var polyline=null;
+    var marker=null;
+    var file = document.querySelector('#getfile');
+    var pol=[];
+    file.onchange = function () {
+        var fileList = file.files ;
+        var reader = new FileReader();
+        reader.readAsText(fileList [0]);
+        reader.onload = function  () {
+            var lines = reader.result.split('\n');
+            if(pol.length > 0)
+                pol.splice(0,pol.length);
+            for(var i=0; i< lines.length;i++){
+                if(lines[i].indexOf("$GPRMC")!=-1){
+                    //줄 단위로 분리
+                    var parsing = lines[i].split(',');
+
+                    //각 항목의 위치
+                    var fixedIdx = 2;
+                    var latIdx = 3;
+                    var lonIdx = 5;
+
+                    var tmp=0;
+
+                    if(parsing.length <= 5)
+                        continue;
+
+                    // A : ok
+                    // V : invalid
+                    if(parsing[fixedIdx] != "A")
+                        continue;
+
+                    //3737.17031 분  > 37.619505 도
+                    tmp = parseFloat(parsing[latIdx].substring(2, parsing[latIdx].length))/60;
+                    var lat = parseFloat(parsing[latIdx].substring(0,2))+tmp;
+
+                    //12637.93494 분 > 126.632249 도
+                    tmp = parseFloat(parsing[lonIdx].substring(3, parsing[lonIdx].length))/60;
+                    var lon = parseFloat(parsing[lonIdx].substring(0,3))+tmp;
+
+                    // lat 또는 lon이 정상이 아니라면 패스.
+                    if(isNaN(lat) || isNaN(lon))
+                        continue;
+
+                    //배열에 추가
+                    pol.push(new naver.maps.LatLng(lat,lon));
+                }
+            }
+
+            if(polyline != null){
+                polyline.setPath(pol);
+            }
+            else{
+                polyline = new naver.maps.Polyline({
+                    path: pol,      //선 위치 변수배열
+                    strokeColor: '#FF0000', //선 색 빨강 #빨강,초록,파랑
+                    strokeOpacity: 0.8, //선 투명도 0 ~ 1
+                    strokeWeight: 6,   //선 두께
+                    map: map           //오버레이할 지도
+                });
+            }
+
+            if(marker != null) {
+                marker.setPosition(pol[pol.length-1]);
+            }else{
+                marker = new naver.maps.Marker({
+                    position: pol[pol.length-1], //마크 표시할 위치 배열의 마지막 위치
+                    map: map
+                });
+            }
+        };
+    };
+</script>
+</body>
+</html>
