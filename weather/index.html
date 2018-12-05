@@ -33,11 +33,11 @@
 <section class="weather">
     <div class="left">
         <h2 class="city"></h2>
-        <strong class="main"><i class="wi wi-day-sunny"></i></strong>
+        <strong class="main"></strong>
     </div>
     <div class="temp">
         <span class="now"></span>
-        <p class="minMax"><span class="min"></span> / <span class="max"></span></p>
+        <p class="minMax"><span class="min"></span><span class="max"></span></p>
     </div>
 </section>
 
@@ -117,6 +117,12 @@
                 $('.temp .now').html(resp.main.temp + '<i class="wi wi-celsius"></i>');
                 $('.temp .minMax').html(resp.main.temp_min + '<i class="wi wi-celsius"></i> / ' + resp.main.temp_max + '<i class="wi wi-celsius"></i>' );
                 
+            }, error: function(jqXHR, exception) {
+                var msg = '';
+                if (jqXHR.status === 429) {
+                    msg = 'Too much traffic!';
+                }
+                $('.city').html(msg);
             }
         });
     }
