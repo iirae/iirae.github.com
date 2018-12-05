@@ -8,6 +8,7 @@
     <style type="text/css">
         .buttons {margin-bottom:20px;}
         .buttons button {display:inline-block; padding:7px 15px; color:#ACACAE; border:0; background:#38373D;}
+        .buttons button.selected,
         .buttons button:hover {color:#554636; border:0; background:#FFC000;}
         
         .weather {display:inline-block; width:210px; height:115px; padding:15px 30px 20px; color:#FFC000; background:#414045; border-radius:5px; box-sizing:border-box;}
@@ -25,15 +26,15 @@
 
 <div class="buttons">
     <button type="button" onclick="timerGetWeather(1800000)">30분 마다</button>
-    <button type="button" onclick="timerGetWeather(3600000)">1시간 마다</button>
-    <button type="button" onclick="clearInterval(repeat)">수동</button>
-    <button type="button" onclick="getWeather();">새로고침</button>
+    <button type="button" onclick="timerGetWeather(3600000)" class="selected">1시간 마다</button>
+    <button type="button" onclick="clearInterval(repeat)" class="">수동</button>
+    <button type="button" onclick="getWeather();" class="refresh">새로고침</button>
 </div>
 
 <section class="weather">
     <div class="left">
         <h2 class="city"></h2>
-        <strong class="main"></strong>
+        <strong class="main"><i class="wi"></i></strong>
     </div>
     <div class="temp">
         <span class="now"></span>
@@ -49,7 +50,11 @@
         timerGetWeather(3600000);
         
         $('.buttons button').on('click', function(){
-        
+            if( !$(this).hasClass('refresh') ){
+                $(this).addClass('selected').siblings().removeClass('selected');
+            } else {
+                $('.manual').addClass('selected');
+            }
         });
     });
     
@@ -84,16 +89,20 @@
                 var _icon = $('.main');
                 
                 switch(resp.weather[0].icon) {
-                    case '01d, 01n': //clear sky
+                    case '01d': //clear sky
+                    case '01n': //clear sky
                         _icon.html('<i class=\"wi wi-day-sunny\"></i>');
                         break;
-                    case '02d, 02n': //few clouds
+                    case '02d': //few clouds
+                    case '02n': //few clouds
                         _icon.html('<i class=\"wi wi-cloud\"></i>');
                         break;
-                    case '03d, 03n': //scattered clouds
+                    case '03d': //scattered clouds
+                    case '03n': //scattered clouds
                         _icon.html('<i class=\"wi wi-cloudy\"></i>');
                         break;
-                    case '04d, 04n': //broken clouds
+                    case '04d': //broken clouds
+                    case '04n': //broken clouds
                         _icon.html('<i class=\"wi wi-cloudy-gusts\"></i>');
                         break;
                     case '09d': //drizzle
