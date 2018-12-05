@@ -6,8 +6,12 @@
     <link rel="stylesheet" href="./weather-icons-master/css/weather-icons.css">
     
     <style type="text/css">
-        .weather {display:inline-block; padding:20px 30px; color:#FFC000; background:#414045; border-radius:5px;}
-        .weather h2 {margin:0;}
+        .buttons {margin-bottom:20px;}
+        .buttons button {display:inline-block; padding:7px 15px; color:#ACACAE; border:0; background:#38373D;}
+        .buttons button:hover {color:#554636; border:0; background:#FFC000;}
+        
+        .weather {display:inline-block; width:210px; height:115px; padding:15px 30px 20px; color:#FFC000; background:#414045; border-radius:5px; box-sizing:border-box;}
+        .weather h2 {margin:0 0 5px;}
         .weather p {margin:0;}
         .weather .main i:before {font-size:40px;}
         .weather .left {float:left;}
@@ -19,38 +23,63 @@
 <!--[if (gte IE 9)|!(IE)]><!--><body><!--<![endif]-->
 <h1 id="head">날씨</h1>
 
+<div class="buttons">
+    <button type="button" onclick="timerGetWeather(1800000)">30분 마다</button>
+    <button type="button" onclick="timerGetWeather(3600000)">1시간 마다</button>
+    <button type="button" onclick="clearInterval(repeat)">수동</button>
+    <button type="button" onclick="getWeather();">새로고침</button>
+</div>
+
 <section class="weather">
     <div class="left">
-        <h2 class="city">city</h2>
+        <h2 class="city"></h2>
         <strong class="main"><i class="wi wi-day-sunny"></i></strong>
     </div>
     <div class="temp">
-        <span class="now">5</span>
-        <p class="minMax"><span class="min">5</span> / <span class="max">5</span></p>
+        <span class="now"></span>
+        <p class="minMax"><span class="min"></span> / <span class="max"></span></p>
     </div>
 </section>
 
 <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
 <script>
     
     $(document).ready(function(){
-        var dataUrl = "//api.openweathermap.org/data/2.5/weather?q=Seoul,KR&appid=b5f2c7c7d8a5f236e0f7076de9d1eadd&units=metric";
-        var weather;
+        timerGetWeather(3600000);
         
+        $('.buttons button').on('click', function(){
+        
+        });
+    });
+    
+    function timerGetWeather(timer) {
+        getWeather();
+        repeat = setInterval(function() {
+            getWeather();
+            console.log(timer);
+        }, timer);
+    
+    }
+    
+    function getWeather() {
+        var dataUrl = "//api.openweathermap.org/data/2.5/weather?q=Seoul,KR&appid=b5f2c7c7d8a5f236e0f7076de9d1eadd&units=metric";
+        
+        console.log('getWeather');
         $.ajax({
             url:dataUrl,
             dataType:"json",
             type:"GET",
             async:"false",
             success:function(resp){
-                console.log("현재온도 : "+ (resp.main.temp) );
+                /*console.log("현재온도 : "+ (resp.main.temp) );
                 console.log("현재습도 : "+ resp.main.humidity);
                 console.log("날씨 : "+ resp.weather[0].main );
                 console.log("상세날씨설명 : "+ resp.weather[0].description );
                 console.log("날씨 이미지 : "+ resp.weather[0].icon );
                 console.log("바람   : "+ resp.wind.speed );
                 console.log("도시이름  : "+ resp.name );
-                console.log("구름  : "+ (resp.clouds.all) +"%" );
+                console.log("구름  : "+ (resp.clouds.all) +"%" );*/
                 
                 var _icon = $('.main');
                 
@@ -90,7 +119,7 @@
                 
             }
         });
-    });
+    }
 </script>
 
 </body>
