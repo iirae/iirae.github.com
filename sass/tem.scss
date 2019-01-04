@@ -193,6 +193,14 @@ footer {
       .description {
         font-family:$font-raleway;
         line-height:1.5em;
+        li {
+            &:before {
+                content:"＃";
+            }
+            & + li {
+                margin-top:10px;
+            }
+        }
       }
       &:hover .description {
         opacity:1;
