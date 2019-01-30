@@ -1,64 +1,29 @@
+//네이버 검색 API예제는 블로그를 비롯 전문자료까지 호출방법이 동일하므로 blog검색만 대표로 예제를 올렸습니다.
+// ssl 이슈가 있으면 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 를 추가해보시길 바랍니다.
 <?php
-class Book
-{
-        private $key = "G777mZaKHQjWtIJvNrzX"; // 사용자가 발급받은 오픈 API 키
-        private $searchUrl = "http://openapi.naver.com/search"; // 오픈 API 호출 URL
-        private $target = "book";
-
-        /**
-         * API 결과를 받아오기 위하여 오픈 API 서버에 Request를 하고 결과를 XML Object로 반환하는 메서드
-         * @return object
-         */
-        private function query($query)
-        {
-                $url = sprintf("%s?query=%s&target=%s&key=%s", $this->searchUrl, $query, $this->target, $this->key);
-                $data =file_get_contents($url);
-                $xml = simplexml_load_string($data);
-                
-                return $xml;
-        }
-
-        /**
-         * API의 결과를 Json으로 encode하려 반환하는 메서드
-         * XML을 직접 parsing하지 않고 json으로 변환하여 반환한다.
-         */
-        public function getBookSearch($query)
-        {       $xml = $this->query($query);
-                $result = json_encode($xml);
-
-                return $result;
-        }
-}
-?>
-<?php
-class Book
-{
-        private $key = "G777mZaKHQjWtIJvNrzX"; // 사용자가 발급받은 오픈 API 키
-        private $searchUrl = "http://openapi.naver.com/search"; // 오픈 API 호출 URL
-        private $target = "book";
-
-        /**
-         * API 결과를 받아오기 위하여 오픈 API 서버에 Request를 하고 결과를 XML Object로 반환하는 메서드
-         * @return object
-         */
-        private function query($query)
-        {
-                $url = sprintf("%s?query=%s&target=%s&key=%s", $this->searchUrl, $query, $this->target, $this->key);
-                $data =file_get_contents($url);
-                $xml = simplexml_load_string($data);
-                
-                return $xml;
-        }
-
-        /**
-         * API의 결과를 Json으로 encode하려 반환하는 메서드
-         * XML을 직접 parsing하지 않고 json으로 변환하여 반환한다.
-         */
-        public function getBookSearch($query)
-        {       $xml = $this->query($query);
-                $result = json_encode($xml);
-
-                return $result;
-        }
-}
+  $client_id = "G777mZaKHQjWtIJvNrzX";
+  $client_secret = "HtchWwdoKB";
+  $encText = urlencode("네이버오픈API");
+  $url = "https://openapi.naver.com/v1/search/book.json?query=".$encText; // json 결과
+//  $url = "https://openapi.naver.com/v1/search/book.xml?query=".$encText; // xml 결과
+  $is_post = false;
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_POST, $is_post);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+  $headers = array();
+  $headers[] = "X-Naver-Client-Id: ".$client_id;
+  $headers[] = "X-Naver-Client-Secret: ".$client_secret;
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+  $response = curl_exec ($ch);
+  $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  echo "status_code:".$status_code."<br>";
+  curl_close ($ch);
+  if($status_code == 200) {
+    echo $response;
+  } else {
+    echo "Error 내용:".$response;
+  }
 ?>
