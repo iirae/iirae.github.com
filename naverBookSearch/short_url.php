@@ -1,7 +1,7 @@
 <?php
 if ($_POST['mode'] == "transurl") {
 
-    $url = sprintf("%s?url=%s", "https://openapi.naver.com/v1/util/shorturl.json", $_POST['query']);
+    $url = sprintf("%s?url=%s", "https://openapi.naver.com/v1/util/shorturl.xml", $_POST['query']);
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_POST, true);
