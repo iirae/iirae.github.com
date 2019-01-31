@@ -2,8 +2,8 @@
 error_reporting(E_ERROR);
   $client_id = "G777mZaKHQjWtIJvNrzX";
   $client_secret = "HtchWwdoKB";
-  //$encText = urlencode($_POST['query']);
-  $encText = urlencode('애자일']);
+  $encText = urlencode($_POST['query']);
+  //$encText = urlencode('애자일');
   
   $url = "https://openapi.naver.com/v1/search/book.json?query=".$encText; // json 결과
 //  $url = "https://openapi.naver.com/v1/search/book.xml?query=".$encText; // xml 결과
