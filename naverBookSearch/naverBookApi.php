@@ -2,7 +2,7 @@
 error_reporting(E_ERROR);
   $client_id = "G777mZaKHQjWtIJvNrzX";
   $client_secret = "HtchWwdoKB";
-  $encText = urlencode("네이버오픈API");
+  $encText = urlencode($_POST['query']);
   
   $url = "https://openapi.naver.com/v1/search/book.json?query=".$encText; // json 결과
 //  $url = "https://openapi.naver.com/v1/search/book.xml?query=".$encText; // xml 결과
@@ -28,5 +28,6 @@ error_reporting(E_ERROR);
     echo $response;
   } else {
     echo "Error 내용:".$response;
+    echo "Error 내용:".$encText;
   }
 ?>

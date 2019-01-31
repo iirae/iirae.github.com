@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -32,7 +31,7 @@
 <body>
         <div class="search_book">
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                <input type="hidden" name="mode" value="response" />
+                <input type="hidden" name="mode" value="bookSearch" />
                 <fieldset class="srch">
                         <legend>검색영역</legend>
                         <input type="text" name="query" id="query" accesskey="s" title="검색어" class="keyword" value="애자일">
@@ -78,59 +77,71 @@
                     </tbody>
             </table>
         </div>
-</body>
-
-<script type="text/javascript">
-        $('#search').click( function() {
-                if($('#query').val() == ''){
-                        alert('검색어를 입력해 주세요');
-                        $('#query').focus();
-                }else{
-                        callAjax($('#query').val());
-                        $('#name').val("");
-                }
-        });
-
-        function callAjax(query) {
-                $.ajax({
-                    dataType:'json',
-                    type:'POST',
-                    url:'./book_proxy.php',
-                    data:{'query':query},
-                    success:function(result){
-                            $('#result').html('');
-                            //console.log(result);
-                            if(result['channel']['display'] > 0){
-                                    $('.__oldlist').remove();
-                                    for(var i in result['channel']['item']){
-                                            var item = result['channel']['item'][i];
-                                            $html = template('__template', item);
-                                            $html.addClass('__oldlist');
-                                            $('#list').append($html);
-                                            $('.__oldlist').show();
-                                    }
-                                    
-                            }else{
-                                    $('#result').html('');
-                                    $('#result').append("데이터가 없거나 정상적으로 로딩 되지 않았습니다.");
-                            }
-                    },
-                    error: function (request, status, error) {
-                        console.log('code55555555: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
-                    }
+        
+        <script src="./handlebars-v4.0.12.js"></script>
+        
+        <script id="list_template" type="text/x-handlebars-template">
+            {{#items}}
+            <tr class="__template">
+                    <td><img src="{{image}}"  width="50px" height="70px" /></td>
+                    <td><a href="{{link}}">{{title}}</a></td>
+                    <td>{{author}}</td>
+                    <td>{{publisher}}</td>
+                    <td>{{pubdate}}</td>
+                    <td>{{price}}</td>
+                    <td>{{isbn}}-</td>
+            </tr>
+            {{/items}}
+        </script>
+        
+        <script type="text/javascript">
+                $('#search').click( function() {
+                        if($('#query').val() == ''){
+                                alert('검색어를 입력해 주세요');
+                                $('#query').focus();
+                        }else{
+                            console.log($('#query').val());
+                                callAjax($('#query').val());
+                                $('#name').val("");
+                        }
                 });
-        };
-
-        function template(template_id, params){
-                var c = $('.' + template_id).clone();
-                var html = $('<div>').append(c).html();
-                for(var key in params){
-                        html = html.replace(new RegExp('#' + key + '#', 'g'), params[key]);
+        
+                function callAjax(query) {
+                        var _result = $('#list');
+                        $.ajax({
+                            dataType:'json',
+                            type:'POST',
+                            url:'./naverBookApi.php',
+                            data:{'query':query},
+                            success:function(result){
+                                _result.html('');
+                                
+                                if(result['display'] > 0){
+                                    $('.__oldlist').remove();
+                                    
+                                    //핸들바 템플릿 가져오기
+                                    var source = $("#list_template").html();
+                                    
+                                    //핸들바 템플릿 컴파일
+                                    var template = Handlebars.compile(source);
+                                    
+                                    var data = result;
+                            
+                                    var html = template(data);
+                                    console.log(data);
+                                    $('#list').append(html);
+                                    
+                                }else{
+                                    _result.html('');
+                                    _result.append("데이터가 없거나 정상적으로 로딩 되지 않았습니다.");
+                                }
+                            },
+                            error: function (request, status, error) {
+                                console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
+                            }
+                        });
                 }
-                html = html.replace(/#template_([^#]*)#/g, '$1');
-                var $html = $(html).removeClass(template_id).removeClass('__template');
-                return $html;
-        }
-</script>
-
+                
+        </script>
+</body>
 </html>
