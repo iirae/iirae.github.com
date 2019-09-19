@@ -1,0 +1,2532 @@
+@charset "UTF-8";
+
+@import "mixin";
+
+html, body, .wrap, button, input, select, td, textarea, th {
+    font-family:HelveticaNeue-Light,AppleSDGothicNeo-Light,'Malgun Gothic','맑은 고딕', sans-serif;
+    color:$black_001;
+    font-size:15px;
+    @include mo {
+        @include vwPx(font-size, 15);
+    }
+}
+
+h1, h2, h3, h4, h5 {
+    font-size:15px;
+    @include mo {
+        @include vwPx(font-size, 15);
+    }
+}
+html, body {
+    min-width:320px;
+    max-width:768px;
+    margin:0 auto;
+    word-break:normal;
+}
+a {
+    color:$black_001;
+}
+
+// layout
+.wrap {
+    min-height:100vh;
+    background-color:$gray_003;
+    &.trans {
+        background-color:transparent;
+        .congrats {
+            padding:10px 0;
+        }
+    }
+}
+.header {
+    z-index:50;
+    position:fixed;
+    left:0;
+    top:0;
+    right:0;
+    padding:0 50px;
+    text-align:center;
+    border-bottom:1px solid $yellow_002;
+    background-color:$white;
+    h1 {
+        font-weight:400;
+        //font-size:16px;
+        @include rem(font-size, 16);
+        line-height:50px;
+    }
+    .btnBack {
+        position:absolute;
+        top:50%;
+        left:10px;
+        margin-top:-15px;
+
+    }
+}
+.container {
+    padding-top:51px;
+}
+.contents {
+    & > .headArea, & > .section {
+    }
+}
+
+// CWadsFixed (하단 고정 광고)
+.CWadsFixed {
+    z-index:50;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100%;
+    //height:67px;
+    @include vwPx(height, 67);
+    .image {
+        display:block;
+        width:100%;
+        height:100%;
+        background-color:$black_003;
+    }
+}
+
+// icon
+.icon {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+//button
+.btnBack {
+    display:inline-block;
+    width:30px;
+    height:30px;
+    background: {
+        image:url($bg_url + "btn_back.svg");
+        repeat:no-repeat;
+        position:center;
+        size:cover;
+    }
+}
+.btnLike {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    vertical-align:middle;
+    cursor:pointer;
+    background: {
+        image:url($bg_url + "btn_goal.svg");
+        repeat:no-repeat;
+        position:center;
+        size:cover;
+    }
+    &.selected {
+        background-image:url($bg_url + "btn_goal_sel.svg");
+    }
+}
+.btnStrong, .btnNormal, .btnMore, .btnSimple, .btnPlatinum, .btnDisabled {
+    display:inline-block;
+    width:100%;
+    height:44px;
+    line-height:44px;
+    text-align:center;
+    font-weight:700;
+}
+.btnStrong {
+    color:$black_002;
+    background-color:$yellow_002;
+}
+.btnNormal {
+    color:$black_001;
+    background-color:$gray_002;
+}
+.btnSimple {
+    font-weight:400;
+    color:$white;
+    background-color:$black_004;
+}
+.btnMore {
+    color:$white;
+    background-color:$black_004;
+    border-radius:4px;
+}
+.btnPlatinum {
+    color:$white;
+    background-color:$green_001;
+    border-radius:4px;
+}
+.btnDisabled {
+    color:$black_004;
+    background-color:$gray_001;
+    border-radius:4px;
+}
+.btnStatic, .btnBasic, .btnEmphasis {
+    display:inline-block;
+    height:26px;
+    padding:0 8px;
+    @include rem(font-size, 14);
+    line-height:26px;
+    letter-spacing:-1px;
+    text-align:center;
+    border-radius:3px;
+}
+.btnStatic {
+    color:$black_002;
+    border:1px solid $yellow_002;
+}
+.btnEmphasis {
+    color:$black_002;
+    background-color:$yellow_002;
+}
+.btnBasic {
+    color:$white;
+    background-color:$black_004;
+}
+
+// btnArea
+.btnArea {
+    width:100%;
+    padding:20px 25px;
+    box-sizing:border-box;
+    &.fixed {
+        position:fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        max-width:768px;
+        margin:0 auto;
+        padding:0;
+
+    }
+    &.col2 {
+        & > [class*="btn"] {
+            width:50%;
+        }
+    }
+
+    & > [class*="btn"] {
+        height:47px;
+        line-height:47px;
+        @include rem(font-size, 15);
+    }
+    .btnNormal {
+        color:$black_002;
+        & + .btnNormal {
+            border-left:1px solid $white;
+            box-sizing:border-box;
+        }
+    }
+    .btnMore {
+    }
+}
+
+// text
+.txtRed {color:$red_001 !important;}
+.txtBlue {color:$blue_001 !important;}
+.txtBold {font-weight:700;}
+.txtNormal {font-weight:400;}
+
+.txtEllipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
+}
+
+
+// margin
+.mt15 {margin-top:15px !important;}
+.mt20 {margin-top:20px !important;}
+
+//form
+.fText {
+    width:100%;
+    height:40px;
+    padding:0 20px;
+    @include rem(font-size, 14);
+    color:$black_001;
+    line-height:40px;
+    border:1px solid $gray_004;
+    background-color:$gray_003;
+    border-radius:3px;
+    box-sizing:border-box;
+    &::placeholder {
+        color:$black_004;
+    }
+    &:focus {
+        border-color:$black_002;
+    }
+    &.error {
+        border-color:$red_001;
+    }
+}
+.fTextarea {
+    width:100%;
+    padding:0 20px;
+    @include rem(font-size, 14);
+    color:$black_001;
+    line-height:40px;
+    border:1px solid $gray_004;
+    background-color:$gray_003;
+    border-radius:3px;
+    box-sizing:border-box;
+    &::placeholder {
+        color:$black_004;
+    }
+    &:focus {
+        border-color:$black_002;
+    }
+    &.error {
+        border-color:$red_001;
+    }
+}
+
+.buttonChk {
+    position:relative;
+    width:32px;
+    height:10px;
+    background-color:#e1e1e1;
+    border-radius:5px;
+    input {
+        overflow:hidden;
+        position:absolute;
+        clip:rect(0 0 0 0);
+        margin:-1px;
+        width:1px;
+        height:1px;
+        color:transparent;
+    }
+    label {
+        position:absolute;
+        top:-4px;
+        left:0;
+        right:auto;
+        display:block;
+        width:18px;
+        height:18px;
+        background-color:#f5f5f5;
+        border-radius:50%;
+        box-shadow: 0 2px 3px 0 rgba(43, 43, 43, 0.21);
+        transition:all 0.3s;
+    }
+    input:checked {
+        & + label {
+            left:auto;
+            right:0;
+            background-color:$yellow_002;
+        }
+    }
+}
+
+// headArea
+.headArea {
+    padding:16px 25px 17px;
+    border-bottom:1px solid $gray_001;
+    background-color:$white;
+    &.myCoin {
+        color:$black_002;
+        .icon {
+            width:20px;
+            height:20px;
+            margin-right:6px;
+            background: {
+                image:url($bg_url + "ico_coin.svg");
+            }
+            @include bgProp();
+        }
+        .coin {
+            @include rem(font-size, 15);
+            vertical-align:middle;
+        }
+    }
+}
+
+// cotents > conTitle
+.titleArea {
+    padding:15px 25px;
+    .conTitle {
+        padding:0;
+        @include rem(font-size, 15);
+        background-color:transparent;
+    }
+    .desc {
+        margin-top:5px;
+        color:$black_003;
+        @include rem(font-size, 14);
+        letter-spacing:-1px;
+        line-height:1.5;
+    }
+    .blind + .desc {
+        margin-top:0;
+    }
+}
+.conTitle {
+    padding:15px 25px;
+    color:$black_005;
+    @include rem(font-size, 14);
+    font-weight:400;
+}
+
+// tab
+.tab {
+    display:flex;
+    width:100%;
+    padding:0 15px;
+    justify-content:center;
+    align-content:stretch;
+    border-bottom:1px solid $gray_001;
+    background-color:$white;
+    box-sizing:border-box;
+    &.col4 {
+        li {
+            width:25%;
+            margin-left:18px;
+        }
+    }
+    li {
+        margin-left:0.05%;
+        width:33.33%;
+        box-sizing:border-box;
+        &:first-of-type {
+            margin-left:0;
+        }
+        a {
+            display:block;
+            padding:10px 0;
+            @include rem(font-size, 16);
+            color:$black_002;
+            text-align:center;
+            letter-spacing:-1px;
+        }
+        &.selected {
+            position:relative;
+            &:after {
+                @include pseudo(block, 68, 1, none);
+                position:absolute;
+                left:50%;
+                bottom:-1px;
+                margin-left:-31px;
+                background-color:$black_002;
+            }
+            a {
+                color:$black_001;
+            }
+        }
+    }
+}
+
+//setCoin
+.setCoin {
+    color:$black_002;
+    .icon {
+        width:17px;
+        height:17px;
+        background: {
+            image:url($bg_url + "ico_coin.svg");
+        }
+        @include bgProp();
+    }
+    .coin {
+        margin-left:1px;
+        @include rem(font-size, 15);
+        vertical-align:middle;
+    }
+}
+
+//layer
+.overlay {
+    height:100%;
+    height:100vh;
+    overflow:hidden;
+    .layer {
+        opacity:1;
+    }
+}
+.layer {
+    opacity:0;
+    z-index:100;
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    display:flex;
+    width:100%;
+    height:100%;
+    padding:100px 29px;
+    align-items:center;
+    cursor:pointer;
+    background:rgba(0,0,0,0.5);
+    box-sizing:border-box;
+    transition:opacity 0.4s;
+    &:before {
+        z-index:101;
+        display:block;
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        cursor:pointer;
+    }
+    .inner {
+        z-index:102;
+        position:relative;
+        width:100%;
+        max-height:100%;
+        max-width:360px;
+        margin:0 auto;
+        background-color:$white;
+        border-radius:5px;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.25);
+    }
+    .titleArea {
+        padding:15px 0;
+        text-align:center;
+        border-bottom:1px solid $yellow_002;
+        h2 {
+            @include rem(font-size, 15);
+            line-height:1;
+        }
+    }
+    .content {
+        overflow-y:auto;
+        padding:15px 29px;
+        text-align:center;
+        @include rem(font-size, 15);
+        .desc {
+            @include rem(font-size, 15);
+            line-height:1.47;
+            letter-spacing:-1px;
+        }
+        .product {
+            padding:0;
+            border-bottom-width:0;
+            .desc {
+                margin-bottom:20px;
+            }
+            .image {
+                overflow:hidden;
+                display:flex;
+                display:-webkit-flex;
+                width:75px;
+                height:75px;
+                margin:0 auto 15px;
+                justify-content:center;
+                align-items:center;
+                background-color:$gray_004;
+            }
+        }
+    }
+    .btnArea {
+        display:flex;
+        padding:0;
+        & > [class*="btn"] {
+            height:40px;
+            line-height:40px;
+            @include rem(font-size, 13);
+            font-weight:400;
+            &:first-of-type {
+                border-bottom-left-radius:5px;
+            }
+            &:last-of-type {
+                border-bottom-right-radius:5px;
+            }
+        }
+    }
+}
+
+//section
+.section {
+    padding:15px 25px 10px 25px;
+    background-color:$white;
+    .title {
+        margin-bottom:15px;
+        @include rem(font-size, 14);
+        font-weight:400;
+    }
+}
+
+// 당첨!
+.congrats {
+    padding:10px 20px 10px 25px;
+    background-color:$white;
+    .inner {
+        //overflow:hidden;
+        position:relative;
+        height:56px;
+        padding:5px 5px 5px 0;
+        box-sizing:border-box;
+        .list {
+            overflow:hidden;
+            height:46px;
+            border-radius:23px;
+            box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+            background-image: linear-gradient(to left, #ffad3b, #ff6f1d 98%);
+        }
+         .item {
+             position:relative;
+             top:0;
+             left:0;
+             display:block;
+             height:56px;
+             padding:0 10px 0 65px;
+             cursor:pointer;
+             .image {
+                overflow:hidden;
+                position:absolute;
+                top:50%;
+                left:15px;
+                display:-webkit-flex;
+                display:flex;
+                margin-top:-26px;
+                width:42px;
+                height:42px;
+                align-items:center;
+                justify-content:center;
+                border-radius:50%;
+             }
+            .text {
+                padding-top:4px;
+                color:$white;
+                @include rem(font-size, 12);
+                line-height:18px;
+            }
+        }
+    }
+}
+
+//loading
+
+.loading {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:rgba(255,255,255,0.35);
+    &:before {
+        z-index:10;
+        content:'';
+        position:absolute;
+        top:50%;
+        left:50%;
+        width:30px;
+        height:30px;
+        margin-top:-15px;
+        margin-left:-15px;
+        border-radius:50%;
+        border:3px solid $black_004;
+        border-top-color:$yellow_002;
+        box-sizing:border-box;
+        animation:spinner .6s linear infinite;
+    }
+}
+
+
+//tableLayout
+.tableLayout {
+    border-bottom:1px solid $gray_001;
+    th, td {
+        border-top:1px solid $gray_001;
+    }
+    th {
+        padding:10px 11px;
+        font-weight:400;
+        background-color:$gray_003;
+        &:first-of-type {
+            padding-left:25px;
+        }
+        &:last-of-type {
+            padding-right:25px;
+        }
+    }
+    td {
+        padding:10px 11px;
+        @include rem(font-size, 14);
+        background-color:$white;
+        &:first-of-type {
+            padding-left:25px;
+        }
+        &:last-of-type {
+            padding-right:25px;
+        }
+    }
+    .center {
+        text-align:center;
+    }
+    .left {
+        text-align:left;
+    }
+}
+
+// 상품 정보
+.prize {
+    display:flex;
+    display:-webkit-flex;
+    padding:10px 25px;
+    border-bottom:1px solid $gray_001;
+    justify-content:center;
+    align-items:center;
+    background-color:$white;
+    .image {
+        display:flex;
+        display:-webkit-flex;
+        flex:0 0 auto;
+        width:76px;
+        height:76px;
+        text-align:center;
+        justify-content:center;
+        align-items:center;
+        img {
+            max-width:100%;
+            max-height:100%;
+        }
+    }
+    .info {
+        position:relative;
+        flex:1 1 99px;
+        padding-left:10px;
+        .brand {
+            color:$gray_007;
+            @include rem(font-size, 15);
+        }
+        .name {
+            display:block;
+            color:$black_002;
+            @include rem(font-size, 16);
+            font-weight:400;
+        }
+        .setCoin {
+            margin-top:4px;
+            color:$black_001;
+            @include rem(font-size, 15);
+        }
+    }
+}
+
+// 쇼핑메인
+.myInfo {
+    @include afterClear();
+    .profile {
+        float:left;
+        .image {
+            overflow:hidden;
+            display:inline-block;
+            width:25px;
+            height:25px;
+            @include vwPx(width, 25);
+            @include vwPx(height, 25);
+            max-width:35px;
+            max-height:35px;
+            text-align:center;
+            vertical-align:middle;
+            background:$gray_002;
+            border-radius:50%;
+        }
+        .name {
+            margin-left:10px;
+            //font-size:13px;
+            @include rem(font-size, 15);
+            vertical-align:middle;
+        }
+    }
+    .coin {
+        float:right;
+        font-size:15px;
+        @include rem(font-size, 15);
+        line-height:1.6667;
+        color:$gray_006;
+        .icon {
+            width:17px;
+            height:17px;
+            @include vwPx(width, 17);
+            @include vwPx(height, 17);
+            max-width:29px;
+            max-height:26px;
+            background: {
+                image:url($bg_url + "ico_coin.svg");
+                repeat:no-repeat;
+                position:center;
+                size:cover;
+            }
+        }
+    }
+}
+.bannerArea {
+    overflow:hidden;
+    position:relative;;
+    width:100%;
+    //height:115px;
+    min-height:115px;
+    .slideWrap {
+        height:100%;
+    }
+    .view {
+        position:absolute;
+        top:0;
+        left:0;
+        overflow:hidden;
+        width:100%;
+        li {
+            width:100%;
+            //height:115px;
+            a, img {
+                display:block;
+                width:100%;
+                //height:100%;
+            }
+        }
+    }
+    .ts-controls {
+        position:absolute;
+        bottom:10px;
+        left:0;
+        width:100%;
+        text-align:center;
+        .ts-paging {
+            .ts-paging-btn {
+                display:inline-block;
+                width:8px;
+                height:8px;
+                margin-left:5px;
+                background-color:$black_002;
+                overflow:hidden;
+                clip:rect(0 0 0 0);
+                color:transparent;
+                white-space:nowrap;
+                border-radius:50%;
+                &:first-of-type {
+                    margin-left:0;
+                }
+                &.ts-paging-active {
+                    background-color:$yellow_001;
+                }
+            }
+        }
+    }
+}
+.recommendGoods {
+    margin:0 -24px 0 -25px;
+    padding:0 12px;
+    font-size:0;
+    @include afterClear();
+    li {
+        display:inline-block;
+        width:25%;
+        text-align:center;
+        box-sizing:border-box;
+        a {
+            display:inline-block;
+            //font-size:12px;
+            @include rem(font-size, 12);
+        }
+        .image {
+            overflow:hidden;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            width:60px;
+            @include vwPx(width, 60);
+            height:60px;
+            @include vwPx(height, 60);
+            max-width:100px;
+            max-height:100px;
+            background-color:$gray_005;
+            border-radius:50%;
+            img {
+                max-width:100%;
+                max-height:100%;
+            }
+        }
+        .coin {
+            display:block;
+            margin-top:10px;
+            @include rem(font-size, 15);
+            font-weight:200;
+            em {
+                font-weight:400;
+            }
+        }
+    }
+}
+
+//쇼핑목록
+.prdList {
+    .item {
+        display:flex;
+        display:-webkit-flex;
+        margin-top:7px;
+        padding:10px 25px;
+        border-bottom:1px solid $gray_001;
+        justify-content:center;
+        align-items:center;
+        background-color:$white;
+        .image {
+            display:flex;
+            display:-webkit-flex;
+            flex:0 0 auto;
+            width:80px;
+            height:80px;
+            text-align:center;
+            justify-content:center;
+            align-items:center;
+            img {
+                max-width:100%;
+                max-height:100%;
+            }
+        }
+        .info {
+            position:relative;
+            flex:1 1 99px;
+            padding-left:10px;
+            .brand {
+                color:$gray_007;
+                @include rem(font-size, 15);
+            }
+            .name {
+                display:block;
+                margin-top:3px;
+                color:$black_002;
+                @include rem(font-size, 16);
+                font-weight:400;
+                max-height:42px;
+                line-height:1.3;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                word-wrap:break-word;
+                word-break:keep-all;
+            }
+            .btnLike {
+                margin-left:15px;
+            }
+            .price {
+                position:absolute;
+                left:10px;
+                bottom:0;
+                .cash {
+                    margin-left:15px;
+                    @include rem(font-size, 15);
+                }
+            }
+        }
+        .gauge {
+            margin-top:5px;
+        }
+        .text {
+            margin-top:6px;
+            color:$black_003;
+            @include rem(font-size, 14);
+            letter-spacing:-1px;
+        }
+    }
+}
+.gauge {
+    position:relative;
+    .total, .mine {
+        display:block;
+        width:100%;
+        height:20px;
+        padding:0 5px;
+        color:$black_002;
+        @include rem(font-size, 13);
+        box-sizing:border-box;
+    }
+    .total {
+        text-align:right;
+        background:$gray_001;
+        border-radius:9px;
+        span {
+            position:relative;
+            z-index:2;
+        }
+    }
+    .mine {
+        position:absolute;
+        left:0;
+        top:0;
+        .bg {
+            display:block;
+            position:absolute;
+            left:0;
+            top:0;
+            height:100%;
+            background-image: linear-gradient(to right, #ffd437, #ffad2e);
+            border-radius:8px;
+        }
+        .coin {
+            position:relative;
+            z-index:2;
+        }
+    }
+}
+
+// 쇼핑상세
+.product {
+    padding:25px 25px 20px;
+    border-bottom:1px solid $gray_001;
+    background-color:$white;
+    .image {
+        width:100%;
+    }
+    .info {
+        margin-top:20px;
+        .brandName {
+            color:$gray_007;
+            @include rem(font-size, 14);
+        }
+        .prdName {
+            margin-top:5px;
+            @include rem(font-size, 15);
+            color:$black_002;
+        }
+        .price {
+            margin-top:5px;
+            @include rem(font-size, 18);
+            color:$black_001;
+        }
+        .tag {
+            display:inline-block;
+            height:16px;
+            padding:0 8px;
+            @include rem(font-size, 13);
+            line-height:16px;
+            color:$yellow_001;
+            vertical-align:middle;
+            border:1px solid $yellow_001;
+            border-radius:8px;
+        }
+    }
+}
+.coinInfo {
+    margin-top:7px;
+    padding:0 25px;
+    background-color:$white;
+    li {
+        display:-webkit-flex;
+        display:flex;
+        padding:11px 0 9px;
+        @include rem(font-size, 15);
+        & + li {
+            border-top:1px dashed $gray_001;
+        }
+        &.balance {
+            @include rem(font-size, 15);
+        }
+        .tit {
+            flex:0 0 210px;
+            color:$black_003;
+            text-align:left;
+        }
+        .coin {
+            flex:1 1 210px;
+            text-align:right;
+
+        }
+    }
+}
+.prdDesc {
+    padding:10px 25px;
+    @include rem(font-size, 13);
+    color:$black_003;
+    h3 {
+        margin-bottom:5px;
+        @include rem(font-size, 13);
+        font-weight:400;
+    }
+    p {
+        line-height:1.43;
+    }
+}
+
+// 메뉴형 툴팁
+.tooltip {
+    position:relative;
+    &.open {
+        .content {
+            display:block;
+            opacity:1;
+        }
+    }
+    .content {
+        display:none;
+        opacity:0;
+        z-index:10;
+        position:absolute;
+        right:0;
+        bottom:-71px;
+        min-width:106px;
+        text-align:center;
+        background-color:$white;
+        border-radius:3px;
+        box-shadow: 0 2px 10px 0 rgba(100, 100, 100, 0.25);
+        transition:all 0.5s;
+        &:before {
+            display:block;
+            content:"";
+            position:absolute;
+            top:-14px;
+            right:14px;
+            border:7px solid transparent;
+            border-bottom-color:$white;
+            -webkit-filter:drop-shadow(0 -2px 3px rgba(100, 100, 100, 0.25));
+        }
+        .list {
+            li {
+                & + li {
+                    border-top:1px solid $gray_001;
+                }
+                a {
+                    display:block;
+                    padding:5px 10px;
+                    @include rem(font-size, 12);
+                    line-height:1.5;
+                    white-space:nowrap;
+                }
+            }
+        }
+    }
+}
+//친구목록
+.people {
+    .one {
+        display:flex;
+        display:-webkit-flex;
+        padding:10px 25px;
+        border-bottom:1px solid $gray_001;
+        justify-content:center;
+        align-items:center;
+        cursor:pointer;
+        background-color:$white;
+        .image {
+            overflow:hidden;
+            display:flex;
+            display:-webkit-flex;
+            flex:0 0 auto;
+            width:40px;
+            height:40px;
+            text-align:center;
+            justify-content:center;
+            align-items:center;
+            border-radius:50%;
+            img {
+                max-width:100%;
+                max-height:100%;
+            }
+        }
+        .info {
+            position:relative;
+            flex:1 1 40px;
+            padding-left:20px;
+            .nickname {
+                color:$black_002;
+                @include rem(font-size, 15);
+                word-break:break-all;
+            }
+            .steps {
+                display:block;
+                margin-top:3px;
+                color:$black_003;
+                @include rem(font-size, 13);
+                font-weight:400;
+                max-height:40px;
+                line-height:1.3;
+            }
+        }
+        .button {
+            margin-left:10px;
+            a[class*="btn"] + a[class*="btn"] {
+                margin-left:6px;
+            }
+        }
+        &:last-of-type {
+            .tooltip {
+                .content {
+                    top:-70px;
+                    bottom:auto;
+                    &:before {
+                        display:none;
+                    }
+                    &:after {
+                        display:block;
+                        content:"";
+                        position:absolute;
+                        bottom:-14px;
+                        right:14px;
+                        border:7px solid transparent;
+                        border-top-color:$white;
+                        -webkit-filter:drop-shadow(0 3px 3px rgba(100, 100, 100, 0.25));
+                    }
+                }
+            }
+        }
+        &:first-of-type {
+            .tooltip {
+                .content {
+                    top:auto;
+                    right:0;
+                    bottom:-71px;
+                    &:before {
+                        display:block;
+                        content:"";
+                        position:absolute;
+                        top:-14px;
+                        right:14px;
+                        border:7px solid transparent;
+                        border-bottom-color:$white;
+                        -webkit-filter:drop-shadow(0 -2px 3px rgba(100, 100, 100, 0.25));
+                    }
+                    &:after {
+                        display:none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.nothing {
+    padding:98px 25px 0;
+    .desc {
+        display:flex;
+        flex-flow:column;
+        position:relative;
+        margin:0 auto 20px;
+        @include rem(font-size, 15);
+        line-height:1.47;
+        color:$black_002;
+        text-align:center;
+        letter-spacing:-1px;
+        &:before {
+            display:block;
+            content:"";
+            width:50px;
+            height:49px;
+            margin:0 auto 10px;
+            background: {
+                @include bgProp();
+                image:url($bg_url + "ico_users.svg");
+                size:cover;
+
+            }
+        }
+    }
+    .btnStrong {
+        @include rem(font-size, 15);
+        border-radius:4px;
+    }
+}
+
+//검색
+.searchForm {
+    padding:10px 25px;
+    border-bottom:1px solid $gray_001;
+    background-color:$white;
+    .inner {
+        position:relative;
+        height:40px;
+        padding:0 40px 0 0;
+        border:1px solid $gray_004;
+        background-color:$gray_003;
+        border-radius:3px;
+        input {
+            width:100%;
+            height:100%;
+            padding-left:15px;
+            @include rem(font-size, 15);
+            background-color:transparent;
+            box-sizing:border-box;
+        }
+        .btnSearch {
+            display:inline-block;
+            position:absolute;
+            top:0;
+            right:0;
+            vertical-align:middle;
+            width:16px;
+            height:16px;
+            padding:12px;
+            background: {
+                image:url($bg_url + "btn_search.svg");
+                size:16px 16px;
+                repeat:no-repeat;
+                position:center;
+            }
+        }
+    }
+}
+
+//list select
+.selectList {
+    li {
+        & + li {
+            margin-top:10px;
+        }
+        label {
+            display:flex;
+            justify-content:stretch;
+            align-items:center;
+        }
+        .nickname, .icon {
+            margin-left:15px;
+        }
+        .image {
+            overflow:hidden;
+            display:inline-block;
+            flex:0 0 auto;
+            width:35px;
+            height:35px;
+            border-radius:50%;
+        }
+        .nickname {
+            overflow:hidden;
+            flex:1 1 auto;
+            @include rem(font-size, 14);
+            color:$black_002;
+            text-align:left;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+        .icon {
+            display:inline-block;
+            flex:0 0 auto;
+            width:15px;
+            height:15px;
+            background: {
+                image:url($bg_url + "ico_radio_nor.svg");
+            }
+            @include bgProp();
+        }
+        input:checked + .icon {
+            background: {
+                image:url($bg_url + "ico_radio_sel.svg");
+            }
+        }
+    }
+}
+
+.itemList {
+    .item {
+        display:flex;
+        padding:10px 25px;
+        align-items:center;
+        border-bottom:1px solid $gray_001;
+        background-color:$white;
+        .info {
+            flex:1 1 auto;
+            word-break:keep-all;
+            .detail {
+                @include rem(font-size, 14);
+                line-height:1.43;
+                font-weight:400;
+            }
+            .date {
+                display:block;
+                margin-top:3px;
+                @include rem(font-size, 14);
+                color:$black_003;
+            }
+        }
+        .status {
+            flex:0 0 auto;
+            margin-left:20px;
+            span {
+                @include rem(font-size, 14);
+            }
+        }
+    }
+}
+
+// 게시판
+.brdList {
+    margin-top:7px;
+    .item {
+        display:flex;
+        display:-webkit-flex;
+        padding:10px 25px;
+        border-bottom:1px solid $gray_001;
+        justify-content:center;
+        align-items:center;
+        background-color:$white;
+        .image {
+            display:flex;
+            display:-webkit-flex;
+            flex:0 0 auto;
+            width:106px;
+            height:106px;
+            text-align:center;
+            justify-content:center;
+            align-items:center;
+            img {
+                max-width:100%;
+                max-height:100%;
+            }
+        }
+        .info {
+            position:relative;
+            flex:1 1 99px;
+            padding-left:15px;
+            .subject {
+                color:$black_003;
+                @include rem(font-size, 14);
+            }
+            .title {
+                display:block;
+                margin-top:5px;
+                color:$black_001;
+                @include rem(font-size, 15);
+                font-weight:400;
+                height:59px;
+                line-height:1.3;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                word-wrap:break-word;
+                word-break:keep-all;
+            }
+        }
+        .date {
+            margin-top:3px;
+            color:$black_003;
+            @include rem(font-size, 13);
+        }
+    }
+}
+
+//파일 첨부
+.attachArea {
+    margin:0 25px;
+    .list {
+        display:flex;
+        flex-wrap:wrap;
+        margin-left:-15px;
+        @include afterClear();
+        li {
+            position:relative;
+            width:80px;
+            height:80px;
+            margin:0 0 15px 15px;
+            .image {
+                display:block;
+                width:100%;
+                height:100%;
+                box-sizing:border-box;
+                background: {
+                    repeat:no-repeat;
+                    position:center;
+                    size:cover;
+                }
+            }
+            .btnDel {
+                position:absolute;
+                top:5px;
+                right:5px;
+                display:block;
+                width:21px;
+                height:21px;
+                background: {
+                    image:url($bg_url + "ico_btn_del.svg");
+                    repeat:no-repeat;
+                    position:center;
+                    size:cover;
+                }
+            }
+            &.add {
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                background-color:$gray_001;
+                .btnAdd {
+                    display:block;
+                    width:30px;
+                    height:30px;
+                    text-align:center;
+                    border:none;
+                    background:url($bg_url + "ico_img.svg") no-repeat center;
+                    background-size:cover;
+                    box-sizing:border-box;
+                    input {
+                        position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0
+                    }
+                }
+            }
+        }
+    }
+}
+
+// border-top 공통
+.pShoppingMain, .pShoppingDetail {
+    .contents {border-top:7px solid $gray_003;}
+}
+
+//tab 상단 고정 페이지
+.pFriendsMine, .pFriendsRequest, .pFriendsRecommend, .pFriendsInvite,
+.pWalletSend, .pWalletReceive, .pWalletDetails {
+    .contents {
+        padding-top:39px;
+        .tab {
+            z-index:50;
+            position:fixed;
+            top:51px;
+            left:0;
+            right:0;
+            max-width:768px;
+            margin:0 auto;
+            background-color:$white;
+        }
+    }
+}
+
+//하단 버튼 고정 페이지
+.pBoardDetail, .pInquiryList, .pInquiryWrite {
+    padding-bottom:47px;
+}
+
+// 무료충전소
+.pFreebeeList {
+    padding-top:0;
+    .conTitle {
+        @include rem(font-size, 15);
+        color:$black_005;
+    }
+    .itemList {
+        .item {
+            position:relative;
+            display:flex;
+            margin-top:7px;
+            padding-left:98px;
+            &:before {
+                @include pseudo(block, 58, 38, $bg_url + "ico_coin_freebee.svg");
+                position:absolute;
+                top:50%;
+                left:25px;
+                margin-top:-19px;
+            }
+            &:first-of-type {
+                margin-top:0;
+            }
+            .info {
+                flex:1 1 auto;
+                .coin {
+                    margin-top:0;
+                    @include rem(font-size, 15);
+                    font-weight:400;
+                }
+                .txtInfo {
+                    margin-top:3px;
+                    @include rem(font-size, 14);
+                    color:$black_002;
+                }
+            }
+            .status {
+                flex:0 0 auto;
+                margin-left:15px;
+                .timer {
+                    display:block;
+                    width:70px;
+                    height:26px;
+                    @include rem(font-size, 14);
+                    line-height:26px;
+                    color:$black_002;
+                    text-align:center;
+                    background-color:$yellow_002;
+                    border-radius:4px;
+                }
+                .btnStatic {
+                    @include rem(font-size, 14);
+                }
+            }
+        }
+    }
+}
+
+// 쇼핑 > 메인
+.pShoppingMain {
+    padding-top:0;
+    @include vwPx(padding-bottom, 67);
+    .menuList {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:flex-start;
+        align-items:flex-start;
+        margin-top:-10px;
+        padding:0 25px 20px;
+        border-bottom:1px solid $gray_001;
+        background-color:$white;
+        li {
+            width:50%;
+            margin-top:19px;
+            a {
+                display:block;
+                text-align:center;
+            }
+            .text {
+                display:block;
+                margin-top:8px;
+                @include rem(font-size, 15);
+                line-height:1;
+            }
+        }
+    }
+}
+
+// 쇼핑 > 상세
+.pShoppingDetail {
+    padding-bottom:48px;
+}
+
+//쇼핑 > 잭팟
+.pJackpotList {
+    .congrats {
+        border-bottom:1px solid $gray_001;
+    }
+    .conTitle {
+        margin-top:7px;
+        padding-bottom:0;
+        background-color:$white;
+    }
+    .prdList {
+        .item {
+            &:first-of-type {
+                margin-top:0;
+            }
+            .image {
+                width:113px;
+                height:113px;
+            }
+            .info {
+                padding-left:15px;
+                .name {
+                    height:42px;
+                }
+            }
+            .setCoin {
+                margin-top:5px;
+                .coin {
+                    @include rem(font-size, 14);
+                }
+            }
+            .text {
+                margin-top:5px;
+            }
+        }
+    }
+}
+.pJackpotDetail {
+    height:100vh;
+    box-sizing:border-box;
+    .contents {
+        position:relative;
+        height:100%;
+        padding-top:97px;
+        box-sizing:border-box;
+    }
+    .prize {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        box-sizing:border-box;
+    }
+    .luckydraw {
+        min-height:100%;
+        margin-top:7px;
+        padding-top:35px;
+        text-align:center;
+        background: {
+            image:url($bg_url + "bg_jackpot.png");
+            repeat:no-repeat;
+            position:center;
+            size:cover;
+        }
+        box-sizing:border-box;
+        .question {
+            color:$white;
+            @include rem(font-size, 15);
+            text-shadow: 0 1px 5px rgba(103, 68, 0, 0.38);
+        }
+        .letters {
+            display:flex;
+            width:100%;
+            margin-top:15px;
+            flex-wrap:wrap;
+            justify-content:center;
+            input {
+                width:50px;
+                height:50px;
+                margin:10px 8px 0 7px;
+                @include rem(font-size, 18);
+                color:$black_002;
+                font-weight:700;
+                text-align:center;
+                border-radius:8px;
+                box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.13);
+            }
+        }
+        .msg {
+            padding:20px 0 13px;
+            color:$white;
+            @include rem(font-size, 18);
+            font-weight:700;
+            letter-spacing:-1px;
+            text-shadow: 0 1px 5px rgba(103, 68, 0, 0.38);
+        }
+        .machine {
+            height:335px;
+            margin-top:33px;
+            padding-top:43px;
+            box-sizing:border-box;
+            background: {
+                image:url($bg_url + "bg_jackpotmachin_off.png");
+                repeat:no-repeat;
+                size:360px auto;
+                position:center top;
+            }
+            &.on {
+                background: {
+                    image:url($bg_url + "bg_jackpotmachin_on.png");
+                }
+                .lever {
+                    .button {
+                        color:$white;
+                    }
+                }
+            }
+            .group {
+                display:flex;
+                width:285px;
+                margin:0 auto;
+                justify-content:center;
+                .reel {
+                    overflow:hidden;
+                    width:93px;
+                    height:127px;
+                    margin-left:3px;
+                    line-height:127px;
+                    vertical-align:middle;
+                    &:first-of-type {
+                        margin-left:0;
+                    }
+                    li {
+                        display:flex;
+                        width:100%;
+                        height:127px;
+                        justify-content:center;
+                        align-items:center;
+                        img {
+                            max-width:75px;
+                            max-height:75px;
+                        }
+                    }
+                }
+            }
+            .lever {
+                margin-top:35px;
+                .button {
+                    display:block;
+                    width:300px;
+                    height:53px;
+                    @include rem(font-size, 18);
+                    color:#b2b2b2;
+                    font-weight:700;
+                }
+            }
+        }
+    }
+}
+
+//mypage > 쿠폰
+.pCouponList {
+    .prdList {
+        .item {
+            position:relative;
+            padding:10px 25px;
+            border-bottom-width:0;
+            &:after {
+                position:absolute;
+                top:0;
+                right:100px;
+                //@include vwPx(right, 95);
+                display:block;
+                content:"";
+                width:1px;
+                height:100%;
+                border-left:1px dashed $gray_001;
+            }
+            .image {
+                width:76px;
+                height:76px;
+            }
+            .info {
+                flex:1 1 76px;
+                .name {
+                    color:$black_001;
+                }
+                .text {
+                    font-size:1rem;
+                }
+            }
+            .status {
+                flex:0 0 auto;
+                padding-left:24px;
+                color:$blue_001;
+            }
+            &.done {
+                background-color:$gray_001;
+                cursor:default;
+                &:after {
+                    border-left-color:$gray_007;
+                }
+                .status {
+                    color:$black_002;
+                }
+            }
+        }
+    }
+}
+.pCouponDetail {
+    padding-bottom:20px;
+    .coupon {
+        padding:20px 25px;
+        text-align:center;
+        border-bottom:1px solid $gray_001;
+        background-color:$white;
+        .image {
+            display:inline-block;
+            width:125px;
+            height:125px;
+        }
+        .info {
+            .brand {
+                margin-top:15px;
+                color:$gray_007;
+                @include rem(font-size, 13);
+            }
+            .name {
+                margin-top:5px;
+                color:$black_002;
+                @include rem(font-size, 15);
+                font-weight:400;
+            }
+            .setCoin {
+                margin-top:10px;
+                color:$black_001;
+                @include rem(font-size, 15);
+            }
+            .code {
+                margin-top:15px;
+                .barcode {
+                    display:inline-block;
+                    width:179px;
+                    margin-bottom:9px;
+                }
+                .number {
+                    @include rem(font-size, 14);
+                }
+            }
+        }
+    }
+    .couponDesc {
+        padding:10px 25px;
+        color:$black_003;
+        font-size:1rem;
+        line-height:1.5;
+        word-break:keep-all;
+        h3 {
+            margin-bottom:5px;
+            font-size:1rem;
+            font-weight:400;
+        }
+    }
+}
+
+//mypage > 친구
+.pFriendsMine, .pFriendsRequest {
+    .titleArea {
+        .desc {
+            margin-top:0;
+            @include rem(font-size, 14);
+            color:$black_002;
+        }
+    }
+}
+.pFriendsRecommend {
+    .nothing {
+        padding:0;
+        .desc {
+            margin-top:60px;
+            padding: {
+                left:25px;
+                right:25px;
+            }
+        }
+    }
+}
+.pFriendsInvite {
+    padding-bottom:47px;
+    .eventArea {
+        padding-top:14px;
+        text-align:center;
+        border-bottom:1px solid $gray_001;
+        &:before {
+            @include pseudo(block, 150, 145, $bg_url + "bg_coin.svg");
+            margin:0 auto 15px;
+        }
+        .title {
+            display:inline-block;
+            padding:0 6px 3px;
+            @include rem(font-size, 15);
+            color:$white;
+            line-height:1.47;
+            font-weight:400;
+            letter-spacing:-0.038em;
+            background-color:$yellow_001;
+        }
+        .desc {
+            margin:10px 0 10px;
+            padding:0 25px;
+            @include rem(font-size, 14);
+            line-height:1.38;
+        }
+        .goalCount {
+            display:flex;
+            padding:15px 25px;
+            @include rem(font-size, 15);
+            text-align:left;
+            align-items:flex-start;
+            background-color:$white;
+            & > span {
+                flex:1 1 auto;
+            }
+            .count {
+                flex:0 0 auto;
+                margin-left:10px;
+                .number {
+                    display:inline-block;
+                    width:32px;
+                    height:28px;
+                    padding:0 10px 0 5px;
+                    color:$black_002;
+                    line-height:28px;
+                    text-align:right;
+                    border:1px solid $gray_001;
+                    border-radius:5px;
+                    background-color:$white;
+                }
+                .text {
+                    @include rem(font-size, 14);
+                }
+            }
+        }
+    }
+    .invite {
+        margin-top:7px;
+        padding:15px 25px 21px;
+        text-align:center;
+        border-bottom:1px solid $gray_001;
+        background-color:$white;
+        .title {
+            @include rem(font-size, 13);
+            color:$black_002;
+            font-weight:400;
+        }
+        .accumulate {
+            display:block;
+            margin-top:5px;
+            @include rem(font-size, 20);
+            color:$black_005;
+            .number {
+                @include rem(font-size, 35);
+                color:$black_001;
+            }
+        }
+        .myCode {
+            display:inline-block;
+            height:20px;
+            margin-top:10px;
+            padding:4px 10px;
+            @include rem(font-size, 14);
+            color:$black_005;
+            border:1px solid $gray_001;
+            background-color:$gray_003;
+            border-radius:14px;
+            .code {
+                letter-spacing:-1px;
+                font-weight:400;
+            }
+            .btnCopy {
+                margin-left:10px;
+                @include rem(font-size, 12);
+                color:$black_004;
+            }
+        }
+    }
+}
+
+//mypage > 내지갑
+.pWalletSend {
+    min-height:100vh;
+    padding-bottom:47px;
+    background-color:$white;
+    box-sizing:border-box;
+    .sendBox {
+        padding:15px 25px;
+        border-bottom:1px solid $gray_001;
+        .inputWrap {
+            padding-bottom:10px;
+            .searchForm {
+                padding:0;
+                border-bottom-width:0;
+                input {
+                    @include rem(font-size, 14);
+                    &::placeholder {
+                        color:$black_004;
+                    }
+                }
+            }
+            .fText {
+                margin-top:10px;
+            }
+        }
+        .text {
+            @include rem(font-size, 14);
+            color:$black_004;
+            text-align:center;
+        }
+        .condition {
+            padding:10px 0 5px;
+            color:$black_002;
+            text-align:center;
+            .coin {
+                @include rem(font-size, 15);
+                vertical-align:baseline;
+                strong {
+                    @include rem(font-size, 20);
+                    color:$black_001;
+                }
+            }
+            .expire {
+                margin-top:10px;
+                @include rem(font-size, 15);
+                strong {
+                    color:$black_001;
+                }
+            }
+        }
+    }
+    .info {
+        padding:20px 25px;
+        color:$black_002;
+        border-top:7px solid $gray_003;
+        .title {
+            @include rem(font-size, 15);
+        }
+        .list {
+            margin-top:15px;
+            padding-left:15px;
+            @include rem(font-size, 14);
+            line-height:1.43;
+            li {
+                list-style:decimal;
+                & + li {
+                    margin-top:10px;
+                }
+            }
+        }
+    }
+}
+.pWalletReceive {
+}
+.pWalletDetails {
+    .item {
+        .info {
+            .detail {
+                @include rem(font-size, 15);
+            }
+            .date {
+                margin-top:5px;
+                @include rem(font-size, 15);
+            }
+        }
+        .status {
+            strong {
+                @include rem(font-size, 16);
+            }
+        }
+    }
+}
+
+// 설정 > 코인 적립/차감 내역
+.pCoinDetails {
+    .userInfo {
+        display:flex;
+        padding:15px 25px;
+        align-items:baseline;
+        color:$black_002;
+        background-color:$yellow_002;
+        .nickname {
+            flex:1 1 auto;
+            font-weight:400;
+        }
+        .coin {
+            flex:0 0 auto;
+            margin-left:15px;
+        }
+    }
+    .extinctionCoin {
+        padding:10px 25px;
+        border-bottom:1px solid $gray_001;
+        background-color:$white;
+        .conTitle {
+            padding:0 0 10px;
+            @include rem(font-size, 14);
+            color:$black_003;
+            border-bottom:1px solid $gray_001;
+        }
+        .detail {
+            .coinInfo {
+                display:flex;
+                padding:0;
+                dt {
+                    flex:1 1 auto;
+                }
+                dd {
+                    flex:0 0 auto;
+                }
+            }
+            .txtInfo {
+                margin-top:10px;
+                @include rem(font-size, 13);
+                color:$black_003;
+            }
+        }
+    }
+    .section {
+        padding:0;
+        background-color:transparent;
+    }
+    .itemList {
+        .item {
+            .detail {
+                flex:1 1 auto;
+                .title, .nickname, .date {
+                    display:block;
+                }
+                .title {
+                    margin:0;
+                    padding:0 0 5px;
+                    color:$black_003;
+                }
+                .nickname {
+                    margin-top:5px;
+                }
+                .date {
+                    margin-top:5px;
+                    color:$black_003;
+                }
+            }
+            .coin {
+                flex:0 0 auto;
+                margin-left:15px;
+                @include rem(font-size, 16);
+            }
+        }
+    }
+}
+
+//setting
+.pSettingList {
+    padding-bottom:39px;
+    .divide {
+        .conTitle {
+            height:38px;
+            padding:0 25px;
+            @include rem(font-size, 14);
+            line-height:38px;
+            color:$black_004;
+            border-bottom:1px solid $gray_001;
+        }
+    }
+    //menuList
+    .menuList {
+        li {
+            border-bottom:1px solid $gray_001;
+            height:42px;
+            padding:0 25px;
+            line-height:42px;
+            letter-spacing:-1px;
+            background-color:$white;
+            a {
+                position:relative;
+                display:block;
+                height:100%;
+                //line-height:42px;
+                &:after {
+                    @include pseudo(block, 7, 13, $bg_url + "ico_arrow_link.svg");
+                    position:absolute;
+                    top:50%;
+                    right:0;
+                    margin-top:-6px;
+                }
+            }
+            &.check {
+                display:flex;
+                align-items:center;
+                background-color:$white;
+                .title {
+                    flex:1 1 auto;
+                }
+                .buttonChk {
+                    flex:0 0 auto;
+                    text-align:right;
+                }
+            }
+            &.version {
+                display:flex;
+                background-color:$white;
+                .title {
+                    flex:0 0 auto;
+                }
+                .status {
+                    flex:1 1 auto;
+                    text-align:right;
+                }
+                a {
+                    padding:0;
+                    &:after {
+                        display:none;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+//설정 > 이벤트
+.pBoardList {
+    .congrats {
+        border-bottom:1px solid $gray_001;
+    }
+    .nothing {
+        height:calc(100vh - 135px);
+        margin:7px auto 0;
+        padding:131px 0 0;
+        border-bottom:7px solid $gray_003;
+        background-color:$white;
+        box-sizing:border-box;
+        .desc {
+            padding-top:70px;
+            &:before {
+                width:75px;
+                height:55px;
+                background: {
+                    image:url($bg_url + "bg_event.svg");
+                }
+            }
+        }
+    }
+}
+.pBoardDetail {
+    .info {
+        padding:15px 25px;
+        border-bottom:1px solid $gray_001;
+        background-color:$white;
+        .subject {
+            @include rem(font-size, 14);
+            color:$black_003;
+        }
+        .title {
+            margin-top:5px;
+            @include rem(font-size, 15);
+            color:$black_001;
+        }
+        .date {
+            display:block;
+            margin-top:10px;
+            @include rem(font-size, 13);
+            color:$black_003;
+        }
+    }
+    .detail {
+        margin-top:7px;
+        background-color:$white;
+        .platinum {
+            display:flex;
+            padding:19px 25px 80px;
+            flex-flow:column;
+            &:before {
+                @include pseudo(inline-block, 150, 144, $bg_url + "bg_event_platinum.svg");
+                margin:0 auto;
+            }
+            p {
+                margin-top:20px;
+                color:$black_002;
+            }
+            .btnPlatinum {
+                margin:25px 0 20px;
+            }
+        }
+    }
+}
+
+//설정 > 문의 및 신고하기
+.pInquiryList {
+    .conTitle {
+        max-height:70px;
+        @include rem(font-size, 15);
+        line-height:1.47;
+        color:$black_001;
+        background-color:$white;
+        box-sizing:border-box;
+    }
+    .txtEllipsis {
+        letter-spacing:-1px;
+    }
+    .date {
+        color:$black_003;
+    }
+    .nothing {
+        height:calc(100vh - 168px);
+        padding-top:140px;
+        background-color:$white;
+        box-sizing:border-box;
+        .desc {
+            &:before {
+                width:62px;
+                height:62px;
+                background: {
+                    image:url($bg_url + "bg_inquiry.svg");
+                }
+            }
+        }
+    }
+    .board {
+        border-top:1px solid $gray_001;
+        h3 {
+            font-weight:400;
+        }
+        .list {
+            border-bottom:1px solid $gray_001;
+            .item {
+                display:block;
+                padding:10px 25px;
+                border-top:1px solid $gray_001;
+                background-color:$white;
+                .title {
+                    max-height:60px;
+                    line-height:1.38;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp:3;
+                    -webkit-box-orient: vertical;
+                    word-wrap:break-word;
+                    word-break:keep-all;
+                }
+                .info {
+                    margin-top:10px;
+                    @include rem(font-size, 14);
+                    .date {
+                        color:$black_003;
+                    }
+                    .status {
+                        margin-left:20px;
+                        color:$black_004;
+                    }
+                }
+            }
+        }
+    }
+}
+.pInquiryWrite {
+    .inputWrap {
+        padding:0 25px;
+        .fText {
+            background-color:$white;
+            & + .fText {
+                margin-top:10px;
+            }
+        }
+        .fTextarea {
+            margin-top:10px;
+            background-color:$white;
+        }
+    }
+    .deviceInfo {
+        padding:10px 25px;
+        @include rem(font-size, 14);
+        line-height:1.43;
+        color:$black_004;
+    }
+}
+.pInquiryRead {
+    .conTitle {
+        background-color:$white;
+    }
+    .questionSec, .AnswerSec {
+        position:relative;
+        line-height:1.47;
+        &:before {
+            display:block;
+            content:"Q";
+            position:absolute;
+            top:10px;
+            left:25px;
+            font-weight:700;
+        }
+        .date {
+            display:block;
+            margin-top:5px;
+            @include rem(font-size, 14);
+            color:$black_004;
+        }
+    }
+    .questionSec {
+        border-top:1px solid $gray_001;
+        .titleArea {
+            padding:10px 25px 10px 42px;
+            background-color:$white;
+            .title {
+                color:$black_002;
+                font-weight:400;
+            }
+        }
+        .detail {
+            padding:15px 25px 15px 42px;
+            border:solid $gray_001;
+            border-width:1px 0 1px 0;
+            background-color:$gray_003;
+        }
+    }
+    .AnswerSec {
+        padding:10px 25px 10px 42px;
+        border-bottom:1px solid $gray_001;
+        background-color:$white;
+        &:before {
+            content:"A";
+        }
+        .detail {
+            background-color:$white;
+        }
+    }
+}
+
+// ######################################## layer ##########################################
+.layer {
+    .coinInfo {
+        margin:0;
+        padding:0;
+        li {
+            &:first-of-type {
+                padding-top:0;
+            }
+            & + li {
+                border-top-width:0;
+                border-bottom:1px dashed #e8e8e8;
+            }
+            &.price {
+                padding:0 0 10px;
+            }
+            &.balance {
+                padding:13px 0 14px;
+                @include rem(font-size, 15);
+                border-bottom-width:0;
+            }
+        }
+    }
+}
+.layerAccept {
+    .titleArea {
+        h2 {
+            line-height:1.47;
+        }
+    }
+}
+.layerChargeCoin {
+    .coinInfo {
+        li {
+            &:last-of-type {
+                padding:0 0 10px;
+            }
+            .tit {
+                flex:0 0 150px;
+            }
+            .coin {
+                flex:1 1 150px
+            }
+        }
+    }
+    .desc {
+        margin-top:10px;
+    }
+    .btnList {
+        padding-top:3px;
+        li {
+            margin-top:15px;
+            [class*="btn"] {
+                height:36px;
+                line-height:36px;
+                font-weight:400;
+                border-radius:5px;
+            }
+        }
+    }
+}
+.layerPay {
+
+    .coinInfo {
+        li {
+            &:last-of-type {
+                padding:0 0 10px;
+            }
+            .tit {
+                flex:0 0 180px;
+                letter-spacing:-1px;
+            }
+            .coin {
+                flex:1 1 180px
+            }
+        }
+    }
+}
+.layerPayResult {
+    .content {
+        .product {
+            margin-bottom:15px;
+            padding-bottom:15px;
+            border-bottom:1px dashed $gray_001;
+        }
+        .desc {
+            //letter-spacing:-0.12em;
+            text-align:left;
+        }
+        .success {
+            .txtInfo {
+                margin-top:10px;
+                @include rem(font-size, 14);
+                color:$black_004;
+            }
+        }
+    }
+}
+.layerStopWatching, .layerGetCoin {
+    .content {
+        padding:29px 23px;
+    }
+    .desc {
+        @include rem(font-size, 15);
+    }
+}
+.layerSelectFriend {
+    .content {
+        max-height:calc(100vh - 286px);
+        padding:10px 20px;
+        box-sizing:border-box;
+    }
+}

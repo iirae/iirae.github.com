@@ -193,13 +193,23 @@ footer {
       .description {
         font-family:$font-raleway;
         line-height:1.5em;
-        li {
+        text-align:left;
+         & > li {
             &:before {
                 content:"＃";
             }
             & + li {
                 margin-top:10px;
             }
+        }
+        .sub {
+          padding-left:12px;
+          li {
+            text-align:left;
+            &:before {
+                content:"ㆍ";
+            }
+          }
         }
       }
       &:hover .description {
