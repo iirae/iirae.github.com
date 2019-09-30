@@ -23,6 +23,8 @@ $p30:30px;
 $p40:40px;
 $p60:60px;
 
+$bg_url:"../images/";
+
 .wrap {
   min-width:320px;
   box-sizing:border-box;
@@ -68,7 +70,7 @@ nav {
 footer {
   position:fixed;
   bottom:0;
-  background:#fff url('../images/bg_footer.png') repeat-x 0 0;
+  background:#fff url($bg_url + 'bg_footer.png') repeat-x 0 0;
   p {
     text-align:center;
     font-size:0.8rem;
@@ -79,7 +81,7 @@ footer {
   position:relative;
   height:100%;
   //background:url('../images/danang.jpg') no-repeat 50% 50%;
-  background:url('../images/img_think.jpeg') no-repeat 50% 50%;
+  background:url($bg_url + 'img_think.jpeg') no-repeat 50% 50%;
   background-size:cover;
   .title {
     position:absolute;
