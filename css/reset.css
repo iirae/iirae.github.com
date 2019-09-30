@@ -24,7 +24,7 @@ button {overflow:visible;border:0;padding:0;margin:0;cursor:pointer;vertical-ali
 input[type*="text"],
 input[type*="tel"] {font-family:'Malgun Gothic', 'Lato',Helvetica,Arial,sans-serif;}
 
-#skipNavigation a { position: absolute; left: 0; top: 0; display: block; overflow: hidden; margin-left: -1px; margin-bottom: -1px; width: 1px; height: 1px; text-align: center; color: #000; white-space: nowrap; }
-#skipNavigation a:focus, #skipNavigation a:hover, #skipNavigation a:active { z-index: 100; padding: 10px 0; width: 100%; height: auto; background: #c4122f; color: #fff; }
+#skipNavigation a {position:absolute;left:0;top:0;display:block;overflow:hidden;margin-left:-1px;margin-bottom:-1px;width:1px;height:1px;text-align:center;color:#000;white-space:nowrap;}
+#skipNavigation a:focus, #skipNavigation a:hover, #skipNavigation a:active { z-index:100;padding:10px 0;width:100%;height:auto;background:#c4122f;color:#fff; }
 
-.blind { overflow: hidden; position: absolute; clip: rect(0 0 0 0); margin: -1px; width: 1px; height: 1px; color: transparent; }
+.blind { overflow:hidden;position:absolute;clip:rect(0 0 0 0);margin:-1px; width:1px;height:1px;color:transparent;}
