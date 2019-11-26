@@ -106,9 +106,10 @@ a {color:#565656;}
 /* ****************************** common ****************************** */
 .text {
     &-underline {
+        display:inline-block;
         text-decoration:underline;
+        transition:transform .35s;
         &:hover {
-            opacity:1;
             transform:rotateX(3deg) rotateY(-2deg) translateZ(20px);
         }
     }
