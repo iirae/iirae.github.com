@@ -12,8 +12,10 @@ a {color:#565656;}
 
 .wrap {
     display:flex;
+    display:-webkit-flex;
     flex-direction:column;
     min-width:320px;
+    min-height:100%;
     min-height:100vh;
     align-items:stretch;
     .type {
@@ -31,6 +33,7 @@ a {color:#565656;}
     left:0;
     right:0;
     display:flex;
+    width:100%;
     max-width:1150px;
     margin:0 auto;
     padding:1rem 2rem;
@@ -46,6 +49,9 @@ a {color:#565656;}
             display:flex;
         }
         li {
+            a:hover {
+                text-decoration:underline;
+            }
             & + li {
                 margin-left:1rem;
             }
@@ -67,8 +73,11 @@ a {color:#565656;}
         overflow:hidden;
         display:flex;
         flex:1 1 0;
+        height:calc(100% - 80px);
+        height:calc(100vh - 80px);
         align-items:center;
         justify-content:center;
+        box-sizing:border-box;
     }
 }
 .theme {
@@ -98,6 +107,10 @@ a {color:#565656;}
 .text {
     &-underline {
         text-decoration:underline;
+        &:hover {
+            opacity:1;
+            transform:rotateX(3deg) rotateY(-2deg) translateZ(20px);
+        }
     }
 }
 [class*="btn"] {
