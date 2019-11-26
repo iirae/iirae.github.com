@@ -54,7 +54,11 @@ a {color:#565656;}
 }
 
 .footer {
+    width:100%;
+    max-width:1150px;
+    margin:0 auto;
     padding:1rem 2rem;
+    box-sizing:border-box;
 }
 
 .contents {
@@ -82,6 +86,9 @@ a {color:#565656;}
                 display:block;
             }
         }
+        .header {
+            background:none;
+        }
         .contents {
             justify-content:flex-start;
         }
@@ -93,6 +100,31 @@ a {color:#565656;}
         text-decoration:underline;
     }
 }
+[class*="btn"] {
+    display:inline-block;
+    margin-left:20px;
+    font-size:0.8rem;
+    font-weight:400;
+    background: {
+        image:linear-gradient(180deg,transparent 97%,#000 0);
+        size:100% 100%;
+        repeat:no-repeat;
+        position:0 0;
+    }
+    transition:background-size .35s ease-in-out;
+    &:hover {
+        background-size:0 100%;
+    }
+}
+.btn {
+    &-next {
+        font-size:1.2rem;
+    }
+}
+.move {
+    text-align:right;
+}
+
 .area {
     &-image {
         margin:0 -2rem;
@@ -106,7 +138,7 @@ a {color:#565656;}
     &-text {
         max-width:850px;
         margin:0 auto;
-        padding:3rem 0;
+        padding:3rem 0 6rem;
         //font-family:$font-skyer;
         ul {
             padding-left:20px;
@@ -119,11 +151,14 @@ a {color:#565656;}
 // intro
 .intro {
     .description {
+        z-index:1;
         position:relative;
         width:95%;
+        max-width:500px;
         margin:0 auto;
         text-align:center;
         &::after {
+            z-index:-1;
             opacity:0.3;
             position:absolute;
             top:-40%;
@@ -140,6 +175,9 @@ a {color:#565656;}
 
 // company
 .company {
+    width:100%;
+    max-width:600px;
+    margin:0 auto;
     .list {
         padding-left:20px;
         font-size:1rem;
@@ -199,13 +237,74 @@ a {color:#565656;}
     .info {
         margin-bottom:3rem;
     }
+    .project-title {
+        margin-bottom:1rem;
+    }
 }
 
 
 
 
 
+@include pc {
+    html, body, button,input[type*="text"], input[type*="tel"]  {
+        font-size:20px;
+        line-height:1.67;
+    }
+    .btn {
+        &-next {
+            margin-left:0;
+        }
+    }
+    .area {
+        &-image {
+            margin:0 -2rem;
+            padding:5rem 0;
+            &.app {
+                .image {
+                    max-width:300px;
+                }
+            }
+        }
+        &-text {
+            max-width:850px;
+            margin:0 auto;
+            padding:4rem 0 10rem;
+            ul {
+                padding-left:20px;
+            }
+        }
+    }
+    .intro {
+        .description {
+            font-size:1.6rem;
+            &::after {
+                width:200%;
+                height:400px;
+                top:40%;
+                left:20%;
+            }
+        }
+    }
+    .project {
+        padding-top:20vh;
+        .title {
+            .ordinal {
+                margin-bottom:8vh;
+                font-size:2rem;
+            }
+        }
+        .info {
+            margin-top:2rem;
+        }
+    }
+}
 
+
+@include pcSmall {
+
+
+}
 
 
 

@@ -52,3 +52,21 @@ $bg_url: '../images/';
         clear: both;
       }
 }
+
+@mixin mo {
+    @media screen and  (max-width: #{768px}) {
+        @content;
+    }
+}
+
+@mixin pcSmall{
+    @media screen and (min-width: #{769px}) and (max-width: #{1149px}) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media screen and (min-width: #{769px}) {
+        @content;
+    }
+}
