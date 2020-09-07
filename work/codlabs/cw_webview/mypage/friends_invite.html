@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="coinWalking">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta name="referrer" content="always">
+    <link rel="canonical" href="">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <h1>Friends</h1>
+            <a href="javascript:window.history.back();" class="btnBack" title="back"></a>
+        </header>
+        
+        <div class="container pFriendsInvite" id="container">
+        
+            <div class="contents" id="contents">
+            
+                <ul class="tab col4">
+                    <li><a href="./friends_mine.html">Friend</a></li>
+                    <li><a href="./friends_recommend.html">Recommend</a></li>
+                    <li><a href="./friends_request.html">Request</a></li>
+                    <li class="selected"><a href="javascript:;">Invite</a></li>
+                </ul>
+                
+                <section class="eventArea">
+                    <h2 class="title">Recommend to a friend and receive <strong>600 Coins</strong>!</h2>
+                    <p class="desc">When you invite a friend, you and your friend will both receive 600 Coins. Send Recommendation Code to your friend now.</p>
+                    <div class="goalCount">
+                        <em class="count">
+                            <span class="text">You invited</span>
+                            <strong class="number">100</strong>
+                            <span class="text">/100 Friends</span>
+                        </em>
+                    </div>
+                </section>
+                
+                <section class="invite">
+                    <h2 class="title">Received Coins from Recommendations</h2>
+                    <strong class="accumulate"><span class="number">1,200</span> Coins</strong>
+                    <div class="myCode">
+                        <strong class="code">My Recommendation Code <em>KXA12A</em></strong>
+                        <a href="javascript:;" class="btnCopy">Copy</a>
+                    </div>
+                </section>
+                
+                <div class="btnArea fixed">
+                    <a href="javascript:;" class="btnStrong">Share</a>
+                </div>
+                
+            </div><!-- //contents -->
+        </div><!-- //container -->
+        
+        <!-- layer: 친구 요청 -->
+        <div class="layer layerInvite" id="layerInvite" style="display:none;">
+            <div class="inner">
+                <div class="content">
+                    <p class="desc">sdhehsgdjtragergsrjtjyttkjdd has accepted your invitation! <br><span>600</span> Coins added to your balance.</p>
+                </div>
+                <div class="btnArea">
+                    <a href="javascript:;" class="btnNormal eClose">Friends List</a>
+                    <a href="javascript:;" class="btnStrong">Confirm</a>
+                </div>
+            </div>
+        </div><!-- // layer -->
+        
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var _body = $("body");
+        
+            //레이어 열기
+            _body.on('click', '.eLayer', function (e) {
+                var targetLayer = $($(e.currentTarget).attr("href"));
+                modalLayerOpen(targetLayer);
+                e.preventDefault();
+            });
+            
+            // 레이어 닫기
+            _body.on('click', '.layer .eClose', function (e) {
+                layer_close($(this));
+                e.preventDefault();
+            });
+            
+        });
+      
+    </script>
+</body>
+</html>

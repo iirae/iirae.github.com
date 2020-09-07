@@ -1,0 +1,64 @@
+<?php include "../inc/header.html"; ?>
+
+<div class="wrap pInquiryList" id="wrap">
+    <header class="headBar" id="header">
+        <h1>고객 문의</h1>
+        <a href="javascript:;" class="buttonBack"><span class="blind">뒤로가기</span></a>
+        <a href="Inquiry_Write.html" class="button">문의작성</a>
+    </header>
+
+    <div class="contents" id="contents">
+        <h2 class="blind">고객 문의 목록</h2>
+        
+        <!-- 리스트가 없을 경우 -->
+        <section class="nodataWrap">
+            <div class="nodata">
+                <h2>등록한 문의 내역이 없습니다.</h2>
+                <p>서비스 이용 시 궁금한 점이 있거나<br>
+                도움이 필요하신 경우, 언제든지 고객 센터를<br>
+                방문하시거나 직접 문의해 주세요.</p>
+            </div>
+        </section><!-- //리스트가 없을 경우 -->
+        
+        <!-- 리스트가 있을 경우 -->
+        <section>
+            <h2 class="blind">알림 목록</h2>
+            <ul class="board list">
+                <!--
+                    답변대기: waiting
+                    처리중: doing
+                    답변완료: done
+                 -->
+                <li class="visited">
+                    <a href="#">
+                        <div class="title">
+                            <strong class="status waiting">답변대기</strong>
+                            <p class="desc">이번 달 운행화물내역에서 상세를 보니 세금계산서가 아직 발급되지 않은 건들이 있는데 언제쯤 발급될 예정인지 알 수 있을까요?</p>
+                        </div>
+                        <span class="date">2018.01.31 17:30</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="title">
+                            <strong class="status doing">처리중</strong>
+                            <p class="desc">이번 달 운행화물내역에서 상세를 보니 세금계산서가 아직 발급되지 않은 건들이 있는데 언제쯤 발급될 예정인지 알 수 있을까요?</p>
+                        </div>
+                        <span class="date">2018.01.31 17:30</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="title">
+                            <strong class="status done">답변완료</strong>
+                            <p class="desc">이번 달 운행화물내역에서 상세를 보니 세금계산서가 아직 발급되지 않은 건들이 있는데 언제쯤 발급될 예정인지 알 수 있을까요?</p>
+                        </div>
+                        <span class="date">2018.01.31 17:30</span>
+                    </a>
+                </li>
+            </ul>
+        </section><!-- //리스트가 있을 경우 -->
+        
+</div>
+
+<?php include "../inc/footer.html"; ?>

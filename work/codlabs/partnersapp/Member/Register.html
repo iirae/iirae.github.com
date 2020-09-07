@@ -1,0 +1,70 @@
+<?php include "../inc/header.html"; ?>
+
+<div class="wrap pSignUp white" id="wrap">
+    <?php include "../inc/headbar.html"; ?>
+    
+    <div class="contents" id="contents">
+        <h2 class="blind">사업자 및 개인정보 입력</h2>
+        
+        <section class="section reset inputArea">
+            <fieldset>
+                <legend>사업자 번호, 이름, 휴대폰 번호, 비밀번호, 이메일 입력</legend>
+                
+                <h3 class="mt0">사업자 번호</h3>
+                <div class="detail">
+                    <span class="fText"><input type="number" placeholder="하이픈(-) 없이 입력" class="eIntOnly" maxlength="10" /><span class="clear">&times;</span></span><!-- error 추가 -->
+                </div>
+                
+                <h3>이름</h3>
+                <div class="detail">
+                    <span class="fText"><input type="text" placeholder="이름 입력" maxlength="10" /><span class="clear">&times;</span></span><!-- error 추가 -->
+                </div>
+                
+                <h3>휴대폰 번호</h3>
+                <div class="detail">
+                    <span class="fText"><input type="tel" placeholder="하이픈(-) 없이 입력" class="eIntOnly" maxlength="12" /><span class="clear">&times;</span></span><!-- error 추가 -->
+                </div>
+                
+                <h3>비밀번호</h3>
+                <div class="detail">
+                    <div class="fText"><input type="password" placeholder="영문, 숫자, 특수기호 조합 8~32자" maxlength="32" /><span class="clear">&times;</span></div><!-- error 추가 -->
+                
+                    <div class="fText mt10 error"><input type="password" placeholder="비밀번호 재확인" maxlength="32" /><span class="clear">&times;</span></div><!-- error 추가 -->
+                </div>
+                
+                <h3>이메일 주소</h3>
+                <div class="detail">
+                    <div class="fEmail error"><!-- error -->
+                        <div class="static">
+                            <span class="fText"><input type="text" placeholder="yourmail" /><span class="clear">&times;</span></span>
+                            <span class="text">@</span>
+                            <label class="fSelect mail eSelectEmail" for="selectEmail">
+                                <select title="e-mail 선택" id="selectEmail">
+                                    <option value="naver.com" selected>naver.com</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                    <option value="daum.net">daum.net</option>
+                                    <option value="hotmail.com">hotmail.com</option>
+                                    <option value="1">직접입력</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="inperson" style="display:none;">
+                            <span class="fText"><input type="text" placeholder="직접입력" /><span class="clear">&times;</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+            </fieldset>
+        </section>
+        
+        <div class="midBtnArea mt20">
+            <a href="javascript:;" class="btnStrong">입력완료</a><!-- 비활성화: disabled 클래스 추가 -->
+        </div>
+        
+    </div><!-- //contents -->
+    
+    <p class="mCaution">비밀번호가 일치하지 않습니다</p><!-- wrap이 끝나기 직전에 추가 -->
+</div>
+
+<?php include "../inc/footer.html"; ?>

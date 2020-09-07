@@ -1,0 +1,47 @@
+<?php include "../inc/header.html"; ?>
+
+<div class="wrap pSettingMarketing fixed" id="wrap">
+    <?php include "../inc/headbar.html"; ?>
+
+    <div class="contents" id="contents">
+        <h2 class="blind">마케팅 알림 수신 설정</h2>
+        
+        <section class="alertPack">
+            <div class="item full">
+                <p class="description">맞춤 보험, 금융상품 등 회원님께 유용한 마케팅 관련 알림을 설정해주세요.</p>
+            </div>
+        </section>
+        
+        <section class="alertPack">
+            <div class="item">
+                <h3 class="title">푸시알림</h3>
+                <div class="buttonChk checked">
+                    <input type="checkbox" id="push" checked />
+                    <label for="push"><span class="blind">알림 받기</span></label>
+                </div>
+            </div>
+            <div class="item">
+                <h3 class="title">SMS</h3>
+                <div class="buttonChk">
+                    <input type="checkbox" id="sms" />
+                    <label for="sms"><span class="blind">알림 받기</span></label>
+                </div>
+            </div>
+            <div class="item">
+                <h3 class="title">이메일</h3>
+                <div class="buttonChk">
+                    <input type="checkbox" id="email" />
+                    <label for="email"><span class="blind">알림 받기</span></label>
+                </div>
+            </div>
+        </section>
+        
+        <div class="btnArea fix">
+            <a href="javascript:;" class="btnStrong">저장</a><!-- 비활성화: disabled 클래스 추가 -->
+        </div>
+    </div>
+    
+</div>
+
+
+<?php include "../inc/footer.html"; ?>

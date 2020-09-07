@@ -1,0 +1,150 @@
+<?php include "./inc/header_index.html"; ?>  <!-- UI확인을 위한 분리 header와 ui동일 -->
+
+<div class="wrap pIndex" id="wrap">
+    
+    <header class="headBar typeList" id="header">
+        <div class="heading">
+            <h1><img src="./images/img_logo_baro.svg" alt="BARO"/></h1>
+            <div class="slideNav">
+                <a href="javascript:;" class="buttonSlideNav eOpenNav"><span class="blind">메뉴 보기</span></a>
+                    <nav class="information">
+                        <div class="inner">
+                            <a href="javascript:;" class="myInfo">
+                                <h2 class="name">홍길동</h2>
+                                <em class="company">이십사시콜화물</em>
+                            </a>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">홈</a></li>
+                                <li><a href="javascript:;">화물등록</a></li>
+                                <li class="eHasChild"><span title="화물목록 메뉴보기">화물목록</span>
+                                    <ul style="display:none;">
+                                        <li><a href="javascript:;">전체목록</a></li>
+                                        <li><a href="javascript:;">배차대기</a></li>
+                                        <li><a href="javascript:;">배차완료</a></li>
+                                        <li><a href="javascript:;">배차실패</a></li>
+                                        <li><a href="javascript:;">운행중</a></li>
+                                        <li><a href="javascript:;">운행완료</a></li>
+                                        <li><a href="javascript:;">인수승인대기</a></li>
+                                        <li><a href="javascript:;">인수승인보류</a></li>
+                                        <li><a href="javascript:;">인수승인완료</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:;">설정</a></li>
+                            </ul>
+                        </div>
+                        <a href="javascript:;" class="close eCloseNav"><span class="blind">닫기</span></a>
+                    </nav>
+            </div>
+            <a href="javascript:;" class="buttonNoti"><span class="blind">알림</span></a><!-- on 추가 -->
+        </div>
+        <!--<div class="setArea">
+            <p class="period">지난 48시간 동안</p>
+        </div>-->
+    </header>
+
+    <div class="contents" id="contents">
+        <article class="article dashboard">
+            <section class="section">
+                <div class="titleArea">
+                    <h2>배차상태</h2>
+                    <p class="info">오늘하루동안</p>
+                </div>
+                <ul class="statusList">
+                    <li>
+                        <a href="/Cargo/List.html">
+                            <h3>등록화물</h3>
+                            <strong class="txtCount">1,140</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <h3>배차대기</h3>
+                            <strong class="txtCount">5</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <h3>운행완료</h3>
+                            <strong class="txtCount">123</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <h3>배차실패</h3>
+                            <strong class="txtCount txtWarn">15<span class="sub">(0.4%)</span></strong>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            
+            <section class="section">
+                <div class="titleArea">
+                    <h2>배차현황</h2>
+                    <p class="info">전체기간동안</p>
+                </div>
+                <ul class="statusList">
+                    <li>
+                        <a href="javascript:;">
+                            <h3>차주제안</h3>
+                            <strong class="txtCount">2</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <h3>운행중</h3>
+                            <strong class="txtCount">45</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <h3>인수대기</h3>
+                            <strong class="txtCount">123</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <h3>인수보류</h3>
+                            <strong class="txtCount txtWarn">5</strong>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </article>
+        
+        <article class="article quick">
+            <section class="section">
+                <h2 class="blind">화물 바로가기</h2>
+                <ul class="shortcut">
+                    <li class="cargoRegist"><a href="/Cargo/Registration.html">화물 등록</a></li>
+                    <li class="order"><a href="/Cargo/List.html">화물 목록</a></li>
+                    <li class="approval"><a href="/Cargo/List.html">인수 대기</a></li>
+                </ul>
+            </section>
+            <section class="section">
+                <h2 class="blind">고객 편의</h2>
+                <ul class="shortcut">
+                    <li class="notice"><a href="/Home/Notice_List.html">공지사항</a></li>
+                    <li class="inquiry"><a href="/Home/Inquiry_List.html">고객문의</a></li>
+                    <li class="customer"><a href="tel:15881588">고객센터</a></li>
+                </ul>
+            </section>
+        </article>
+    </div>
+    
+</div>
+
+<!-- layer: 공지 팝업 -->
+<section class="layer" id="layer2" style="display:none;">
+    <div class="inner">
+        <h2 class="blind">이미지 보기</h2>
+        <div class="content full">
+            <img src="./images/img-popup-event-sample.png" alt="이미지 설명" />
+        </div>
+        <div class="footer odd">
+            <a href="javascript:;" class="btnNormal big">오늘 하루 보지 않기</a>
+            <a href="javascript:;" class="btnBasic eClose">닫기</a>
+        </div>
+    </div>
+</section>
+<!-- //layer: 공지 팝업 -->
+<?php include "./inc/footer.html"; ?>

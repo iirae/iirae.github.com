@@ -1,0 +1,94 @@
+<?php include "../include/header.html"; ?>
+
+<div id="contents" class="contents mini">
+    <section class="section">
+        <div class="titleArea">
+            <h2>친구 초대 관리</h2>
+        </div>
+
+        <div class="tab fix eTabSection">
+            <ul>
+                <li><a href="#invitedList">초대 내역</a></li>
+                <li class="selected"><a href="#userCount">가입자 수</a></li>
+            </ul>
+        </div>
+        
+        <div class="tabCont" id="invitedList">
+        
+        </div>
+        
+        <div class="tabCont" id="userCount">
+            <div class="mBox left">
+                <div class="btnRadio">
+                    <input type="radio" id="chkToday" name="pickDate" checked />
+                    <label for="chkToday" title="일별">일별</label>
+                </div>
+                <div class="btnRadio">
+                    <input type="radio" id="chkTomorrow" name="pickDate" />
+                    <label for="chkTomorrow" title="월별">월별</label>
+                </div>
+                <div class="pickDate ml20" id="openDate" style="display: inline-block;">
+                    <strong>기간</strong>
+                    <input type="text" id="datepicker" name="" title="기간 선택 시작일" class="fText w120 ePickDate hasDatepicker"> ~
+                    <input type="text" id="datepicker2" name="" title="기간 선택 마감일" class="fText w120 ePickDate hasDatepicker">
+                    <a href="javascript:;" class="btnNormal">검색</a>
+                </div>
+            </div>
+            <div class="setArea">
+                <em>기준일: <strong>2018. 1. 1 ~ 2018. 1. 30</strong></em>
+                <em class="ml20">초대 가입자: <strong class="txtEm">88,456</strong>명</em>
+            </div>
+            <div class="tableLayout">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:33.33%">
+                        <col style="width:33.33%">
+                        <col style="width:auto">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">일시</th>
+                            <th scope="col">가입자 수</th>
+                            <th scope="col">추천인 수</th>
+                        </tr>
+                    </thead>
+                    <tbody class="right">
+                        <tr>
+                            <td class="center">2018-01-30</td>
+                            <td>3,000</td>
+                            <td>2,410</td>
+                        </tr>
+                        <tr>
+                            <td class="center">2018-01-29</td>
+                            <td>3,000</td>
+                            <td>2,410</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="paginate">
+                <a href="#" class="prev"><strong>&lt;</strong> 이전</a>
+                <ol>
+                    <li class="current"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+                </ol>
+                <a href="#" class="next">다음 <strong>&gt;</strong></a>
+            </div>
+            
+        </div>
+        
+    </section>
+
+</div><!-- //contents -->
+
+<?php include "../include/footer.html"; ?>

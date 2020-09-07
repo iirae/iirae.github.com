@@ -1,0 +1,133 @@
+<?php include "../include/header.html"; ?>
+
+<hr class="layout" />
+
+<div class="contents" id="contents">
+
+    <div class="area-title">
+        <h3>운영자 관리</h3>
+    </div>
+    
+    <div class="area-setting">
+        <div class="left">
+            <label class="form-select" for="">
+                <select name="" id="" title="">
+                    <option value="">ID</option>
+                    <option value="" selected>이름</option>
+                </select>
+            </label>
+            <input type="text" class="form-input w200" placeholder="검색 단어 입력">
+            <a href="#" class="button-normal">검색</a>
+        </div>
+        <div class="right">
+            <a href="#layer-register_operation" class="button-submit e-modal">등록</a>
+        </div>
+    </div>
+    
+    <div class="table-layout">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col style="width:70px">
+                <col style="width:100px">
+                <col style="width:100px">
+                <col style="width:120px">
+                <col style="width:auto">
+                <col style="width:140px">
+                <col style="width:140px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">이름</th>
+                    <th scope="col">타입</th>
+                    <th scope="col">접근 권한</th>
+                    <th scope="col">최종 접속일</th>
+                    <th scope="col">계정 등록일</th>
+                </tr>
+            </thead>
+            <tbody class="center">
+                <tr>
+                    <td>1</td>
+                    <td><a href="javascript:;" class="text-link">dhkim</a></td>
+                    <td>김도희</td>
+                    <td>super</td>
+                    <td class="left">회원 관리, 광고 관리, 컨텐츠 관리, 코인 관리, luckydraw, 쇼핑 관리, 고객센터, 통계</td>
+                    <td>2019-06-20 14:37:53</td>
+                    <td>2019-03-07 13:37:48</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div><!-- //contents -->
+
+<!-- layer: 운영자 등록 -->
+<section class="layer modal" id="layer-register_operation" style="width:400px;">
+    <h2>운영자 등록</h2>
+    <div class="inner">
+        <div class="content">
+            <div class="table-layout">
+                <table>
+                    <caption></caption>
+                    <colgroup>
+                        <col style="width:120px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">ID <em class="text-red" title="필수">*</em></th>
+                            <td><input type="text" title="ID입력" class="form-input w100per"/></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">비밀번호 <em class="text-red" title="필수">*</em></th>
+                            <td><input type="password" title="password 입력" class="form-input w100per"/></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">비밀번호 확인 <em class="text-red" title="필수">*</em></th>
+                            <td><input type="password" title="password 입력" class="form-input w100per"/></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이름 <em class="text-red" title="필수">*</em></th>
+                            <td><input type="text" title="ID입력" class="form-input w100per"/></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">권한 타입 <em class="text-red" title="필수">*</em></th>
+                            <td>
+                                <span class="form-radio"><input id="radio1" type="radio" name="radio" checked><label for="radio1">이용 불가</label></span>
+                                <span class="form-radio"><input id="radio2" type="radio" name="radio" checked><label for="radio2">보통</label></span>
+                                <span class="form-radio"><input id="radio3" type="radio" name="radio" checked><label for="radio3">전체</label></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Email <em class="text-red" title="필수">*</em></th>
+                            <td><input type="email" title="ID입력" class="form-input w100per"/></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">메뉴 권한 설정</th>
+                            <td>
+                                <ul class="list-check">
+                                    <li><span class="form-check"><input id="c1" type="checkbox"><label for="c1">메뉴1</label></span></li>
+                                    <li><span class="form-check"><input id="c2" type="checkbox"><label for="c2">메뉴2</label></span></li>
+                                    <li><span class="form-check"><input id="c3" type="checkbox"><label for="c3">메뉴3</label></span></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <footer>
+            <a href="#" class="button-basic e-close">닫기</a>
+            <a href="#" class="button-submit">등록</a>
+        </footer>
+    </div>
+    <a href="#" class="button-close e-close">닫기</a>
+</section><!-- //layer: 운영자 신규 등록 -->
+
+
+
+<hr class="layout" />
+
+<?php include "../include/footer.html"; ?>

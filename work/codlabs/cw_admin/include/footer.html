@@ -1,0 +1,32 @@
+
+        </div><!-- //container -->
+    </div><!-- //wrap -->
+    
+    <script>
+        $(function(){
+            //레이어 열기
+            $(document).on('click', '.eModal', function(e){
+                var targetLayer = $($(e.currentTarget).attr("href"));
+                $("body").addClass("overlay");
+                modalLayerOpen(targetLayer);
+                e.preventDefault();
+            });
+            
+            // layer close click
+            $('.layer').on('click', ' .eClose', function (e) {
+                mLayer_close($(this));
+                $("body").removeClass("overlay");
+                e.preventDefault();
+                //delData();
+            });
+            
+            // 날짜선택
+            $( ".ePickDate" ).datepicker({
+                 showOtherMonths: true,
+                 selectOtherMonths: true
+            });
+            
+        });
+    </script>
+</body>
+</html>

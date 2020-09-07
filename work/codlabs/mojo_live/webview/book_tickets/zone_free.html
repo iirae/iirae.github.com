@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="referrer" content="always">
+    <link rel="canonical" href="">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    
+    <script src="//www.google.com/recaptcha/api.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div class="wrap zone" id="wrap">
+    <header class="header" id="header">
+        <h1>티켓 예매</h1>
+        <a href="javascript:window.history.back();" class="button-back" title="go back"></a>
+        <a href="javascript:;" class="button-close" title="close book tickets"></a>
+        
+    </header>
+    
+    <div class="container" id="container">
+        <div class="contents fixed" id="contents">
+            <header class="area-title">
+                <h2>공연 구역 선택</h2>
+            </header>
+            
+            <div class="section plan free">
+                <p class="noti"><span class="text-red">구역 선택</span> 후 <span class="text-red">초대권을 응모</span>해주세요.</p>
+                <a href="./zone_plan.html" class="button-link">좌석도 보기</a>
+            </div>
+            
+            <section class="section list-zone">
+                <h2 class="title">공연시작 18:00</h2>
+                <ul class="seats">
+                    <li><strong class="zone">A 스탠딩 구역A 스탠딩 구역A 스탠딩 구역<em class="badge comport">쾌적</em></strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zoneA" /><label for="zoneA">구역선택</label></span></li>
+                    <li><strong class="zone">B 스탠딩 구역<em class="badge smooth">원활</em></strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zoneB" /><label for="zoneB">구역선택</label></span></li>
+                    <li><strong class="zone">13 구역<em class="badge congest">혼잡</em></strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone13" /><label for="zone13">구역선택</label></span></li>
+                    <li><strong class="zone">12 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone12" checked /><label for="zone12">선택완료</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">11 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone11" /><label for="zone11">구역선택</label></span></li>
+                    <li><strong class="zone">110 구역</strong><span class="form-radio_button"><input type="radio" name="choiceZone" id="zone110" /><label for="zone110">구역선택</label></span></li>
+                </ul>
+                
+                <button class="button-refresh" type="button" title="구역별 잔여 좌석 새로고침"></button>
+            </section>
+            
+            <div class="area-captcha">
+                <div class="g-recaptcha" data-sitekey="6Ld5BYUUAAAAAMx6NO3kbhS9jyQcR4yqy59Tvza2"></div>
+            </div>
+            
+            <div class="area-button fixed">
+                <a href="./check_profile.html" class="button-strong">응모하기</a><!-- 비활성화 시 class에 disabled 추가 -->
+            </div>
+            
+        </div><!-- //contents -->
+    </div><!-- //container -->
+    
+</div><!-- //wrap -->
+
+<script type="text/javascript" src="../js/common.js"></script>
+<script>
+    $(document).ready(function(){
+        var _body = $('body');
+        
+        _body.on('click', '.seats label', function() {
+            $('.seats label').text('구역선택');
+            $(this).text('선택완료');
+            //document.body.scrollTop;
+        });
+        
+        //캡챠
+        _body.on('click', '.button-strong', function(e){
+            e.preventDefault();
+            twingkle('.area-captcha', '.g-recaptcha');
+        });
+    });
+</script>
+</body>
+</html>

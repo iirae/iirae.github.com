@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<!-- [if lte 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ko"><!--<![endif]-->
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="타이틀">
+    <meta property="og:url" content="메인 접속 url">
+    <meta property="og:description" content="홈페이지 설명">
+    <meta name="keywords" content="홈페이지 접속 키워드 적기">
+    <meta name="copyright" content="Copyright">
+    <title>CW ADMIN</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/ico_favicon.png">
+    <link href="//fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./css/reset.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/common.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./css/jquery-ui.css" rel="stylesheet" type="text/css" media="all">
+    
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</head>
+<body>
+    <div id="skipNavigation">
+        <a href="#nav">네비게이션 바로가기</a>
+        <a href="#contents">본문 바로가기</a>
+    </div>
+    
+    <div id="wrap" class="wrap">
+        <header id="header" class="header">
+            <div class="headTop">
+                <h1><a href="#">coinWalking ADMIN</a></h1>
+                <div class="myInfo">
+                    <strong class="userName">김운영자님</strong>
+                    <a href="#" class="btnNormal">로그아웃</a>
+                </div>
+            </div>
+            <nav id="nav" class="nav">
+                <ul>
+                    <li class="selected"><a href="#">회원관리</a>
+                        <ul>
+                            <li><a href="javascript:;">회원관리</a></li>
+                            <li><a href="javascript:;">계정 블럭</a></li>
+                            <li><a href="javascript:;">탈퇴 회원 관리</a></li>
+                            <li><a href="javascript:;">관리자 계정 관리</a></li>
+                        </ul>
+                    </li><!-- 메뉴 활성화 li에 class="selected" 추가 -->
+                    <li><a href="#">광고 관리</a>
+                        <ul>
+                            <li><a href="javascript:;">광고 등록 관리</a></li>
+                            <li><a href="javascript:;">노출 비율 관리</a></li>
+                            <li><a href="javascript:;">AdNob Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">컨텐츠 관리</a>
+                        <ul>
+                            <li><a href="javascript:;">푸시 발송</a></li>
+                            <li><a href="javascript:;">이벤트</a></li>
+                            <li><a href="javascript:;">친구 초대 관리</a></li>
+                            <li><a href="javascript:;">팝업 관리</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">코인 관리</a>
+                        <ul>
+                            <li><a href="javascript:;">코인 보유 현황</a></li>
+                            <li><a href="javascript:;">일별 적립 현황</a></li>
+                            <li><a href="javascript:;">코인 선물 현황</a></li>
+                            <li><a href="javascript:;">관리자 코인 지급</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">쇼핑 관리</a>
+                        <ul>
+                            <li><a href="javascript:;">카테고리 관리</a></li>
+                            <li><a href="javascript:;">상품 등록 관리</a></li>
+                            <li><a href="javascript:;">상품 판매 관리</a></li>
+                            <li><a href="javascript:;">구매 취소 요청</a></li>
+                            <li><a href="javascript:;">럭키드로우 응모</a></li>
+                            <li><a href="javascript:;">럭키드로우 퀴즈</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">고객센터</a>
+                        <ul>
+                            <li><a href="javascript:;">FAQ</a></li>
+                            <li><a href="javascript:;">문의 및 신고</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <hr class="layout" />
+        
+        <div id="container" class="container">
+        
+            <nav class="snb" id="snb">
+                <h2>회원관리</h2>
+                <ul class="depth2">
+                    <li class="selected"><a href="#">회원관리</a></li>
+                    <li><a href="#">계정 블럭</a></li>
+                    <li><a href="#">탈퇴 회원 관리</a></li>
+                    <li><a href="#">관리자 계정 관리</a></li>
+                </ul>
+            </nav>
+        
+            <hr class="layout" />
+            
+            <div id="contents" class="contents">
+            
+                <div class="tab fix eTabSection">
+                    <ul>
+                        <li><a href="#text">text</a></li>
+                        <li><a href="#tab">tab</a></li>
+                        <li><a href="#heading">Heading</a></li>
+                        <li class="selected"><a href="#form">Form, Button</a></li>
+                        <li><a href="#tableLayout">Table</a></li>
+                        <li><a href="#paginate">Paginate</a></li>
+                        <li><a href="#flowArea">div 좌우 정렬</a></li>
+                        <li><a href="#mBox">영역 묶기</a></li>
+                        <li><a href="#layer">Layer</a></li>
+                    </ul>
+                </div>
+                
+                <!-- text -->
+                <section class="tabCont" id="text" style="display:none;">
+                    <div class="tableLayout">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col style="width:200px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">txtLink</th>
+                                    <td><a href="" class="txtLink">파란 글자에</a></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">txtWarn</th>
+                                    <td><p class="txtWarn">붉은 글자에</p></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">txtEm</th>
+                                    <td><p class="txtEm">파란 글자에</p></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">txtEllipsis</th>
+                                    <td><p class="txtEllipsis">말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때 말줄임표가 필요할 때</p></td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">stWarn</th>
+                                    <td><span class="stWarn">보</span> 경고성 딱지는 요걸로</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">stEm</th>
+                                    <td><span class="stEm">예</span> 파란 딱지는 요걸로</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">stNormal</th>
+                                    <td><span class="stNormal">예</span> 회색 딱지는 요걸로</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="loading"></div>
+                </section>
+                
+                <!-- Tab -->
+                <section class="tabCont" id="tab" style="display:none;">
+                    <div class="titleArea">
+                        <h3>TAB</h3>
+                    </div>
+                    <div class="tab fix eTab">
+                        <ul>
+                            <li class="selected"><a href="#tab">tab</a></li>
+                            <li><a href="#">tab</a></li>
+                            <li><a href="#">tab</a></li>
+                            <li><a href="#">tab</a></li>
+                            <li><a href="#">tab</a></li>
+                            <li><a href="#">tab</a></li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- heading -->
+                <section class="tabCont" id="heading" style="display:none;">
+                    <section class="section">
+                        <div class="titleArea">
+                            <h3>head3</h3>
+                            <span class="desc">* 설명입니다.</span>
+                        </div>
+                        <ul class="list">
+                            <li>head 단위로 section이 구분됩니다.</li>
+                            <li>section 안에는 반드시 head가 존재해야 합니다.</li>
+                            <li>하나의 section 안에는 여러개의 head가 존재할 수 있습니다.</li>
+                        </ul>
+                        
+                        <div class="titleArea">
+                            <h4>head4</h4>
+                            <p class="desc">- 설명입니다.</p>
+                        </div>
+                        
+                        <div class="titleArea">
+                            <div class="left">
+                                <h3>head 좌우 정렬</h3>
+                            </div>
+                            <span class="right">
+                                <a href="javascript:;" class="btnNormal">검색</a>
+                            </span>
+                        </div>
+                    </section>
+                    
+                </section>
+                
+                <!-- form button -->
+                <section class="tabCont" id="form" style="display:block;">
+                    <div class="titleArea">
+                        <h3>button, form</h3>
+                        <p class="txtInfo">테이블 상단</p>
+                    </div>
+                    
+                    <div class="tableLayout">
+                        <table>
+                            <caption>caption</caption>
+                            <colgroup>
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:200px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" rowspan="8">BUTTON</th>
+                                    <td>btnNormal</td>
+                                    <td>
+                                        <a href="#" class="btnNormal">btnNormal</a>
+                                    </td>
+                                    <td>검색, 레이어 버튼 등</td>
+                                </tr>
+                                <tr>
+                                    <td>btnStatic</td>
+                                    <td>
+                                        <a href="#" class="btnStatic">btnStatic</a>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>btnBasic</td>
+                                    <td>
+                                        <a href="#" class="btnBasic">btnBasic</a>
+                                    </td>
+                                    <td>취소, 닫기, 목록 등</td>
+                                </tr>
+                                <tr>
+                                    <td>btnSubmit</td>
+                                    <td>
+                                        <a href="#" class="btnSubmit">btnSubmit</a>
+                                    </td>
+                                    <td>저장, 수정, 변경</td>
+                                </tr>
+                                <tr>
+                                    <td>btnDanger</td>
+                                    <td>
+                                        <a href="#" class="btnDanger">btnDanger</a>
+                                    </td>
+                                    <td>이거 누르면 위험해진다?</td>
+                                </tr>
+                                <tr>
+                                    <td>btnPositive</td>
+                                    <td>
+                                        <a href="#" class="btnPositive">btnPositive</a>
+                                    </td>
+                                    <td>살짝 강조하고 싶소?</td>
+                                </tr>
+                                <tr>
+                                    <td>btnRadio</td>
+                                    <td>
+                                        <div class="btnRadio">
+                                            <input type="radio" id="chkToday" name="pickDate" checked />
+                                            <label for="chkToday" title="오늘">오늘</label>
+                                        </div>
+                                        <div class="btnRadio">
+                                            <input type="radio" id="chkTomorrow" name="pickDate" />
+                                            <label for="chkTomorrow" title="내일">내일</label>
+                                        </div>
+                                    </td>
+                                    <td>n개 중 1개만 선택해야 하는 버튼의 경우</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <th rowspan="14" scope="row" class="top">FORM</th>
+                                    <td rowspan="3">checkbox</td>
+                                    <td>fChk</td>
+                                    <td>
+                                        <span class="fChk"><input id="man02" type="checkbox"><label for="man02">운영자 선택</label></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>fChk hideTxt</td>
+                                    <td>
+                                        <div>
+                                            <span class="fChk hideTxt"><input id="man03" type="checkbox" checked><label for="man03">운영자 선택</label></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>allChk</td>
+                                    <td>
+                                        <div class="chkWrap">
+                                            <span class="fChk allChk"><input id="allChk" type="checkbox"><label for="allChk">전체</label></span>
+                                            <span class="fChk eachChk"><input id="each01" type="checkbox" disabled><label for="each01">운영자 선택 disabled</label></span>
+                                            <span class="fChk eachChk"><input id="each02" type="checkbox" disabled checked><label for="each02">운영자 선택 disabled checked</label></span>
+                                            <span class="fChk eachChk"><input id="each03" type="checkbox"><label for="each03">운영자 선택</label></span>
+                                        </div>
+                                        <div class="chkWrap">
+                                            <span class="fChk allChk"><input id="allChk2" type="checkbox"><label for="allChk2">전체</label></span>
+                                            <span class="fChk eachChk"><input id="each11" type="checkbox"><label for="each11">운영자 선택</label></span>
+                                            <span class="fChk eachChk"><input id="each12" type="checkbox"><label for="each12">운영자 선택</label></span>
+                                            <span class="fChk eachChk"><input id="each13" type="checkbox"><label for="each13">운영자 선택</label></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">radio</td>
+                                    <td>fRadio</td>
+                                    <td>
+                                        <span class="fRadio"><input id="radio" type="radio" name="radio" checked><label for="radio">노출</label></span>
+                                        <span class="fRadio"><input id="radio2" type="radio" name="radio"><label for="radio2">비노출</label></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>fRadio hideTxt</td>
+                                    <td>
+                                        <span class="fRadio hideTxt"><input id="radio3" type="radio" name="radio2" checked><label for="radio3">노출</label></span>
+                                        <span class="fRadio hideTxt"><input id="radio4" type="radio" name="radio2"><label for="radio4">비노출</label></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>input text</td>
+                                    <td>fText</td>
+                                    <td>
+                                        <input type="text" class="fText w200" placeholder="홍길동">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>textarea</td>
+                                    <td>fTextarea</td>
+                                    <td>
+                                        <div class="fTextarea w500">
+                                            <textarea name="" id="" cols="30" rows="2">내용내용내용</textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">select</td>
+                                    <td>fSelect</td>
+                                    <td>
+                                        <label class="fSelect" for="">
+                                            <select name="" id="" title="그룹">
+                                                <option value="">개발자</option>
+                                                <option value="">팀장</option>
+                                                <option value="">팀원</option>
+                                            </select>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>fSelect dateButton</td>
+                                    <td>
+                                        <div>
+                                            <label class="dateButton fSelect" for="">
+                                                <select name="" id="">
+                                                    <option value="">2018-08</option>
+                                                    <option value="">2018-09</option>
+                                                    <option value="">2018-10</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>date</td>
+                                    <td>pickDate</td>
+                                    <td>
+                                        <div class="pickDate" id="openDate" style="display: inline-block;">
+                                            <strong>기간</strong>
+                                            <input type="text" id="datepicker" name="" title="기간 선택 시작일" class="fText w120 ePickDate">
+                                            <label for="open_hour" class="fSelect">
+                                                <select class="selSz01" name="up_hour" id="open_hour">
+                                                    <option value="00">00시</option>
+                                                    <option value="01">01시</option>
+                                                    <option value="02">02시</option>
+                                                    <option value="03">03시</option>
+                                                    <option value="04">04시</option>
+                                                    <option value="05">05시</option>
+                                                    <option value="06">06시</option>
+                                                    <option value="07">07시</option>
+                                                    <option value="08">08시</option>
+                                                    <option value="09">09시</option>
+                                                    <option value="10">10시</option>
+                                                    <option value="11">11시</option>
+                                                    <option value="12">12시</option>
+                                                    <option value="13">13시</option>
+                                                    <option value="14">14시</option>
+                                                    <option value="15">15시</option>
+                                                    <option value="16">16시</option>
+                                                    <option value="17">17시</option>
+                                                    <option value="18">18시</option>
+                                                    <option value="19">19시</option>
+                                                    <option value="20">20시</option>
+                                                    <option value="21">21시</option>
+                                                    <option value="22">22시</option>
+                                                    <option value="23">23시</option>
+                                                </select>
+                                            </label>
+                                            <label for="start_min" class="fSelect">
+                                                <select class="selSz01" name="down_min" id="start_min">
+                                                    <option value="00">00분</option>
+                                                    <option value="10">10분</option>
+                                                    <option value="20">20분</option>
+                                                    <option value="30">30분</option>
+                                                    <option value="40">40분</option>
+                                                    <option value="50">50분</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">file</td>
+                                    <td>fFile</td>
+                                    <td>
+                                        <span class="fFile">
+                                            <input type="text" class="name w300" value="filename_0178471648726.xls" title="파일명" />
+                                            <input type="file" id="fileUpload" class="eFile" accept=".jpg, .jpeg, .gif, .png" /><label for="fileUpload" class="btnNormal">파일첨부</label>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>fFile &gt; btnNormal icoExcel</td>
+                                    <td>
+                                        <span class="fFile">
+                                            <input type="text" class="name w300" value="filename_0178471648726.xls" title="파일명" />
+                                            <input type="file" id="fileUpload2" class="eFile" accept=".xls, .xlsx" /><label for="fileUpload2" class="btnNormal icoExcel">파일첨부</label>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>fFile thumbnail</td>
+                                    <td>
+                                        <span class="fFile thumbnail">
+                                            <figure class="thumb">
+                                                <img src="./images/sample.png" alt="샘플이미지" style="width:200px; max-height:300px;">
+                                                <figcaption class="name">filename.jpg</figcaption>
+                                            </figure>
+                                            <input type="file" id="fileUpload3" class="eFile" accept=".jpg, .jpeg, .gif, .png" /><label for="fileUpload3" class="btnNormal">파일첨부</label>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>주소 검색</td>
+                                    <td>addrWrap</td>
+                                    <td>
+                                        <div class="addrWrap">
+                                            <span class="buttonArea">
+                                                <a href="#" class="btnStatic">주소검색</a>
+                                            </span>
+                                            <span class="inputArea">
+                                                <input type="text" class="fText" readonly />
+                                                <input type="text" class="fText" />
+                                            </span>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <div class="addrWrap">
+                                            <span class="buttonArea">
+                                                <a href="#" class="btnStatic">주소검색</a>
+                                                <a href="#" class="btnNormal">이전주소</a>
+                                            </span>
+                                            <span class="inputArea">
+                                                <input type="text" class="fText" readonly />
+                                                <input type="text" class="fText" />
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>이메일 입력</td>
+                                    <td>emailWrap</td>
+                                    <td>
+                                        <div class="emailWrap eEmailForm">
+                                            <input type="text" class="fText personal">
+                                            <span class="text">@</span>
+                                            <label for="" class="fSelect">
+                                                <select name="" id="">
+                                                    <option value="" selected="" disabled="" hidden="">선택</option>
+                                                    <option value="">nate.com</option>
+                                                    <option value="">naver.com</option>
+                                                    <option value="">gmail.com</option>
+                                                    <option value="">hanmail.net</option>
+                                                    <option value="">daum.net</option>
+                                                    <option value="">paran.com</option>
+                                                    <option value="1">직접입력</option>
+                                                </select>
+                                            </label>
+                                            <input type="text" class="fText domain" readonly="">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="tableLayout mt0">
+                        <table>
+                            <caption>설명</caption>
+                            <colgroup>
+                                <col style="width:130px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">이미지 리스트</th>
+                                    <td>
+                                        <ul class="imgLinkList">
+                                            <li class="empty"><a href="javascript:;">jfkalhgowhgfwe.jpg</a></li>
+                                            <li><a href="javascript:;">jfkalhgowhgfwe.jpg</a></li>
+                                            <li><a href="javascript:;">jfkalhgowhgfwejfkalhgowhgfwejfkalhgowhgfwejfkalhgowhgfwejfkalhgowhgfwejfkalhgowhgfwe.jpg</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="tableLayout mt0">
+                        <table>
+                            <caption>설명</caption>
+                            <colgroup>
+                                <col style="width:25%">
+                                <col style="width:25%">
+                                <col style="width:25%">
+                                <col style="width:25%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">제목</th>
+                                </tr>
+                            </thead>
+                            <tbody class="center">
+                                <tr>
+                                    <td>
+                                        <figure class="thumb">
+                                            <img src="./images/sample.png" alt="샘플이미지">
+                                            <figcaption>filename.jpg</figcaption>
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <figure class="thumb">
+                                            <img src="./images/sample.png" alt="샘플이미지">
+                                            <figcaption>filename.jpg</figcaption>
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <figure class="thumb">
+                                            <img src="./images/sample.png" alt="샘플이미지">
+                                            <figcaption>filename.jpg</figcaption>
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <figure class="thumb">
+                                            <img src="./images/sample.png" alt="샘플이미지">
+                                            <figcaption>filename.jpg</figcaption>
+                                        </figure>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </section>
+                
+                <!-- tableLayout -->
+                <section class="tabCont" id="tableLayout" style="display:none;">
+                    <div class="titleArea">
+                        <h3>tableLayout</h3>
+                    </div>
+                    
+                    <div class="titleArea">
+                        <h4>setArea</h4>
+                        <p class="desc">tableLayout에 붙는 세팅 영역</p>
+                    </div>
+                    
+                    <div class="setArea center">
+                        <strong>제목</strong>
+                        <div class="right">
+                            <a href="#" class="btnNormal">버튼</a>
+                        </div>
+                    </div>
+                    
+                    <div class="titleArea">
+                        <h4>hover</h4>
+                    </div>
+                    
+                    <div class="setArea">
+                        <span class="left">
+                            <strong class="title">타이틀</strong>
+                            <a href="#" class="btnNormal">글쓰기</a>
+                            <strong class="title">타이틀</strong>
+                            <a href="#" class="btnNormal">글쓰기</a>
+                        </span>
+                        <div class="right">
+                            <label class="fSelect" for="">
+                                <select name="" id="" title="">
+                                    <option value="">제목</option>
+                                    <option value="">작성자</option>
+                                </select>
+                            </label>
+                            <input type="text" class="fText w200" placeholder="검색 단어 입력">
+                            <a href="#" class="btnNormal">검색</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tableLayout hover">
+                        <table>
+                            <caption>caption</caption>
+                            <colgroup>
+                                <col style="width:300px">
+                                <col style="width:200px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" colspan="3">제목</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">제목
+                                        <div class="tooltip">
+                                            <span class="trigger">?</span>
+                                            <div class="content" style="width:300px">
+                                                <p>* 설명이 여기에 들어갑니다.</p>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th scope="col">Class</th>
+                                    <th scope="col">제목</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">제목</th>
+                                    <td><a href="#layerSample" class="btnNormal eModal">레이어 확인용 버튼</a></td>
+                                    <td><a href="#layerRefuse" class="btnNormal eModal">거절</a></td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>hover</td>
+                                    <td>tableLayout hover</td>
+                                    <td>마우스 오버 시 background처리</td>
+                                </tr>
+                                <tr>
+                                    <td>테이블 내용 많은 경우</td>
+                                    <td>tableLayout list</td>
+                                    <td>테이블의 여백값작음, font-size 작음</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="titleArea">
+                        <h4>list</h4>
+                    </div>
+                    <div class="tableLayout list">
+                        <table>
+                            <caption>caption</caption>
+                            <colgroup>
+                                <col style="width:200px">
+                                <col style="width:200px">
+                                <col style="width:200px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">제목</th>
+                                    <th scope="col"><a href="javascript:;">Class
+                                        <span class="sort up"><span class="blind">정렬</span></span></a>
+                                    </th>
+                                    <th scope="col">예
+                                        <button type="button" class="sort down"><span class="blind">정렬</span></button></th>
+                                    <th scope="col">비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th rowspan="4" class="top" scope="row">table-cell 정렬</th>
+                                    <td class="left">left</td>
+                                    <td class="left">정렬</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>center</td>
+                                    <td class="center">정렬</td>
+                                    <td><input type="text" class="fText w200" placeholder="홍길동"> <a href="javascript:;" class="btnNormal">버튼</a><label class="fSelect" for="">
+                                        <select name="" id="" title="그룹">
+                                            <option value="">개발자</option>
+                                            <option value="">팀장</option>
+                                            <option value="">팀원</option>
+                                        </select>
+                                    </label></td>
+                                </tr>
+                                <tr>
+                                    <td>right</td>
+                                    <td class="right">정렬</td>
+                                    <td>td, tr, tbody</td>
+                                </tr>
+                                <tr>
+                                    <td style="height:100px;">top (td, tr, tbody)</td>
+                                    <td class="top">정렬</td>
+                                    <td>vertical 정렬 (기본: middle)</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">텍스트 링크</th>
+                                    <td>txtLink</td>
+                                    <td><a href="#" class="txtLink">클릭 영역</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="warn">
+                                    <th scope="row">경고성</th>
+                                    <td>warn</td>
+                                    <td>내용</td>
+                                    <td>내용</td>
+                                </tr>
+                                <tr class="positive">
+                                    <th scope="row">긍정적인 의미</th>
+                                    <td>positive</td>
+                                    <td>내용</td>
+                                    <td>내용</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">긍정적인 의미</th>
+                                    <td class="blank">blank</td>
+                                    <td class="blank"> </td>
+                                    <td class="blank"> </td>
+                                </tr>
+                                <tr class="deleted">
+                                    <th scope="row">삭제</th>
+                                    <td>deleted</td>
+                                    <td>내용</td>
+                                    <td>내용</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th scope="row">합계</th>
+                                    <td class="right">10,000</td>
+                                    <td class="right">10,000</td>
+                                    <td class="right">10,000</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    
+                    <div class="titleArea">
+                        <h4>typeTab</h4>
+                    </div>
+                    <div class="tableLayout typeTab">
+                        <table>
+                            <caption>caption</caption>
+                            <colgroup>
+                                <col style="width:100px">
+                                <col style="width:200px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <thead>
+                                <tr class="heading">
+                                    <th colspan="3" scope="col" class="left">회원 등급별 현황</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">제목</th>
+                                </tr>
+                            </thead>
+                            <tbody class="center">
+                                <tr>
+                                    <td><a href="#" class="eTab">링크</a></td>
+                                    <td class="selected"><a href="#" class="eTab">링크</a></td>
+                                    <td><a href="#" class="eTab">링크</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <!-- paginate -->
+                <section class="tabCont" id="paginate" style="display:none;">
+                    <div class="titleArea">
+                        <h3>paginate</h3>
+                        <p class="txtInfo">tableLayout과 붙여서 사용</p>
+                    </div>
+                        
+                        <div class="paginate">
+                            <a href="#" class="prev"><strong>&lt;</strong> 이전</a>
+                            <ol>
+                                <li class="current"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">6</a></li>
+                                <li><a href="#">7</a></li>
+                                <li><a href="#">8</a></li>
+                                <li><a href="#">9</a></li>
+                                <li><a href="#">10</a></li>
+                            </ol>
+                            <a href="#" class="next">다음 <strong>&gt;</strong></a>
+                        </div>
+                        
+                        <div class="mBox blockInline">
+                            <div class="paginate">
+                                <a href="#" class="first">first</a>
+                                <a href="#" class="prev">prev</a>
+                                <ol>
+                                    <li class="current"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">6</a></li>
+                                    <li><a href="#">7</a></li>
+                                    <li><a href="#">8</a></li>
+                                    <li><a href="#">9</a></li>
+                                    <li><a href="#">10</a></li>
+                                </ol>
+                                <a href="#" class="next">next</a>
+                                <a href="#" class="last">last</a>
+                            </div>
+                            <label class="fSelect" for="">
+                                <select name="" id="" title="">
+                                    <option value="">제목</option>
+                                    <option value="">작성자</option>
+                                </select>
+                            </label>
+                        </div>
+                </section>
+                
+                <!-- flowArea -->
+                <section class="tabCont" id="flowArea" style="display:none;">
+                    <div class="titleArea">
+                        <h3>flowArea</h3>
+                        <p class="txtInfo">무엇이든 2개의 플로우로 보여줄 수 있다. 단, 비율은 필요에 따라 css추가 해야 함</p>
+                        <p class="txtInfo">한 div안에 여러개의 div가 있을 경우 사용</p>
+                    </div>
+                    <div class="flowArea">
+                        <div class="gFlow col3">
+                            <div class="titleArea">
+                                <h4 class="left">gFlow col3</h4>
+                                <div class="right">
+                                    <a href="#" class="btnNormal">BUTTON</a>
+                                </div>
+                            </div>
+                            <div class="tableLayout">
+                                <table>
+                                    <caption>caption</caption>
+                                    <colgroup>
+                                        <col style="width:100px">
+                                        <col style="width:200px">
+                                        <col style="width:auto">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="heading">
+                                            <th colspan="3" scope="col" class="left">회원 등급별 현황</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">제목</th>
+                                            <th scope="col">제목</th>
+                                            <th scope="col">제목</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="center">
+                                        <tr>
+                                            <td>내용</td>
+                                            <td>내용</td>
+                                            <td>내용</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="gReverse col2">
+                            <div class="titleArea">
+                                <h4>gReverse col2</h4>
+                            </div>
+                            <div class="tableScroll">
+                                <div class="tableLayout head">
+                                    <table>
+                                        <caption>caption</caption>
+                                        <colgroup>
+                                            <col style="width:100px">
+                                            <col style="width:auto">
+                                            <col style="width:300px">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr class="heading">
+                                                <td colspan="3" class="left">운영자 처리 상태별 현황</td>
+                                            </tr>
+                                            <tr>
+                                                <td>제목</td>
+                                                <td>제목</td>
+                                                <td>제목</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tableLayout body" style="max-height:100px"><!-- height는 마음대로 조절 -->
+                                    <table>
+                                        <caption>caption</caption>
+                                        <colgroup>
+                                            <col style="width:100px">
+                                            <col style="width:auto">
+                                            <col style="width:283px"><!-- head의 td -17px -->
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                            </tr>
+                                            <tr>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                            </tr>
+                                            <tr>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                            </tr>
+                                            <tr>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flowArea">
+                        <div class="gFlow fix" style="width:400px;">
+                            <div class="titleArea">
+                                <h4>fix width</h4>
+                            </div>
+                            <div class="tableScroll">
+                                <div class="tableLayout head">
+                                    <table>
+                                        <caption>caption</caption>
+                                        <colgroup>
+                                            <col style="width:100px">
+                                            <col style="width:auto">
+                                            <col style="width:100px">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr class="heading">
+                                                <td colspan="3" class="left">운영자 처리 상태별 현황</td>
+                                            </tr>
+                                            <tr>
+                                                <td>제목</td>
+                                                <td>제목</td>
+                                                <td>제목</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tableLayout body" style="max-height:100px"><!-- height는 마음대로 조절 -->
+                                    <table>
+                                        <caption>caption</caption>
+                                        <colgroup>
+                                            <col style="width:100px">
+                                            <col style="width:auto">
+                                            <col style="width:83px"><!-- head의 td -17px -->
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                            </tr>
+                                            <tr>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                            </tr>
+                                            <tr>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                            </tr>
+                                            <tr>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                                <td>내용</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gReverse flex">
+                            <div class="titleArea">
+                                <h4>flex width</h4>
+                            </div>
+                            <div class="tableLayout">
+                                <table>
+                                    <caption>caption</caption>
+                                    <colgroup>
+                                        <col style="width:100px">
+                                        <col style="width:200px">
+                                        <col style="width:auto">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="heading">
+                                            <th colspan="3" scope="col" class="left">회원 등급별 현황</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">제목</th>
+                                            <th scope="col">제목</th>
+                                            <th scope="col">제목</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="center">
+                                        <tr>
+                                            <td>내용</td>
+                                            <td>내용</td>
+                                            <td>내용</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="tabCont" id="mBox" style="display:none;">
+                    <div class="titleArea">
+                        <h3>mBox</h3>
+                        <p class="txtInfo">작은 구분 영역을 나누거나 묶을 때 사용</p>
+                    </div>
+                    
+                    <div class="mBox">
+                        <strong>제목</strong>
+                        <input type="text" class="fText w200 ml10" placeholder="홍길동" />
+                    </div>
+                    
+                    <div class="mBox center">
+                        <strong>가운데 정렬 mBox center</strong>
+                    </div>
+                    
+                    <div class="mBox right">
+                        <strong>우측 정렬 mBox right</strong>
+                    </div>
+                    
+                    <div class="titleArea">
+                        <h4>mBox LR</h4>
+                        <p class="txtInfo">좌우 나란히 정렬하고 싶을 경우 사용</p>
+                        <p class="txtInfo">left, right안에 div가 들어가야 하는 경우 span 대신 div를 사용한다.</p>
+                    </div>
+                    <div class="mBox LR">
+                        <span class="left">
+                            <strong>제목</strong>
+                            <input type="text" class="fText w200 ml10" placeholder="홍길동" />
+                        </span>
+                        <span class="right">
+                            <a href="javascript:;" class="btnNormal">검색</a>
+                        </span>
+                    </div>
+                    
+                    <div class="titleArea">
+                        <h4>mBox clear</h4>
+                        <p class="txtInfo">보더를 제거할 때 사용</p>
+                    </div>
+                    <div class="mBox clear LR">
+                        <span class="left">
+                            <strong>제목</strong>
+                            <input type="text" class="fText w200 ml10" placeholder="홍길동" />
+                        </span>
+                        <span class="right">
+                            <a href="javascript:;" class="btnNormal">검색</a>
+                        </span>
+                    </div>
+                    
+                    
+                </section>
+                
+                <section class="tabCont" id="layer" style="display:none;">
+                    <div class="titleArea">
+                        <h3>레이어 style의 width, height를 제외한 나머지는 삭제 후 개발</h3>
+                    </div>
+                    
+                    <!-- 기본 -->
+                    <section class="layer modal" id="" style="display:block; top:30%;left:69%;">
+                        <h2>거절 사유 선택</h2>
+                        <div class="inner">
+                            <div class="content">
+                                <p>내용이나 설명이 있으면 넣으면 됩니다.</p>
+                            </div>
+                            <footer>
+                                <a href="#" class="btnBasic eClose">닫기</a>
+                                <a href="#" class="btnSubmit">거절</a>
+                            </footer>
+                        </div>
+                        <div class="inner">
+                            <div class="content">
+                                <p>내용이나 설명이 있으면 넣으면 됩니다.</p>
+                            </div>
+                            <footer>
+                                <a href="#" class="btnBasic eClose">닫기</a>
+                                <a href="#" class="btnSubmit">거절</a>
+                            </footer>
+                        </div>
+                        <a href="#" class="btnClose eClose">닫기</a>
+                    </section>
+                    
+                    <!-- 정보 수정 -->
+                    <section class="layer modal" id="" style="width:460px;height:500px; display:block;top:60%;left:70%;z-index:510;">
+                        <h2>기본 정보 수정</h2>
+                        <div class="content">
+                            <div class="tableLayout">
+                                <table>
+                                    <caption></caption>
+                                    <colgroup>
+                                        <col style="width:100px;">
+                                        <col style="width:auto">
+                                    </colgroup>
+                                    <tbody class="left">
+                                        <tr>
+                                            <th scope="row">이름</th>
+                                            <td><input type="text" class="fText w100per" /></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">휴대폰번호</th>
+                                            <td class="txtNum">01002223333</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">생년월일</th>
+                                            <td>******</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">이메일</th>
+                                            <td>
+                                                <div class="emailWrap eEmailForm">
+                                                    <input type="text" class="fText personal" />
+                                                    <span class="text">@</span>
+                                                    <label for="" class="fSelect">
+                                                        <select name="" id="">
+                                                            <option value="" selected disabled hidden>선택</option>
+                                                            <option value="">nate.com</option>
+                                                            <option value="">naver.com</option>
+                                                            <option value="">gmail.com</option>
+                                                            <option value="">hanmail.net</option>
+                                                            <option value="">daum.net</option>
+                                                            <option value="">paran.com</option>
+                                                            <option value="1">직접입력</option>
+                                                        </select>
+                                                    </label>
+                                                    <input type="text" class="fText domain" readonly />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">마케팅 수신 동의</th>
+                                            <td>
+                                                <ul class="dlTypeList w60">
+                                                    <li>
+                                                        <strong class="title">푸시</strong>
+                                                        <span>
+                                                            <span class="fRadio"><input id="temp" type="radio" name="radio2" checked=""><label for="temp">허용</label></span>
+                                                            <span class="fRadio"><input id="temp2" type="radio" name="radio2" checked=""><label for="temp2">거부</label></span>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <strong class="title">SMS</strong>
+                                                        <span>
+                                                            <span class="fRadio"><input id="temp-2" type="radio" name="radio2" checked=""><label for="temp-2">허용</label></span>
+                                                            <span class="fRadio"><input id="temp2-2" type="radio" name="radio2" checked=""><label for="temp2-2">거부</label></span>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <strong class="title">이메일</strong>
+                                                        <span>
+                                                            <span class="fRadio"><input id="temp-3" type="radio" name="radio2" checked=""><label for="temp-3">허용</label></span>
+                                                            <span class="fRadio"><input id="temp2-3" type="radio" name="radio2" checked=""><label for="temp2-3">거부</label></span>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">차량 특징</th>
+                                            <td>
+                                                <span class="fRadio w100"><input id="temp-4" type="radio" name="radio2" checked=""><label for="temp-4">축</label></span>
+                                                <span class="fRadio w100"><input id="temp-5" type="radio" name="radio2" checked=""><label for="temp-5">극초장축</label></span>
+                                                <span class="fRadio w100"><input id="temp-6" type="radio" name="radio2" checked=""><label for="temp-6">플러스</label></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <footer>
+                            <a href="#" class="btnBasic eClose">닫기</a>
+                            <a href="#" class="btnSubmit">확인</a>
+                        </footer>
+                        <a href="#" class="btnClose eClose">닫기</a>
+                    </section>
+                    
+                    <!-- 거절 사유 선택 -->
+                    <section class="layer modal" id="layerRefuse" style="width:280px; height:360px; display:block; left:48%">
+                        <h2>거절 사유 선택</h2>
+                        <div class="content">
+                            <ul class="chkList">
+                                <li><span class="fChk"><input id="c1" type="checkbox"><label for="c1">차량정보 입력</label></span></li>
+                                <li><span class="fChk"><input id="c2" type="checkbox"><label for="c2">사업자정보 입력</label></span></li>
+                                <li><span class="fChk"><input id="c3" type="checkbox"><label for="c3">계좌정보 입력</label></span></li>
+                            </ul>
+                            <ul class="chkList gLine">
+                                <li><span class="fChk"><input id="d1" type="checkbox"><label for="d1">운전면허증 첨부</label></span></li>
+                                <li><span class="fChk"><input id="d2" type="checkbox"><label for="d2">자동차등록증 첨부</label></span></li>
+                                <li><span class="fChk"><input id="d3" type="checkbox"><label for="d3">사업자등록증 첨부</label></span></li>
+                                <li><span class="fChk"><input id="d4" type="checkbox"><label for="d4">화물종사자자격증 첨부</label></span></li>
+                            </ul>
+                        </div>
+                        <footer>
+                            <a href="#" class="btnBasic eClose">닫기</a>
+                            <a href="#" class="btnSubmit">거절</a>
+                        </footer>
+                        <a href="#" class="btnClose eClose">닫기</a>
+                    </section>
+                    
+                    <!-- 지급보류 -->
+                    <section class="layer modal payHold" id="layerPayHold" style="display:block;left:20%;">
+                        <h2>운송료 지급 보류</h2>
+                        <div class="content">
+                            <h3>차주에게 운송료 지급을 보류 처리 합니다.</h3>
+                            <p class="description">차주 지급을 보류하면 차주에게 지급 보류 사유가 알림으로 전송됩니다.</p>
+                            <ul class="reasonList">
+                                <li class="fRadio"><input type="radio" class="" id="reason01" name="reason" /><label for="reason01">지급 계좌 정보 오류로 인한 지급 불가(101)</label></li>
+                                <li class="fRadio"><input type="radio" class="" id="reason02" name="reason" /><label for="reason02">화주사 요청으로 인한 지급 불가(102)</label></li>
+                                <li class="fRadio"><input type="radio" class="" id="reason03" name="reason" /><label for="reason03">세금계산서 금액 불일치로 인한 발급 거절(103)</label></li>
+                                <li class="fRadio"><input type="radio" class="" id="reason04" name="reason" /><label for="reason04">차주의 요청 또는 합의(104)</label></li>
+                                <li class="fRadio"><input type="radio" class="inPerson" id="reason05" name="reason" /><label for="reason05">기타 직접입력(105)</label>
+                                    <div class="fTextarea"><textarea name="" id="" cols="30" rows="5" maxlength="400"  class="typeReason readonly" readonly title="운송료 지급 보류 사유 입력" placeholder="내용을 입력해 주세요.(400자 이내)"></textarea></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <footer>
+                            <a href="#" class="btnBasic eClose">닫기</a>
+                            <a href="#" class="btnSubmit">지급보류</a>
+                        </footer>
+                        <a href="#" class="btnClose eClose">닫기</a>
+                    </section>
+                    <div class="dimmed"></div>
+                
+            </section>
+            
+            </div><!-- //contents -->
+            
+        </div><!-- //container -->
+    </div><!-- //wrap -->
+    
+          <!-- 지급보류 -->
+          <section class="layer modal payHold" id="layerSample" style="width:200px;">
+              <h2>test</h2>
+              <div class="content">
+                  <h3>test</h3>
+                  <p class="description">this is test.</p>
+              </div>
+              <footer>
+                  <a href="#" class="btnBasic eClose">닫기</a>
+                  <a href="#" class="btnSubmit">지급보류</a>
+              </footer>
+              <a href="#" class="btnClose eClose">닫기</a>
+          </section>
+          
+    <script>
+        $(function(){
+            //레이어 열기
+            $(document).on('click', '.eModal', function(e){
+                var targetLayer = $($(e.currentTarget).attr("href"));
+                $("body").addClass("overlay");
+                modalLayerOpen(targetLayer);
+                e.preventDefault();
+            });
+            
+            // layer close click
+            $('.layer').on('click', ' .eClose', function (e) {
+                mLayer_close($(this));
+                $("body").removeClass("overlay");
+                e.preventDefault();
+                //delData();
+            });
+            
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?php
+include "./inc/conf_lib.php";
+
+include "./inc/header.php";
+
+// API -- http://wiki.codlabs.com:8090/pages/viewpage.action?pageId=31293527
+$sUrl = "$gApiExternalUrl/cod/terms/driver";
+$sMethod = "post";
+$sParam = "terms_type=1";
+$rResult = getCurl($sUrl,$sMethod,$sParam);
+if (!$rResult) {
+    echo json_encode($aHtmlReturnCode[100]);
+} else {
+    $aApiReturn = json_decode($rResult,true);
+    if ($aApiReturn[Status_Code] != "200") {
+        echo alertMsgFunction("", "M", "/drivers_policy.html"); exit;
+    } else {
+        $rResult = $aApiReturn[Result_Data][0];
+    }
+}
+?>
+
+        <div class='contents' id='contents'>
+            <?=$rResult[CONT]?>
+        </div>

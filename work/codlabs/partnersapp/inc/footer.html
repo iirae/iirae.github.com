@@ -1,0 +1,19 @@
+    <script>
+        $(function(){
+            //레이어 열기
+            $(".eModal").on("click", function(e){
+                var targetLayer = $($(e.currentTarget).attr("href"));
+                modalLayerOpen(targetLayer);
+                e.preventDefault();
+            });
+            
+            // layer close click
+            $('.layer').on('click', ' .eClose', function (e) {
+                layer_close($(this));
+                e.preventDefault();
+            });
+        });
+    </script>
+    
+</body>
+</html>

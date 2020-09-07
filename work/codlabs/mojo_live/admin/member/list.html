@@ -1,0 +1,82 @@
+<?php include "../include/header.html"; ?>
+
+<hr class="layout" />
+
+<div class="contents" id="contents">
+
+    <div class="area-title">
+        <h3>회원 관리</h3>
+    </div>
+    
+    <div class="area-setting">
+        <input type="text" class="form-input w200" placeholder="검색어 2글자 이상">
+        <a href="#" class="button-normal">검색</a>
+    </div>
+    
+    <div class="table-layout hover">
+        <table>
+            <caption>회원 목록</caption>
+            <colgroup>
+                <col style="width:100px">
+                <col style="width:140px">
+                <col style="width:auto">
+                <col style="width:140px">
+                <col style="width:140px">
+                <col style="width:150px">
+                <col style="width:120px">
+                <col style="width:160px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">회원 No.</th>
+                    <th scope="col">가입 유형</th>
+                    <th scope="col">이메일</th>
+                    <th scope="col">이름</th>
+                    <th scope="col">휴대폰번호</th>
+                    <th scope="col">닉네임</th>
+                    <th scope="col">회원 상태</th>
+                    <th scope="col">회원가입일</th>
+                </tr>
+            </thead>
+            <tbody class="center">
+                <tr>
+                    <td>20</td>
+                    <td>카카오</td>
+                    <td class="left">abcd123@naver.com</td>
+                    <td>홍길동</td>
+                    <td>010-7277-9000</td>
+                    <td><a href="./detail.html" class="text-link">yakuza888</a></td>
+                    <td>정상</td>
+                    <td>2019-06-12 14:17:43</td>
+                </tr>
+            </tbody>
+            <tbody class="nodata">
+                <tr><td colspan="8">회원정보가 없습니다.</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="paginate">
+        <a href="#" class="first">first</a>
+        <a href="#" class="prev">prev</a>
+        <ol>
+            <li class="current"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+        </ol>
+        <a href="#" class="next">next</a>
+        <a href="#" class="last">last</a>
+    </div>
+
+</div><!-- //contents -->
+
+<hr class="layout" />
+
+<?php include "../include/footer.html"; ?>

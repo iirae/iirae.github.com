@@ -1,0 +1,198 @@
+<?php include "../include/header.html"; ?>
+
+<hr class="layout" />
+
+<div class="contents" id="contents">
+
+    <div class="area-title">
+        <h3>회원 관리</h3>
+    </div>
+    
+    <div class="area-flow">
+        <div class="grid-flow fix" style="width:350px;">
+            <div class="section">
+                <div class="area-title">
+                    <h4>회원 정보</h4>
+                </div>
+            </div>
+            <div class="table-layout">
+                <table>
+                    <caption>회원 기본 정보</caption>
+                    <colgroup>
+                        <col style="width:120px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">프로필 이미지</th>
+                            <td><span class="picture-profile"><img src="../images/sample.png" alt="프로필 사진"/></span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이메일</th>
+                            <td>abcd123@naver.com</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이름</th>
+                            <td>홍길동</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">생년월일</th>
+                            <td>1984-08-15</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">성별</th>
+                            <td>남성</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">가입 상태</th>
+                            <td>공연 2019-08-29 15:51:33</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">휴대폰 번호</th>
+                            <td>010-1234-5678</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">휴대폰 인증 국가</th>
+                            <td>대한민국</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">기본 배송지 정보</th>
+                            <td>서울시 서초구 반포대로18, 4F</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="grid-flow flex">
+            <div class="section">
+                <div class="area-title">
+                    <h4>회원 계정 정보</h4>
+                </div>
+                <div class="table-layout">
+                    <table>
+                        <caption>회원 계정 정보</caption>
+                        <colgroup>
+                            <col style="width:110px">
+                            <col style="width:100px">
+                            <col style="width:75px">
+                            <col style="width:135px">
+                            <col style="width:135px">
+                            <col style="width:90px">
+                            <col style="width:120px">
+                            <col style="width:auto">
+                            <col style="width:auto">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">가입 유형</th>
+                                <th scope="col">닉네임</th>
+                                <th scope="col">회원 상태</th>
+                                <th scope="col">회원 가입일</th>
+                                <th scope="col">최종 접속일</th>
+                                <th scope="col">App Version</th>
+                                <th scope="col">OS</th>
+                                <th scope="col">OS Version</th>
+                                <th scope="col">Model</th>
+                            </tr>
+                        </thead>
+                        <tbody class="center">
+                            <tr>
+                                <td>Facebook</td>
+                                <td>yakuza888</td>
+                                <td>정상</td>
+                                <td>2019-06-12 14:17:43</td>
+                                <td>2019-06-21 14:17:43</td>
+                                <td>12.3.1</td>
+                                <td>IOS</td>
+                                <td>8.1.0(27)-eng.compil.20190511.185914</td>
+                                <td>Lenovo K8 Note(manning_retail)-lenovo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="area-title">
+                    <h4>회원 관리</h4>
+                </div>
+                <div class="area-setting mt10">
+                    <div class="">
+                        <strong class="text">패널티 적용</strong>
+                        <label for="" class="form-select">
+                            <select name="" id="">
+                                <option value="">3일 이용정지</option>
+                                <option value="">7일 이용정지</option>
+                                <option value="">15일 이용정지</option>
+                                <option value="">30일 이용정지</option>
+                                <option value="">영구 정지</option>
+                            </select>
+                        </label>
+                        <input type="text" class="form-input w500" placeholder="패널티 사유를 적어주세요.(30자 이내)" />
+                        <a href="javascript:;" class="button-submit">적용</a>
+                    </div>
+                </div>
+                <div class="table-layout">
+                    <table>
+                        <caption></caption>
+                        <colgroup>
+                            <col style="width:150px">
+                            <col style="width:230px">
+                            <col style="width:auto">
+                            <col style="width:150px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">상태</th>
+                                <th scope="col">일자(기간)</th>
+                                <th scope="col">사유</th>
+                                <th scope="col">회원 관리</th>
+                            </tr>
+                        </thead>
+                        <tbody class="center">
+                            <tr>
+                                <td>영구 정지</td>
+                                <td>2019-08-01 09:00 ~ </td>
+                                <td class="left">욕을 해버려쓰 두번 누적되어버려쓰</td>
+                                <td><a href="#layerReasonCancelPenalty" class="button-danger e-modal">패널티 해제</a></td>
+                            </tr>
+                            <tr>
+                                <td>이용 정지 7일</td>
+                                <td>2019-06-01 09:00 ~ 2019-06-07 09:00</td>
+                                <td class="left">욕을 해버려쓰</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                        <tbody class="nodata">
+                            <tr>
+                                <td colspan="4">패널티 적용 이력이 없습니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+</div><!-- //contents -->
+
+<!-- layer: 패널티 해제 사유 -->
+<section class="layer modal" id="layerReasonCancelPenalty" style="width:400px;">
+    <h2>패널티 사유</h2>
+    <div class="inner">
+        <div class="content">
+            <input type="text" class="form-input w100per" placeholder="패널티 해제 사유를 입력해주세요.(30자 이내)" />
+        </div>
+        <footer>
+            <a href="#" class="button-basic e-close">취소</a>
+            <a href="#" class="button-submit">적용</a>
+        </footer>
+    </div>
+    <button type="button" class="button-close e-close">닫기</button>
+</section><!-- //layer: 패널티 사유 -->
+
+
+<hr class="layout" />
+
+<?php include "../include/footer.html"; ?>

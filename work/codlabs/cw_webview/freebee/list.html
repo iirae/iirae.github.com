@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="coinWalking">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta name="referrer" content="always">
+    <link rel="canonical" href="">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <div class="container pFreebeeList" id="container">
+        
+            <div class="contents" id="contents">
+                <div class="titleArea">
+                    <h1 class="conTitle">Earn Free Coins</h1>
+                </div>
+                
+                <div class="itemList">
+                    <div class="item">
+                        <div class="info">
+                            <strong class="coin">300 Coins</strong>
+                            <p class="txtInfo">Watch advertisement to earn 300 Coins for free.</p>
+                        </div>
+                        <div class="status">
+                            <a href="#layerCommercial" class="btnStatic eLayer">Watch Ad</a>
+                        </div>
+                    </div><!-- //item 반복 -->
+                    <div class="item">
+                        <div class="info">
+                            <strong class="coin">200 Coins</strong>
+                            <p class="txtInfo">Watch advertisement to earn 200 Coins for free.</p>
+                        </div>
+                        <div class="status">
+                            <span class="timer">180:00</span>
+                        </div>
+                    </div><!-- //item 반복 -->
+                </div>
+                
+            </div><!-- //contents -->
+        </div><!-- //container -->
+        
+        <!-- layer: 광고를 보시겠습니까? -->
+        <div class="layer layerCommercial" id="layerCommercial" style="display:none;">
+            <div class="inner">
+              <div class="titleArea">
+                  <h2>광고명</h2>
+              </div>
+              <div class="content">
+                  <p class="desc">Once the advertisement starts, it cannot be stopped and when it ends, you will receive <strong>580 Coins</strong>. <br> Watch ad now?</p>
+              </div>
+              <div class="btnArea">
+                  <a href="javascript:;" class="btnNormal eClose">Cancel</a>
+                  <a href="javascript:;" class="btnStrong">Confirm</a>
+              </div>
+            </div>
+        </div><!-- // layer -->
+        
+        <!-- layer: 광고를 다 본 후 -->
+        <div class="layer layerGetCoin" id="layerGetCoin" style="display:none;">
+            <div class="inner">
+                <div class="content">
+                    <p class="desc"><strong>580 Coins</strong> added to your balance for watching the ad</p>
+                </div>
+                <div class="btnArea">
+                    <a href="javascript:;" class="btnNormal eClose">Confirm</a>
+                </div>
+            </div>
+        </div><!-- // layer -->
+        
+        <!-- layer: 광고 시청 중단 -->
+        <div class="layer layerStopWatching" id="layerStopWatching" style="display:none;">
+            <div class="inner">
+                <div class="content">
+                    <p class="desc">Would you like to stop watching? You will not receive <strong>580 Coins</strong></p>
+                </div>
+                <div class="btnArea">
+                    <a href="javascript:;" class="btnNormal eClose">Cancel</a>
+                    <a href="javascript:;" class="btnStrong eClose">Confirm</a>
+                </div>
+            </div>
+        </div><!-- // layer -->
+        
+    </div>
+
+    <script type="text/javascript" src="../js/jquery.touchslider.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //레이어 열기
+            $('body').on('click', '.eLayer', function (e) {
+                var targetLayer = $($(e.currentTarget).attr("href"));
+                modalLayerOpen(targetLayer);
+                e.preventDefault();
+            });
+            
+            // 레이어 닫기
+            $('body').on('click', '.layer .eClose', function (e) {
+                layer_close($(this));
+                e.preventDefault();
+            });
+            
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="noindex,nofollow">
+    <meta property="og:title" content="coinWalking">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta name="referrer" content="always">
+    <link rel="canonical" href="">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <h1>Mobile Prepaid</h1>
+            <a href="javascript:window.history.back();" class="btnBack" title="back"></a>
+        </header>
+        
+        <div class="container pShoppingDetail" id="container">
+            <div class="headArea myCoin">
+                <span class="icon" title="Balance"></span>
+                <strong class="coin">23,345</strong>
+            </div>
+        
+            <div class="contents" id="contents">
+                <h2 class="blind">product detail</h2>
+                
+                <div class="product">
+                    <div class="image"><img src="../images/_img_prd_detail.png" alt="product image"/></div>
+                    <ul class="info">
+                        <li><em class="tag">Expire after 30 days</em></li>
+                        <li class="prdName">product name</li>
+                        <li class="price"><strong>61,200</strong></li>
+                    </ul>
+                </div>
+                
+                <ul class="coinInfo">
+                    <li><em class="tit">Balance</em><strong class="coin txtNormal">1,400</strong></li>
+                    <li><em class="tit">Price</em><strong class="coin">61,200</strong></li>
+                    <li class="balance"><em class="tit txtBold">Remaining after purchase</em><strong class="coin txtRed">- 59,800</strong></li><!-- 코인 부족시 txtRed 클래스 추가 -->
+                </ul>
+                
+                <section class="prdDesc">
+                    <h3>Product Detail</h3>
+                    <p>If you are activating the IR pack for the first time,
+                    kindly ensure your number is connected to Jio network.
+                    International roaming services do not work on
+                    JioFi & JioPhone device.</p>
+                </section>
+                
+                <div class="btnArea fixed">
+                    <a href="#layerChargeCoin" class="btnStrong eLayer">Purchase</a>
+                </div>
+            </div><!-- //contents -->
+        </div><!-- //container -->
+        
+        <!-- layer: 코인부족 -->
+        <div class="layer layerChargeCoin" id="layerChargeCoin" style="display:none;">
+            <div class="inner">
+                <div class="titleArea">
+                    <h2>Insufficient Coins</h2>
+                </div>
+                <div class="content">
+                    <ul class="coinInfo">
+                        <li><em class="tit">Balance</em><span class="coin">1,400</span></li>
+                        <li><em class="tit">Coins required</em><span class="coin txtRed">59,800</span></li>
+                    </ul>
+                    <p class="desc">Get more coins by either Recommendation to friends, Earn Free Coins or Add Coins in Store.</p>
+                    <ul class="btnList">
+                        <li><a href="../mypage/friends_invite.html" class="btnStrong">Recommendation</a></li>
+                        <li><a href="../freebee/list.html" class="btnStrong">Earn Free Coins</a></li>
+                        <li><a href="javascript:;" class="btnStrong">Add Coins in Store</a></li>
+                    </ul>
+                </div>
+                <div class="btnArea">
+                    <a href="javascript:;" class="btnNormal eClose">Dismiss</a>
+                </div>
+            </div>
+        </div><!-- // layer -->
+    
+        <!-- layer: 결제하시겠습니까? -->
+        <div class="layer layerPay" id="layerPay" style="display:none;">
+            <div class="inner">
+                <div class="titleArea">
+                    <h2>Product Name</h2>
+                </div>
+                <div class="content">
+                    <ul class="coinInfo">
+                        <li><em class="tit">Balance</em><span class="coin">61,200</span></li>
+                        <li class="price"><em class="tit">Price</em><span class="coin txtRed">59,800</span></li>
+                        <li class="balance"><em class="tit">Remaining after purchase</em><span class="coin">0</span></li>
+                    </ul>
+                    <p class="desc">Confirm purchase?</p>
+                </div>
+                <div class="btnArea">
+                    <a href="javascript:;" class="btnNormal eClose">Cancel</a>
+                    <a href="#layerPayResult" class="btnStrong eLayer">Confirm</a>
+                </div>
+            </div>
+        </div><!-- // layer -->
+        
+        <!-- layer: 결제 완료 -->
+        <div class="layer layerPayResult" id="layerPayResult" style="display:flex;opacity:1;">
+            <div class="inner">
+                <div class="content">
+                    <!-- 결제 실패 시 -->
+                    <figure class="product">
+                        <span class="image"><img src="" alt=""/></span>
+                        <figcaption>product name</figcaption>
+                    </figure><!-- //결제 실패 시 -->
+                    
+                    <!-- 결제 성공 시 -->
+                    <div class="product">
+                        <h2 class="title">Code</h2>
+                        <strong class="code">ABC1234</strong>
+                    </div>
+                    
+                    <div class="success">
+                        <!--<p class="desc"><span class="txtRed">Transaction completed.</span> <br>회원님의 휴대번호로 쿠폰 코드가 발송되었습니다. 확인 후 사용하시기 바랍니다.</p>
+                        <p class="txtInfo">30초 이상 시간이 걸릴 수 있습니다. SMS 를
+                        받지 못하면 구매내역으로 이동하여 재발송 해주세요.</p>-->
+                        <p class='desc'>You can redeem this code on</p>
+                        <p class='desc url'>https://github.com/material-components/</p>
+                        <p class='desc'>till <strong>2019-05-20</strong></p>
+                        <p class='desc'>Thank you</p>
+                    </div><!-- //결제 성공 시 -->
+                    
+                    <p class="desc"><span class="txtRed">Transaction failed.</span> <br> Please try purchasing again.</p><!-- 결제 실패 시 -->
+                </div>
+                <!-- 결제 성공 시 -->
+                <div class="btnArea">
+                    <a href="javascript:;" class="btnNormal eClose">Close</a>
+                    <a href="javascript:;" class="btnStrong">구매내역 이동</a>
+                </div><!-- //결제 성공 시 -->
+                <!-- 결제 실패 시 -->
+                <div class="btnArea">
+                    <a href="javascript:;" class="btnNormal">Back to shopping</a>
+                </div><!-- //결제 실패 시 -->
+            </div>
+        </div><!-- // layer -->
+        
+        <div class="loading" style="display:none"></div>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            //레이어 열기
+            $('body').on('click', '.eLayer', function (e) {
+                var targetLayer = $($(e.currentTarget).attr("href"));
+                modalLayerOpen(targetLayer);
+                e.preventDefault();
+            });
+            
+            // 레이어 닫기
+            $('body').on('click', '.layer .eClose', function (e) {
+                layer_close($(this));
+                e.preventDefault();
+            });
+            
+        });
+    </script>
+</body>
+</html>

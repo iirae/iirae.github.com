@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>68FCC991-E0CF-4138-8356-265B5F76BFB1</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="16" height="18"></rect>
+    </defs>
+    <g id="04_홈" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="04_고객문의_05" transform="translate(-21.000000, -155.000000)">
+            <g id="Contents" transform="translate(0.000000, 72.000000)">
+                <g id="질문" transform="translate(20.000000, 78.000000)">
+                    <g id="icon_question" transform="translate(1.000000, 5.000000)">
+                        <rect id="Bounds" fill-rule="nonzero" x="0" y="0" width="16" height="18"></rect>
+                        <g id="Shape">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Mask" fill-rule="nonzero"></g>
+                            <path d="M7.85839844,16.2578125 C3.3359375,16.2578125 0.5,13.2070312 0.5,8.25488281 C0.5,3.33496094 3.3359375,0.241210938 7.85839844,0.241210938 C12.3701172,0.241210938 15.2060547,3.33496094 15.2060547,8.25488281 C15.2060547,11.0800781 14.2822266,13.3251953 12.6064453,14.6572266 L14.6044922,17.5683594 L11.8115234,17.5683594 L10.5869141,15.8173828 C9.75976562,16.1181641 8.84667969,16.2578125 7.85839844,16.2578125 Z M7.85839844,13.9160156 C8.3203125,13.9160156 8.76074219,13.8408203 9.15820312,13.7226562 L7.375,11.1445312 L10.0283203,11.1445312 L10.9414062,12.390625 C11.8544922,11.4667969 12.3808594,10.0380859 12.3808594,8.25488281 C12.3808594,4.79589844 10.6191406,2.58300781 7.85839844,2.58300781 C5.08691406,2.58300781 3.3359375,4.79589844 3.3359375,8.25488281 C3.3359375,11.7138672 5.08691406,13.9160156 7.85839844,13.9160156 Z" id="Q" fill="#00A951" mask="url(#mask-2)"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

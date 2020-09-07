@@ -1,0 +1,67 @@
+<?php
+include "./inc/conf_lib.php";
+
+include "./inc/header.php";
+?>
+
+        <section class='section bg'>
+            <div class='contents'>
+                <div class='inner'>
+                    <h2 class='head'>바로트럭 이용안내</h2>
+                </div>
+            </div>
+        </section>
+
+        <article class='contents' id='contents'>
+
+            <section class='divide'>
+                <div class='inner'>
+                    <h3 class='dt'>차주회원 제출서류</h3>
+                    <div class='info'>
+                        <ul>
+                            <li>1. 사업자등록증</li>
+                            <li>2. 운전면허증</li>
+                            <li>3. 자동차등록증</li>
+                            <li>4. 화물운송 종사자 자격증</li>
+                            <li>5. 적재물 배상책임 보험가입증서 (5톤 이상)</li>
+                            <li>6. 통장 사본</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='btnArea'>
+                    <a href='<?=$gDriversAppDownload?>' target='_blank' class='btnBasic icoApp'>차주 앱 다운로드</a>
+                    <a href='/drivers_faq.html' class='btnBasic'>차주 <span class='txtEn'>FAQ</span></a>
+                </div>
+            </section>
+
+            <section class='divide'>
+                <div class='inner'>
+                    <h3 class='dt'>화주회원 제출서류</h3>
+                    <div class='info'>
+                        <ul>
+                            <li>1. 사업자등록증</li>
+                            <li>2. 운송사 허가증 (운송사 가입 시)</li>
+                            <li>3. 주선사 허가증 (주선사 가입 시)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='btnArea'>
+                    <a href='<?=$gPartnersRegistration?>' target='_blank' class='btnBasic icoSignup'>가입하기</a>
+                    <a href='<?=$gPartnersAppDownload?>' target='_blank' class='btnBasic icoApp'>화주 앱 다운로드</a>
+                    <a href='/partners_faq.html' class='btnBasic'>화주 <span class='txtEn'>FAQ</span></a>
+                </div>
+            </section>
+
+            <section class='divide'>
+                <h3 class='dt'>서류제출처</h3>
+                <ul class='sub'>
+                    <li><span class='txtEn'>FAX.</span> <span class='txtNum'><?=$gCompanyWebFaxNo?></span></li>
+                    <li>가입 및 이용문의. <a href='tel:<?=$gCompanyPhoneNo?>' class='txtNum'><?=$gCompanyPhoneNo?></a></li>
+                </ul>
+            </section>
+
+        </article>
+
+<?php
+include "./inc/footer.php";
+?>

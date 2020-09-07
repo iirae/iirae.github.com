@@ -1,0 +1,212 @@
+<?php include "../include/header.html"; ?>
+
+<hr class="layout" />
+
+<div class="contents" id="contents">
+
+    <div class="area-title">
+        <h3>배포티켓 관리</h3>
+    </div>
+
+    <section class="section">
+        <div class="area-title">
+            <h4>예매 내역</h4>
+        </div>
+        <div class="area-setting">
+            <span class="right">
+                <span class="form-radio"><input id="radio" type="radio" name="radio" checked><label for="radio">이름</label></span>
+                <span class="form-radio"><input id="radio2" type="radio" name="radio"><label for="radio2">휴대폰번호</label></span>
+                <span class="form-radio"><input id="radio3" type="radio" name="radio"><label for="radio3">생년월일</label></span>
+                <span class="form-radio"><input id="radio4" type="radio" name="radio"><label for="radio4">예매번호</label></span>
+                <input type="text" class="form-input"/>
+                <a href="javascript:;" class="button-static">검색</a>
+            </span>
+        </div>
+        <div class="table-layout">
+            <table>
+                <caption>예매 내역 상세 목록</caption>
+                <colgroup>
+                    <col style="width:80px">
+                    <col style="width:140px">
+                    <col style="width:130px">
+                    <col style="width:120px">
+                    <col style="width:120px">
+                    <col style="width:auto">
+                    <col style="width:130px">
+                    <col style="width:100px">
+                    <col style="width:120px">
+                    <col style="width:100px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">예매상태</th>
+                        <th scope="col">예매번호</th>
+                        <th scope="col">예매일시</th>
+                        <th scope="col">결제승인번호</th>
+                        <th scope="col">티켓매수<br>(최종/예매)</th>
+                        <th scope="col">공연명</th>
+                        <th scope="col">공연일시</th>
+                        <th scope="col">이름</th>
+                        <th scope="col">휴대폰번호</th>
+                        <th scope="col">생년월일</th>
+                    </tr>
+                </thead>
+                <tbody class="center">
+                    <tr>
+                        <td><em class="text-blue">정상</em></td>
+                        <td><a href="javascript:;" class="text-link">BBQ-K01110258</a></td>
+                        <td>2019-06-28 23:54</td>
+                        <td>결제승인번호</td>
+                        <td><span>2매</span> / <span>2매</span></td>
+                        <td class="left"><a href="javascript:;" class="text-link">2019 BBQ & SBS SUPER CONCERT in GWANGJU</a></td>
+                        <td>2019-08-25 17:00</td>
+                        <td>홍길동</td>
+                        <td>010-1234-5678</td>
+                        <td>19931231</td>
+                    </tr>
+                    <tr>
+                        <td><em class="text-red">부분취소</em></td>
+                        <td><a href="javascript:;" class="text-link">BBQ-K01110258</a></td>
+                        <td>2019-06-28 23:54</td>
+                        <td>결제승인번호</td>
+                        <td><span class="text-red">2매</span> / <span>4매</span></td>
+                        <td class="left"><a href="javascript:;" class="text-link">2019 BBQ & SBS SUPER CONCERT in GWANGJU</a></td>
+                        <td>2019-08-25 17:00</td>
+                        <td>홍길동</td>
+                        <td>010-1234-5678</td>
+                        <td>19931231</td>
+                    </tr>
+                    <tr>
+                        <td><em class="text-red">취소</em></td>
+                        <td><a href="javascript:;" class="text-link">BBQ-K01110258</a></td>
+                        <td>2019-06-28 23:54</td>
+                        <td>결제승인번호</td>
+                        <td><span class="text-red">0매</span> / <span>4매</span></td>
+                        <td class="left"><a href="javascript:;" class="text-link">2019 BBQ & SBS SUPER CONCERT in GWANGJU</a></td>
+                        <td>2019-08-25 17:00</td>
+                        <td>홍길동</td>
+                        <td>010-1234-5678</td>
+                        <td>19931231</td>
+                    </tr>
+                </tbody>
+                <tbody class="nodata">
+                    <tr>
+                        <td colspan="10">검색 결과가 존재하지 않습니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="area-title">
+            <h4>예매 건별 티켓 정보</h4>
+        </div>
+        
+        <div class="table-layout">
+            <table>
+                <caption>예매 건별 티켓 정보</caption>
+                <colgroup>
+                    <col style="width:80px">
+                    <col style="width:120px">
+                    <col style="width:auto">
+                    <col style="width:130px">
+                    <col style="width:120px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:120px">
+                    <col style="width:130px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:110px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="8">예매티켓 정보</th>
+                        <th scope="col" colspan="5">예매취소 정보</th>
+                        <th scope="col">최종 결제</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">티켓상태</th>
+                        <th scope="col">티켓번호</th>
+                        <th scope="col">좌석</th>
+                        <th scope="col">결제수단</th>
+                        <th scope="col">승인번호</th>
+                        <th scope="col">티켓금액</th>
+                        <th scope="col">예매(수)</th>
+                        <th scope="col">결제(합)</th>
+                        <th scope="col">취소타입(이름)</th>
+                        <th scope="col">취소일시</th>
+                        <th scope="col">취소티켓(수)</th>
+                        <th scope="col">취소예매(수)</th>
+                        <th scope="col">취소(합)</th>
+                        <th scope="col">금액</th>
+                    </tr>
+                </thead>
+                <tbody class="center">
+                    <tr>
+                        <td><em class="text-red">취소</em></td>
+                        <td>T-CCS-01127</td>
+                        <td>S석 VIP구역 18열 57번</td>
+                        <td>신용카드</td>
+                        <td>000944276384</td>
+                        <td class="right">150,000원</td>
+                        <td class="right">1,000원</td>
+                        <td class="right">151,000원</td>
+                        <td>회원 (홍길동)</td>
+                        <td></td>
+                        <td class="right"><span class="text-red">-45,000원<br>(30%)</span></td>
+                        <td class="right"><span class="text-red">-1,000원</span></td>
+                        <td class="right"><span class="text-red">-46,000원</span></td>
+                        <td class="positive right">105,000원</td>
+                    </tr>
+                    <tr>
+                        <td><em class="text-blue">정상</em></td>
+                        <td>T-CCS-01127</td>
+                        <td>S석 VIP구역 18열 57번</td>
+                        <td>카카오머니</td>
+                        <td>000944276384</td>
+                        <td class="right">150,000원</td>
+                        <td class="right">1,000원</td>
+                        <td class="right">151,000원</td>
+                        <td>회원 (홍길동)</td>
+                        <td></td>
+                        <td class="right"><span class="text-red"></span></td>
+                        <td class="right"><span class="text-red"></span></td>
+                        <td class="right"><span class="text-red"></span></td>
+                        <td class="positive right">105,000원</td>
+                    </tr>
+                </tbody>
+                <tbody class="nodata">
+                    <tr>
+                        <td colspan="14">선택된 예매 정보가 없습니다.</td>
+                    </tr>
+                </tbody>
+                <tfoot class="right">
+                    <tr class="positive">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>600,000원</td>
+                        <td>4,000원</td>
+                        <td>604,000원</td>
+                        <td></td>
+                        <td></td>
+                        <td><span class="text-red">-90,000원</span></td>
+                        <td><span class="text-red">-2,000원</span></td>
+                        <td><span class="text-red">-92,000원</span></td>
+                        <td>512,000원</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+</div><!-- //contents -->
+
+<hr class="layout" />
+
+<?php include "../include/footer.html"; ?>

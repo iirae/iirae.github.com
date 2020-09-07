@@ -1,0 +1,113 @@
+<?php include "../include/header.html"; ?>
+
+<hr class="layout" />
+
+<div class="contents" id="contents">
+
+    <div class="area-title">
+        <h3>1:1 문의</h3>
+    </div>
+    
+    <div class="table-layout">
+        <table>
+            <caption>1:1 문의 내용</caption>
+            <colgroup>
+                <col style="width:160px">
+                <col style="width:300px">
+                <col style="width:160px">
+                <col style="width:auto">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row">제목</th>
+                    <td colspan="3">최신 버전으로 스토어에서 앱을 다운로드 받았는데 앱이 설치가 되질 않아요.</td>
+                </tr>
+                <tr>
+                    <th scope="row">상태</th>
+                    <td colspan="3"><span class="text-red">답변대기</span></td><!-- <span class="text-blue">답변완료</span> -->
+                </tr>
+                <tr>
+                    <th scope="row">문의자</th>
+                    <td>honggildong123</td>
+                    <th scope="row">문의일</th>
+                    <td>2019.08.05</td>
+                </tr>
+                <tr>
+                    <th scope="row">이메일 수신동의</th>
+                    <td>동의</td>
+                    <th scope="row">이메일</th>
+                    <td>honggildong123@naver.com</td>
+                </tr>
+                <tr>
+                    <th scope="row">답변자</th>
+                    <td>admin</td>
+                    <th scope="row">답변처리일</th>
+                    <td>2019.08.05</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="area-flow">
+        <div class="grid-flow">
+            <div class="area-title">
+                <h4>문의</h4>
+            </div>
+            
+            <div class="board-content mt10" style="height:353px;">
+                <p>앱을 지웠다 새로 설치하고,  이전 버전으로 앱을
+                설치하여 실행하려고 해도 계속 에러 메시지만
+                나와요.</p>
+                <br>
+                <p>어떡해야 하죠?</p>
+            </div>
+        </div>
+        <div class="grid-reverse">
+            <div class="area-title">
+                <h4>답변</h4>
+            </div>
+            
+            <div class="editor mt10">
+                <textarea name="content" class="summernote" value=""></textarea>
+            </div>
+        </div>
+    </div>
+    
+    <div class="area-button">
+        <a href="./inquiry_list.html" class="button-basic">목록</a>
+        <a href="javascript:;" class="button-submit">답변 등록</a>
+    </div>
+</div><!-- //contents -->
+
+<hr class="layout" />
+
+<script>
+
+    $( function() {
+    
+        //editor
+        $('.summernote').summernote({
+            lang: 'ko-KR',
+            tabsize: 2,
+            height: 300,
+            focus: true,
+            toolbar: [
+                ['view', ['fullscreen', 'codeview', 'help']],
+                ['table', ['table']]
+            ],
+            callbacks: {
+                onPaste: function(e) {
+                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                    
+                    e.preventDefault();
+                
+                    setTimeout( function(){
+                        document.execCommand( 'insertText', false, bufferText );
+                    }, 10 );
+                }
+            }
+        });
+        
+    });
+</script>
+<?php include "../include/footer.html"; ?>

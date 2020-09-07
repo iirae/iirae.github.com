@@ -1,0 +1,183 @@
+<?php include "../inc/header.html"; ?>
+
+<div class="wrap white pCargoRegist" id="wrap">
+    
+    <?php include "../inc/headbar.html"; ?>
+    
+    <div class="contents" id="contents">
+        
+        <section class="section">
+            <h2 class="blind">상차지, 상차일 입력</h2>
+            
+            <h3 class="mt0">주소</h3>
+            <div class="setAddr">
+                <div class="button">
+                    <a href="javascript:;" class="btnUsual">우편번호 검색</a>
+                    <a href="#layerAddrBook" class="btnCommon eModal">주소록에서 불러오기</a>
+                </div>
+                <p class="fText"><input type="text" readonly /><span class="clear">&times;</span></p><!-- error -->
+                <p class="fText"><input type="text" placeholder="상차지 상세 주소 입력" /><span class="clear">&times;</span></p>
+            </div>
+            
+            <h3>상차일</h3>
+            <div class="setDate">
+                <div class="button">
+                    <div class="buttonRadio">
+                        <input type="radio" id="chkToday" name="pickDate" checked />
+                        <label for="chkToday" title="오늘">오늘</label>
+                    </div>
+                    <div class="buttonRadio">
+                        <input type="radio" id="chkTomorrow" name="pickDate" />
+                        <label for="chkTomorrow" title="내일">내일</label>
+                    </div>
+                </div>
+                <div class="dateTime">
+                    <span class="fDate error"><input type="date" placeholder="날짜 선택" /></span><!-- error -->
+                    <span class="fTime"><input type="time" placeholder="시간 선택" value="" /></span><!-- error -->
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="blind">상차방법, 연락처, 담당자 입력</h2>
+            <h3>상차방법</h3>
+            <div class="detail">
+                <label for="upType" class="fSelect"><!-- error -->
+                    <select name="" id="upType">
+                        <option value="">지게차</option>
+                        <option value="">크레인</option>
+                        <option value="">호이스트</option>
+                        <option value="">수작업</option>
+                        <option value="">미지정</option>
+                    </select>
+                </label>
+            </div>
+            
+            <h3>연락처</h3>
+            <div class="detail">
+                <p class="fText"><input type="tel" placeholder="하이픈(-) 없이 입력" /><span class="clear">&times;</span></p><!-- error -->
+            </div>
+            
+            <h3>담당자</h3>
+            <div class="detail">
+                <p class="fText"><input type="text" placeholder="담당자 이름 입력" /><span class="clear">&times;</span></p><!-- error -->
+            </div>
+        </section>
+        
+        <div class="midBtnArea mt10 pb0">
+            <a href="javascript:;" class="btnStrong">입력완료</a>
+        </div>
+        
+    </div>
+    
+    <p class="mCaution">상차 시간을 선택 해주세요.</p><!-- wrap이 끝나기 직전에 추가 -->
+</div>
+
+<!-- layer: 주소록 불러오기 -->
+<section class="layer typeWhole bgGray pb0" id="layerAddrBook" style="display:none;">
+    <div class="header">
+        <h2>주소록 검색</h2>
+        <a href="javascript:;" class="buttonClose eClose"><span class="blind">닫기</span></a>
+    </div>
+    
+    <div class="content">
+        <h2 class="blind">주소록 목록</h2>
+        
+        <div class="searchArea">
+            <div class="setSearch">
+                <span class="fText">
+                    <input type="text" placeholder="검색 단어 입력 예) 상하차지명, 담당자..." /><span  class="clear">&times;</span>
+                </span>
+                <button type="button" class="button"><span class="blind">검색</span></button>
+            </div>
+        </div>
+        
+        <div class="itemList addr">
+            <!-- 반복 -->
+            <div class="item">
+                <div class="headArea">
+                    <h3 title="주소지명">AK플라자</h3>
+                </div>
+                <ul class="detail">
+                    <li>
+                        <span class="title">주소</span>
+                        <div class="info">
+                            <p class="addr">경기 수원시 분당구 판교역로 14번길 15 (백현동, 로데오프라자)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="title">담당자</span>
+                        <div class="info">김담당</div>
+                    </li>
+                    <li>
+                        <span class="title">연락처</span>
+                        <div class="info">
+                            <a href="tel:01012345678" class="txtNum">010-1234-5678</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="title">메모</span>
+                        <div class="info">
+                            <p class="txtEllipsis">AK플라자 지하2층 주차, 화물 엘리베이터 이용</p>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- //반복 -->
+            
+            <!-- 반복 -->
+            <div class="item">
+                <div class="headArea">
+                    <h3 title="주소지명">AK플라자</h3>
+                </div>
+                <ul class="detail">
+                    <li>
+                        <span class="title">주소</span>
+                        <div class="info">
+                            <p class="addr">경기 수원시 분당구 판교역로 14번길 15 (백현동, 로데오프라자)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="title">담당자</span>
+                        <div class="info">김담당</div>
+                    </li>
+                    <li>
+                        <span class="title">연락처</span>
+                        <div class="info">
+                            <a href="tel:01012345678" class="txtNum">010-1234-5678</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="title">메모</span>
+                        <div class="info">
+                            <p class="txtEllipsis">AK플라자 지하2층 주차, 화물 엘리베이터 이용</p>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- //반복 -->
+
+        </div>
+        
+        <div class="itemList nodata" style="display:none">
+            <div class="box">
+                    <p class="desc">등록된 주소록이 없습니다.</p>
+                    <a href="javascript:;" class="btnCancel eClose">현재 화면 닫기</a>
+            </div>
+            
+            <div class="box" style="display:none;">
+                <p class="desc">검색결과가 없습니다.</p>
+                <a href="javascript:;" class="btnCancel">목록으로 돌아가기</a>
+            </div>
+        </div>
+        
+        <div class="midBtnArea">
+            <a href="javascript:;" class="btnMore">더보기</a>
+        </div>
+        
+    </div>
+    
+    <a href="#layerAddrBook" class="buttonTop eTop" style="
+            display:none;"><span class="blind">맨위로</span></a>
+</section>
+<!-- // layer: 주소록 불러오기 -->
+
+<?php include "../inc/footer.html"; ?>

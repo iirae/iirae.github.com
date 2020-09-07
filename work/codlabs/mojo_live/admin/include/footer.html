@@ -1,0 +1,86 @@
+
+            <!-- layer: profile -->
+            <section class="layer modal" id="layer-profile" style="width:420px">
+                <h2>Profile</h2>
+                <div class="inner">
+                    <div class="content">
+                        <div class="table-layout">
+                            <table>
+                                <caption>profile 변경</caption>
+                                <colgroup>
+                                    <col style="width:120px">
+                                    <col style="width:auto">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">ID</th>
+                                        <td><input type="text" class="form-input w100per" readonly value="dhkim" /></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">비밀번호</th>
+                                        <td>
+                                            <input type="password" class="form-input w100per"/>
+                                            <p class="text-info mt5">* 비밀번호 변경 시 입력</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">비밀번호 확인</th>
+                                        <td>
+                                            <input type="password" class="form-input w100per"/>
+                                            <p class="text-info mt5">* 비밀번호 변경 시 입력</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">이름</th>
+                                        <td><input type="text" class="form-input w100per"/></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email</th>
+                                        <td><input type="email" class="form-input w100per"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <footer>
+                        <a href="#" class="button-basic e-close">닫기</a>
+                        <a href="#" class="button-submit">수정</a>
+                    </footer>
+                </div>
+                <a href="#" class="button-close e-close">닫기</a>
+            </section><!-- //layer: profile -->
+
+        </div><!-- //container -->
+    </div><!-- //wrap -->
+    
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script>
+        $(function(){
+            //레이어 열기
+            $(".e-modal").on("click", function(e){
+                var targetLayer = $($(e.currentTarget).attr("href"));
+                $("body").addClass("overlay");
+                modalLayerOpen(targetLayer);
+                e.preventDefault();
+            });
+            
+            // layer close click
+            $('.layer').on('click', ' .e-close', function (e) {
+                mLayer_close($(this));
+                $("body").removeClass("overlay");
+                e.preventDefault();
+            });
+        });
+    </script>
+    
+    <!-- ui확인용 팝업 js -->
+    <script type="text/javascript">
+        function PopWin(url, w, h, sb) {
+            var newWin;
+            var setting = "width="+w+", height="+h+", top=0, left=0, scrollbars="+sb;
+            newWin = window.open (url, "", setting);
+            newWin.focus();
+        }
+    </script>
+</body>
+</html>

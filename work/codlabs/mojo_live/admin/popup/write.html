@@ -1,0 +1,100 @@
+<?php include "../include/header.html"; ?>
+
+<hr class="layout" />
+
+<div class="contents" id="contents">
+
+    <div class="area-title">
+        <h3>팝업 관리</h3>
+    </div>
+    
+    <div class="table-layout">
+        <table>
+            <caption>팝업 작성</caption>
+            <colgroup>
+                <col style="width:160px">
+                <col style="width:auto">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row">언어 설정 <em class="text-red" title="필수">*</em></th>
+                    <td>
+                        <span class="form-radio"><input id="ko" type="radio" name="lang" checked><label for="ko">한국어</label></span>
+                        <span class="form-radio"><input id="en" type="radio" name="lang"><label for="en">영어</label></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">제목 <em class="text-red" title="필수">*</em></th>
+                    <td><input type="text" class="form-input w100per"/></td>
+                </tr>
+                <tr>
+                    <th scope="row">노출 여부</th>
+                    <td>
+                        <span class="form-radio"><input id="radio" type="radio" name="radio" checked><label for="radio">노출</label></span>
+                        <span class="form-radio"><input id="radio2" type="radio" name="radio"><label for="radio2">미노출</label></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">노출 기간</th>
+                    <td>
+                        <div class="picker-date" id="openDate">
+                            <input type="text" id="" name="" class="form-input w120 e-pick_date">
+                        </div>
+                        <span class="text">~ </span>
+                        <div class="picker-date ml5" id="clsoeDate">
+                            <input type="text" id="" name="" class="form-input w120 e-pick_date">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">팝업 유형 <em class="text-red" title="필수">*</em></th>
+                    <td>
+                        <label class="form-select" for="">
+                            <select name="" id="">
+                                <option value="">일반</option>
+                                <option value="">긴급</option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">팝업 이미지 <em class="text-red" title="필수">*</em><p class="text-info mt5">(사이즈: 1296 * 1600)</p></th>
+                    <td>
+                        <span class="form-file">
+                            <input type="text" class="name w300" value="filename_0178471648726.xls" title="파일명" readonly />
+                            <input type="file" id="fileUpload" class="e-file" accept=".jpg, .jpeg, .gif, .png" /><label for="fileUpload" class="button-static">파일첨부</label>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">팝업 링크</th>
+                    <td><input type="text" class="form-input w500" /></td>
+                </tr>
+                <tr>
+                    <th scope="row">긴급 팝업 내용 <em class="text-red" title="필수">*</em></th>
+                    <td>
+                        <div class="form-textarea">
+                            <textarea name="" id="" cols="30" rows="10" maxlength="1000"></textarea>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="area-button">
+        <a href="./list.html" class="button-basic">목록</a>
+        <a href="./list.html" class="button-submit">저장</a>
+    </div>
+    
+</div><!-- //contents -->
+
+<hr class="layout" />
+
+<script>
+
+    $( function() {
+    
+    });
+</script>
+<?php include "../include/footer.html"; ?>

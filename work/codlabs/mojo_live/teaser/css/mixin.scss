@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'NotoSansKR';
+  font-style: normal;
+  font-weight: 300;
+  src: local('NotoSansKR-Light'),
+       url("../fonts/NotoSansKR-Light.otf") format('opentype'),
+       url("../fonts/NotoSansKR-Light.ttf") format('truetype'),
+       url("../fonts/NotoSansKR-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'NotoSansKR';
+  font-style: normal;
+  font-weight: 400;
+  src: local('NotoSansKR-Regular'),
+       url("../fonts/NotoSansKR-Regular.otf") format('opentype'),
+       url("../fonts/NotoSansKR-Regular.ttf") format('truetype'),
+       url("../fonts/NotoSansKR-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'NotoSansKR';
+  font-style: normal;
+  font-weight: 700;
+  src: local('NotoSansKR-Bold'),
+       url("../fonts/NotoSansKR-Bold.otf") format("opentype"),
+       url("../fonts/NotoSansKR-Bold.ttf") format("truetype"),
+       url("../fonts/NotoSansKR-Bold.woff") format("woff");
+}
+
+$white:#fff;
+$black_000:#000;
+$co_text_title:#fff;
+
+
+
+$font_notosans:"NotoSansKR";
+
+$bg_url: "../images/";
+
+// vw 사이즈 계산
+@function calcVw($target) {
+    @return ($target / 3.6) * 1vw;
+}
+
+// rem 사이즈 계산
+@function calcRem($target) {
+    @return ($target / 14) * 1rem;
+}
+
+@mixin vwPx($prop, $size) {
+    #{$prop}:($size) + px;
+    #{$prop}:calcVw($size);
+}
+
+@mixin rem($prop, $size) {
+    #{$prop}:calcRem($size);
+}
+
+@mixin bgProp {
+    background: {
+        repeat:no-repeat;
+        position:center;
+        size:cover;
+    }
+}
+
+@mixin afterClear {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+}
+
+@mixin mo {
+    @media screen and  (max-width: #{768px}) {
+        @content;
+    }
+}
+
+@mixin pcSmall{
+    @media screen and (min-width: #{769px}) and (max-width: #{1149px}) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media screen and (min-width: #{769px}) {
+        @content;
+    }
+}
