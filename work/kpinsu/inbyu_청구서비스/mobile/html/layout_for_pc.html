@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover, initial-scale=1.0" />
+        <meta name="title" content="인바이유 자동차보험료 조회" />
+        <meta name="author" content="inbyu" />
+        <meta name="copyright" content="inbyu 인바이유 자동차보험료 조회" />
+        <title>인바이유 청구서비스</title>
+        <link rel="stylesheet" href="../resources/css/common.css" />
+        <link rel="stylesheet" href="../resources/css/swiper.min.css" />
+        <script src="../resources/js/lib/jquery-3.3.1.min.js"></script>
+        <script src="../resources/js/lib/swiper.min.js"></script>
+        <style>
+            main, .vertical-swiper-container {height: 100%;}
+            .section {height:100vh; color: whitesmoke;}
+            .tab {display: flex;}
+            .tab li {width:200px; height:50px; line-height: 50px; color: #000; text-align: center; background: #f8f8f8;}
+            .tab li.on {color:powderblue;}
+            .btn-top {z-index: 50; position: fixed; bottom: 100px; right: 100px;}
+            .slide-button-prev, .slide-button-next {z-index: 20; position:absolute; top: 40%; width: 100px; height: 200px; color: #000; background: rgba(255,255,255,0.5);}
+            .slide-button-prev {left: 0;}
+            .slide-button-next {right: 0;}
+            .swiper-slide {-webkit-transform: translateZ(0); -webkit-backface-visibility: hidden;}
+        </style>
+    </head>
+    <body>
+
+        <main>
+            <div class="swiper-container vertical-swiper-container">
+                <div class="swiper-wrapper">
+                    <section class="section swiper-slide" style="background: purple;">
+                        <div class="bundle-tab-slider">
+                            <ul class="tab">
+                                <li class="on">실손</li>
+                                <li>생명</li>
+                                <li>기타</li>
+                            </ul>
+                            <!-- Slider main container -->
+                            <div class="swiper-container horizontal-swiper-container">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide" style="height:500px;line-height:500px;vertical-align:middle;text-align:center;">실손</div>
+                                    <div class="swiper-slide" style="height:500px;line-height:500px;vertical-align:middle;text-align:center;">생명</div>
+                                    <div class="swiper-slide" style="height:500px;line-height:500px;vertical-align:middle;text-align:center;">기타</div>
+                                </div>
+                                <!-- If we need pagination -->
+                                <!-- <div class="swiper-pagination"></div> -->
+
+                                <!-- If we need navigation buttons -->
+                                <div class="slide-button-prev">&lt;</div>
+                                <div class="slide-button-next">&gt;</div>
+
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section swiper-slide" style="background: red;"></section>
+                    <section class="section swiper-slide" style="background: green;"></section>
+                    <section class="section swiper-slide" style="background: yellowgreen;"></section>
+                    <section class="section swiper-slide" style="background: plum"></section>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </main>
+        <a href="javascript:;" class="btn btn-top" id="btnTop" style="display: none;">Top</a>
+
+        <!-- ui관련 js -->
+        <script>
+            $( document ).ready( function(){
+                let verticalSwiper = new Swiper('.vertical-swiper-container', {
+                    direction: 'vertical',
+                    speed: 500,
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    mousewheel: true,
+                    mousewheelControl: true,
+                    mousewheelForceToAxis: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    allowTouchMove: false,
+                    on: {
+                        slideChange: function() {
+                            let sectionIndex = verticalSwiper.realIndex;
+                            console.log('sectionIndex', sectionIndex);
+                            (sectionIndex === 0) ? $('#btnTop').fadeOut() : $('#btnTop').fadeIn();
+                        }
+                    }
+                });
+
+                let $tab = $('.bundle-tab-slider .tab');
+                let $tabTarget = $tab.children( 'li' );
+
+                let swiper = new Swiper('.horizontal-swiper-container', {
+                    speed: 400,
+                    loop: true,
+                    navigation: {
+                        nextEl: '.slide-button-next',
+                        prevEl: '.slide-button-prev',
+                    },
+                    on: {
+                        slideChange: function() {
+                            let slideIndex = swiper.realIndex;
+                            // console.log('slideIndex', slideIndex);
+                            $tabTarget.removeClass('on');
+                            $('.bundle-tab-slider .tab li:eq(' + slideIndex +')').addClass('on');
+                        }
+                    }
+                });
+            
+                $tabTarget.on('click', function(e){
+                    e.preventDefault();
+                    let tabIndex = $( this ).index();
+                    // console.log('tab index', tabIndex);
+                    swiper.slideTo(tabIndex + 1);
+                    $tabTarget.removeClass('on');
+                    $(this).addClass('on');
+                });
+
+                $('#btnTop').on('click', function(e) {
+                    e.preventDefault();
+                    verticalSwiper.slideTo(0);
+                    // $('html, body').animate({
+                    //     'scrollTop': 0
+                    // }, 2000);
+                });
+
+            });
+        </script>
+    </body>
+</html>

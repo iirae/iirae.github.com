@@ -1,0 +1,20 @@
+@charset "utf-8";
+@import "_reset.scss";
+@import "_mixin.scss";
+@import "_layout.scss";
+@import "_form.scss";
+@import "_button.scss";
+@import "_layer.scss";
+
+.notch {
+    position: fixed;
+    left:0;
+    right:0;
+    bottom: constant(safe-area-inset-bottom);
+    bottom: env(safe-area-inset-bottom);
+    background: #f8f8f8;
+}
+
+pre {
+    white-space: pre-wrap; 
+}

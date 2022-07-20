@@ -1,0 +1,57 @@
+@charset "utf-8";
+@import "_reset.scss";
+@import "_mixin.scss";
+@import "_layout.scss";
+@import "_form.scss";
+@import "_button.scss";
+@import "_layer.scss";
+@import "_indicator.scss";
+
+.blind {
+    overflow: hidden; 
+    position: absolute; 
+    clip: rect(0 0 0 0); 
+    margin: -1px; 
+    width: 1px; 
+    height: 1px; 
+    color: transparent;
+}
+
+.notch {
+    position: fixed;
+    left:0;
+    right:0;
+    bottom: constant(safe-area-inset-bottom);
+    bottom: env(safe-area-inset-bottom);
+    background: #f8f8f8;
+}
+
+pre {
+    white-space: pre-wrap; 
+}
+
+.bundle-sign {
+    .sign {
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+        width: 300px;
+        height: 200px;
+        border: solid 1px #333;
+
+        &::before {
+            z-index: -1;
+            content: "서 명";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            line-height: 200px;
+            text-align: center;
+        }
+    }
+    .inner {
+        position: relative;
+    }
+}
