@@ -4,7 +4,7 @@
   "description": "portfolio",
   "main": "index.js",
   "dependencies": {
-    "node-sass": "^7.0.0",
+    "node-sass": "^7.0.3",
     "npm": "^6.14.6"
   },
   "devDependencies": {},
