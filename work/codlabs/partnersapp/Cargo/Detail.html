@@ -1,0 +1,587 @@
+<?php include "../inc/header.html"; ?>
+
+<div class="wrap fixed pCargoDetail" id="wrap">
+
+    <?php include "../inc/headbar.html"; ?>
+
+    <a href="#layerSuggest" class="txtNoti eModal">차주 제안 운송료가 있습니다.</a>
+    <a href="#layerAskMatching" class="txtNoti eModal">공차 매칭 요청 중입니다.</a>
+    
+    <div class="contents" id="contents">
+        <!--
+            * 화물 상태
+                배차대기: allocationReady
+                배차완료: allocationFinish
+                운행중: driveWork
+                운행완료: driveFinish
+                인수승인대기: approvalReady
+                인수승인완료: approvalFinish
+                화물삭제: cargoCancel
+                배차실패: allocationFailure
+                인수보류: approvalHold
+        -->
+        <div class="identity">
+            <h2 class="idx"><span class="cStatus allocationReady">배차대기</span> / <span class="txtNum">00346</span></h2>
+            <p class="date txtNum">2018-07-25  09:30</p>
+        </div>
+        
+        <!-- 상하차 정보 -->
+        <section class="section">
+            <h3 class="blind">상하차 정보</h3>
+            <ul class="mFull">
+                <li>
+                    <strong class="title">상차</strong>
+                    <div class="info">
+                        <p class="addr">경기 수원시 분당구 판교역로 14번길 15 (백현동, 로데오프라자)</p>
+                        <p class="sub">07월 18일, 15:00 지게차</p>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">하차</strong>
+                    <div class="info">
+                        <p class="addr">대구 달서구 두류공원로 28길 8 성당동 123-2</p>
+                        <p class="sub">07월 18일, 23:00 지게차</p>
+                    </div>
+                </li>
+            </ul>
+        </section><!-- //상하차 정보 -->
+        
+        <!-- 운송료 -->
+        <section class="section">
+            <h3 class="blind">운송료 정보</h3>
+            <p class="price">운송료는 <strong class="txtPositive"><span class="txtNum">10</span>만원</strong> 입니다.</p>
+            <p class="price">등록운송료는 <strong class="txtPositive"><span class="txtNum">10</span>만원</strong> 입니다.</p>
+            <p class="deduct"><em>화물파손의 사유</em>로 <strong class="txtWarn"><span class="txtNum">2</span>만원 차감된 운송료</strong>입니다.</p>
+        </section><!-- //운송료 -->
+        
+        <!-- 변동 운송료 정보 -->
+        <section class="section">
+            <h3 class="blind">상하차 정보</h3>
+            <ul class="mFull">
+                <li>
+                    <strong class="title w100">시작 운송료</strong>
+                    <div class="info">
+                        <span class="txtNum">300,000</span>원
+                    </div>
+                </li>
+                <li>
+                    <strong class="title w100">종료 운송료</strong>
+                    <div class="info">
+                        <span class="txtNum">450,000</span>원
+                    </div>
+                </li>
+                <li>
+                    <strong class="title w100">가액 금액</strong>
+                    <div class="info">
+                        <span class="txtNum">450,000</span>원
+                    </div>
+                </li>
+                <li>
+                    <strong class="title w100">가액 시간 단위</strong>
+                    <div class="info">
+                        <span class="txtNum">30</span>분
+                    </div>
+                </li>
+            </ul>
+        </section><!-- //변동 운송료 정보 -->
+        
+        <!-- 배차 차량 정보 -->
+        <section class="section">
+            <h3>배차 차량 정보</h3>
+            <ul class="mFull">
+                <li>
+                    <strong class="title">차량번호</strong>
+                    <div class="info">
+                        <span class="txtNum">12가 1234</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">차량종류</strong>
+                    <div class="info">
+                        <span>카고</span>
+                    </div>
+                </li>
+                <li class="divide">
+                    <strong class="title">차량톤수</strong>
+                    <div class="info">
+                        <span class="txtNum">5</span>톤
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">차량특징</strong>
+                    <div class="info">
+                        <span>호루, 축</span>
+                    </div>
+                </li>
+                <li class="divide">
+                    <strong class="title">차주명</strong>
+                    <div class="info">
+                        <span>이차주</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">연락처</strong>
+                    <div class="info">
+                        <a href="tel:01012345678" class="txtNum">010-1234-5678</a>
+                    </div>
+                </li>
+            </ul>
+        </section><!-- //배차 차량 정보 -->
+        
+        <!-- 화물 정보 -->
+        <section class="section">
+            <h3 class="blind">화물 정보</h3>
+            <ul class="mFull">
+                <li>
+                    <strong class="title">운송료구분</strong>
+                    <div class="info">
+                        <span>후불</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">차량종류</strong>
+                    <div class="info">
+                        <span>종류무관</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">차량톤수</strong>
+                    <div class="info">
+                        <span class="txtNum">5</span>톤
+                    </div>
+                </li>
+                <li class="divide">
+                    <strong class="title">차량특징</strong>
+                    <div class="info">
+                        <span>선택안함</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">왕복여부</strong>
+                    <div class="info">
+                        <span>편도</span>
+                    </div>
+                </li>
+                <li class="divide">
+                    <strong class="title">화물품목</strong>
+                    <div class="info">
+                        <span>제조식품</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">상세설명</strong>
+                    <div class="info">
+                        <p>16시부터 상차 시작합니다.</p>
+                    </div>
+                </li>
+            </ul>
+        </section><!-- //화물 정보 -->
+        
+        <!-- 등록자 정보 -->
+        <section class="section">
+            <h3 class="blind">등록자 정보</h3>
+            <ul class="mFull">
+                <li>
+                    <strong class="title">등록자</strong>
+                    <div class="info">
+                        <span>김배차</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">연락처</strong>
+                    <div class="info">
+                        <a href="tel:01012345678" class="txtNum">010-1234-5678</a>
+                    </div>
+                </li>
+            </ul>
+        </section><!-- //등록자 정보 -->
+        
+        <!-- 상차담당자 정보 -->
+        <section class="section">
+            <h3 class="blind">상차담당자 정보</h3>
+            <ul class="mFull">
+                <li>
+                    <strong class="title">상차담당자</strong>
+                    <div class="info">
+                        <span>김배차</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">연락처</strong>
+                    <div class="info">
+                        <a href="tel:01012345678" class="txtNum">010-1234-5678</a>
+                    </div>
+                </li>
+            </ul>
+        </section><!-- //상차담당자 정보 -->
+
+        <!-- 하차담당자 정보 -->
+        <section class="section">
+            <h3 class="blind">하차담당자 정보</h3>
+            <ul class="mFull">
+                <li>
+                    <strong class="title">하차담당자</strong>
+                    <div class="info">
+                        <span>김배차</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">연락처</strong>
+                    <div class="info">
+                        <a href="tel:01012345678" class="txtNum">010-1234-5678</a>
+                    </div>
+                </li>
+            </ul>
+        </section><!-- //하차담당자 정보 -->
+        
+        <div class="midBtnArea">
+            <a href="#layerCancelAllocation" class="btnCaution eModal">배차취소</a>
+            <p class="txtWarn">* 배차를 취소하면 복구할 수 없습니다.</p>
+        </div>
+        
+        <!-- 인수증 정보 -->
+        <section class="section">
+            <h3 class="blind">인수증 정보</h3>
+            <ul class="mFull">
+                <li>
+                    <strong class="title w100">등록된 인수증</strong>
+                    <div class="info">
+                        <a href="" class="txtPositive txtBold">총 <em class="txtNum">2</em>개</a>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title w100">업로드 일시</strong>
+                    <div class="info">
+                        <span class="txtNum">2018년 07월 29일 12:56</span>
+                    </div>
+                </li>
+            </ul>
+        </section><!-- //인수증 정보 -->
+        
+        <!-- 인수 승인 보류 정보(반복) -->
+        <section class="section">
+            <h3>인수 승인 보류(<span class="txtNum">1</span>)</h3>
+            <ul class="mFull">
+                <li>
+                    <strong class="title">보류일시</strong>
+                    <div class="info">
+                        <span class="txtNum">2018년 07월 28일 18:00</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">보류사유</strong>
+                    <div class="info">
+                        <span>화물파손</span>
+                    </div>
+                </li>
+                <li class="divide">
+                    <strong class="title">차감운송료</strong>
+                    <div class="info">
+                        <span class="txtNum">20,000</span>원
+                    </div>
+                </li>
+                <li>
+                    <strong class="title">상태</strong>
+                    <div class="info">
+                        <span>미해결</span>
+                    </div>
+                </li>
+            </ul>
+        </section><!-- //인수 승인 보류 정보 -->
+        
+        <div class="midBtnArea">
+            <a href="#layerApprovalHold" class="btnCaution eModal">인수보류</a>
+            <p class="txtWarn">* 배차를 취소하면 복구할 수 없습니다.</p>
+        </div>
+        
+        <!-- 배차 취소 내역 -->
+        <section class="section mToggle">
+            <div class="titleArea eToggle">
+                <h3>배차 취소 내역 (<span class="txtNum">2</span>건)</h3>
+                <a href="javascript:;" class="buttonToggle">펼치기</a>
+            </div>
+            <div class="detail" style="display:none;">
+                <ul class="mFull">
+                    <li>
+                        <strong class="title">취소 일시</strong>
+                        <div class="info">
+                            <span class="txtNum">2018년 07월 28일 18:00</span>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="title">구분</strong>
+                        <div class="info">
+                            <span>차주</span>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="title">이름</strong>
+                        <div class="info">
+                            <span>김성주</span>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="title">연락처</strong>
+                        <div class="info">
+                            <a href="tel:010-3572-1235">010-3572-1235</a>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="title">취소 사유</strong>
+                        <div class="info">
+                            <span>화물 정보가 실제와 다름</span>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul class="mFull">
+                    <li>
+                        <strong class="title">취소 일시</strong>
+                        <div class="info">
+                            <span class="txtNum">2018년 07월 28일 18:00</span>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="title">구분</strong>
+                        <div class="info">
+                            <span>차주</span>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="title">이름</strong>
+                        <div class="info">
+                            <span>김성주</span>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="title">연락처</strong>
+                        <div class="info">
+                            <a href="tel:010-3572-1235">010-3572-1235</a>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="title">취소 사유</strong>
+                        <div class="info">
+                            <span>화물 정보가 실제와 다름</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section><!-- //배차 취소 내역 -->
+        
+        
+        <div class="midBtnArea">
+            <a href="#layerDeleteCargo" class="btnCaution eModal">화물삭제</a>
+            <p class="txtWarn">* 화물을 삭제하면 복구할 수 없습니다.</p>
+        </div>
+        
+    </div>
+    
+    <div class="btnArea fix">
+        <a href="javascript:;" class="btnStrong">인수 승인하기</a><!-- 비활성화: disabled 클래스 추가 -->
+        <a href="javascript:;" class="btnStrong">화물 재등록</a><!-- 비활성화: disabled 클래스 추가 -->
+    </div>
+    <p class="mCaution">인수승인 보류 사유를 선택하세요.</p><!-- wrap이 끝나기 직전에 추가 -->
+</div>
+
+<!-- layer: 배차 취소 -->
+<section class="layer typeWarn" id="layerCancelAllocation" style="display:none;">
+    <div class="inner">
+        <h2>배차를 취소합니다.</h2>
+        <div class="content">
+            <p class="txtInfo">배차를 취소하면 오더가 접수 가능한 배차 대기 상태로 변경됩니다. 차주에게 전달 할 배차취소사유를 선택해 주세요.</p>
+            <div class="setInput eOpenInput">
+                <label for="" class="fSelect">
+                    <select name="" id="">
+                        <option value="" selected disabled hidden>선택해주세요.</option>
+                        <option value="">거래처 사정에 의한 배차 취소</option>
+                        <option value="">운송 조건의 중대한 변화 (기상, 상하차, 지역, 운송료 등)</option>
+                        <option value="">오더 정보 입력 오류 또는 수정 지연</option>
+                        <option value="">차주의 요청 또는 합의</option>
+                        <option value="1">직접입력</option>
+                    </select>
+                </label>
+                <div class="fTArea eInput"><textarea name="" id="" cols="30" rows="1" maxlength="400"  class="typeReason  eAutosize" title="배차 취소 사유 입력" placeholder="내용을 입력해 주세요."></textarea></div>
+            </div>
+        </div>
+        <div class="footer even">
+            <a href="javascript:;" class="btnBasic eClose">닫기</a>
+            <a href="javascript:;" class="btnWarn">배차취소</a>
+        </div>
+    </div>
+</section><!-- // layer: 배차 취소 -->
+
+<!-- layer: 인수 보류 -->
+<section class="layer typeWhole" id="layerApprovalHold" style="display:none;">
+    <div class="header">
+        <h2>인수조건 변경(보류)</h2>
+        <a href="javascript:;" class="buttonClose eClose"><span class="blind">닫기</span></a>
+    </div>
+    
+    <div class="content">
+        <p class="txtWarn mb20">* 인수 승인을 위한 조건을 등록하시면, 차주가 협의가 완료될 때 까지 인수승인이 보류됩니다.</p>
+        
+        <section class="section reset">
+            <h3 class="mt0">인수승인 보류 사유 선택</h3>
+            <div class="setInput eOpenInput">
+                <label for="" class="fSelect"><!-- error 추가 -->
+                    <select name="" id="">
+                        <option value="" selected disabled hidden>선택해주세요.</option>
+                        <option value="">화물 파손</option>
+                        <option value="">화물 훼손</option>
+                        <option value="">화물 오배송</option>
+                        <option value="">회차</option>
+                        <option value="1">직접입력</option>
+                    </select>
+                </label>
+                <p class="fText eInput"><input type="text" maxlength="13" placeholder="내용을 입력하세요. (13자 이내)" /><span class="clear">&times;</span></p><!-- error 추가 -->
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="certifyArea">
+                <strong class="fRadio eAddContChk"><input type="radio" id="byConsultation" name="deductionPayment" checked><label for="byConsultation">차주와 협의 후 인수승인 여부 진행</label></strong>
+            </div>
+            <div class="certifyArea selected">
+                <strong class="fRadio eAddContChk"><input type="radio" id="byInput" name="deductionPayment"><label for="byInput">운송료 차감</label></strong>
+                
+                <div class="formBox" style="display:none;">
+                    <h3>차감운송료</h3>
+                    <div class="setPrice"><!-- error 추가 -->
+                        <input type="number" maxlength="13" placeholder="0" />
+                        <span class="text">만원</span>
+                    </div>
+                    <h3>최종운송료</h3>
+                    <div class="setPrice readonly"><!-- error 추가 -->
+                        <input type="number" maxlength="13" placeholder="0" readonly />
+                        <span class="text">만원</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="footer">
+        <a href="javascript:;" class="btnStrong">완료</a>
+    </div>
+</section><!-- // layer: 인수 보류 -->
+
+<!-- /layer: 화물삭제 -->
+<section class="layer typeWarn" id="layerDeleteCargo" style="display:none;">
+    <div class="inner">
+        <div class="content">
+            <p class="desc">화물목록에서 화물을 삭제합니다.</p>
+        </div>
+        
+        <div class="footer even">
+            <a href="javascript:;" class="btnBasic eClose">닫기</a>
+            <a href="javascript:;" class="btnWarn">화물삭제</a>
+        </div>
+    </div>
+</section>
+
+<!-- layer: 화물삭제 -->
+<section class="layer typeConfirm" id="layerConfirm" style="display:none;">
+    <div class="inner">
+        <div class="content">
+            <p class="desc">화물삭제가 완료되었습니다.</p>
+        </div>
+        
+        <div class="footer">
+            <a href="javascript:;" class="btnStrong">확인</a>
+        </div>
+    </div>
+</section><!-- //layer: 화물삭제 -->
+
+<!-- layer: 제안보기 -->
+<section class="layer suggest" id="layerSuggest" style="display:none;"><!-- display:flex;opacity:1; -->
+    <div class="inner">
+        <div class="header">
+            <h2>제안보기</h2>
+        </div>
+        <div class="content">
+            <h3>제안 내역</h3>
+            <div class="tableLayout">
+                <table>
+                    <caption>차주의 배차 제안 내역보기(시간, 차량 톤수, 운송료)</caption>
+                    <colgroup>
+                        <col style="width:28%">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">시간</th>
+                            <td><span class="txtNum">2018-07-28  09:00</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">차량 톤수</th>
+                            <td>카고/5t</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">운송료</th>
+                            <td><span class="txtNum">270,000</span>원</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer even">
+            <a href="javascript:;" class="btnBasic eClose">닫기</a>
+            <a href="javascript:;" class="btnStrong">제안수락</a>
+        </div>
+    </div>
+</section><!-- //layer: 제안보기 -->
+
+<!-- layer: 공차 매칭 -->
+<section class="layer matching" id="layerAskMatching" style="display:none;"><!-- display:flex;opacity:1; -->
+    <div class="inner">
+        <div class="header">
+            <h2>공차매칭</h2>
+        </div>
+        <div class="content">
+            <p class="desc"><span class="txtNum txtWarn">11시 37분</span>까지 차주가 제안을 수락하지 않으면 제안이 자동으로 종료됩니다.</p>
+            <div class="tableLayout">
+                <table>
+                    <caption>공차 상세 정보 보기(공차 일시, 상차지, 하차지, 차종, 톤 수, 운송료)</caption>
+                    <colgroup>
+                        <col style="width:28%">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">공차 일시</span></th>
+                            <td><span class="txtNum">2018-07-28  09:00 ~ <br>
+                            2018-07-28  23:30</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span class="th">상차지</span></th>
+                            <td>경기도 수원시</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span class="th">하차지</span></th>
+                            <td>고양시 일산동구</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span class="th">차종</span></th>
+                            <td>카고</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span class="th">톤 수</span></th>
+                            <td><span class="txtNum">5</span>t</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span class="th">운송료</span></th>
+                            <td><span class="txtNum">270,000</span>원</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="javascript:;" class="btnBasic eClose">닫기</a>
+        </div>
+    </div>
+</section><!-- //layer: 공차 매칭 -->
+
+
+<?php include "../inc/footer.html"; ?>

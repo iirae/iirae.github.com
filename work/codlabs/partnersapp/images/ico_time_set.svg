@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>09592D83-C5FE-4144-AAA4-1E1143D8C710</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0.00146484375" y="0" width="13.9985352" height="13.9999023"></rect>
+    </defs>
+    <g id="04_홈" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="04_홈_01" transform="translate(-10.000000, -79.000000)">
+            <g id="time-set" transform="translate(0.000000, 71.000000)">
+                <g id="icon_time_set" transform="translate(10.000000, 8.000000)">
+                    <rect id="Bounds" fill-rule="nonzero" x="0.00146484375" y="0" width="13.9985352" height="13.9999023"></rect>
+                    <g id="Shape">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Mask" fill-rule="nonzero"></g>
+                        <path d="M7,6.92206868 L9.09807621,8.13339355 L8.59807621,8.99941895 L6.0010064,7.5 L6,7.5 L6,4.5 L7,4.5 L7,6.92206868 Z M11.9775785,6.5 L13.5,6.5 L11.5,8.5 L9.5,6.5 L10.9272689,6.5 C10.6787643,4.27493077 8.79141283,2.54499664 6.50001364,2.54499664 C4.03958496,2.54499664 2.04501343,4.53956818 2.04501343,6.99999685 C2.04501343,9.46042553 4.03958496,11.4549971 6.50001364,11.4549971 C8.08992591,11.4549971 9.48531225,10.6221325 10.2736826,9.36889346 L11.1404842,9.95355851 C10.1639764,11.4846051 8.45056731,12.5 6.5,12.5 C3.46243388,12.5 1,10.0375661 1,7 C1,3.96243388 3.46243388,1.5 6.5,1.5 C9.36902128,1.5 11.7249641,3.69674999 11.9775785,6.5 Z" id="Portrait-Lock" fill="#222222" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

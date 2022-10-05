@@ -1,0 +1,201 @@
+<?php include "../include/header.html"; ?>
+
+<hr class="layout" />
+
+<div class="contents" id="contents">
+
+    <div class="area-title">
+        <h3>티켓 생성</h3>
+    </div>
+
+    <section class="section">
+        <div class="area-title">
+            <h4>티켓 생성 정보</h4>
+        </div>
+        <div class="table-layout">
+            <table>
+                <caption>티켓 추가 정보 입력</caption>
+                <colgroup>
+                    <col style="width:150px">
+                    <col style="width:auto">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">티켓 이름 <em class="text-red">*</em></th>
+                        <td><input type="text" class="form-input w100per" placeholder="50자 이내로 작성" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">배포 기간 <em class="text-red">*</em></th>
+                        <td>
+                            <span class="picker-date" id="openDate">
+                                <input type="text" id="datepicker" name="" class="form-input w120 e-pick_date">
+                                <label for="open_hour" class="form-select">
+                                    <select class="selSz01" name="up_hour" id="open_hour">
+                                        <option value="00">00시</option>
+                                        <option value="01">01시</option>
+                                        <option value="02">02시</option>
+                                        <option value="03">03시</option>
+                                        <option value="04">04시</option>
+                                        <option value="05">05시</option>
+                                        <option value="06">06시</option>
+                                        <option value="07">07시</option>
+                                        <option value="08">08시</option>
+                                        <option value="09">09시</option>
+                                        <option value="10">10시</option>
+                                        <option value="11">11시</option>
+                                        <option value="12">12시</option>
+                                        <option value="13">13시</option>
+                                        <option value="14">14시</option>
+                                        <option value="15">15시</option>
+                                        <option value="16">16시</option>
+                                        <option value="17">17시</option>
+                                        <option value="18">18시</option>
+                                        <option value="19">19시</option>
+                                        <option value="20">20시</option>
+                                        <option value="21">21시</option>
+                                        <option value="22">22시</option>
+                                        <option value="23">23시</option>
+                                    </select>
+                                </label>
+                                <label for="start_min" class="form-select">
+                                    <select class="selSz01" name="down_min" id="start_min">
+                                        <option value="00">00분</option>
+                                        <option value="10">10분</option>
+                                        <option value="20">20분</option>
+                                        <option value="30">30분</option>
+                                        <option value="40">40분</option>
+                                        <option value="50">50분</option>
+                                    </select>
+                                </label>
+                            </span>
+                            <span class="text ml10">~</span>
+                            <span class="picker-date ml10" id="closeDate">
+                                <input type="text" id="datepicker2" name="" class="form-input w120 e-pick_date">
+                                <label for="open_hour" class="form-select">
+                                    <select class="selSz01" name="up_hour" id="close_hour">
+                                        <option value="00">00시</option>
+                                        <option value="01">01시</option>
+                                        <option value="02">02시</option>
+                                        <option value="03">03시</option>
+                                        <option value="04">04시</option>
+                                        <option value="05">05시</option>
+                                        <option value="06">06시</option>
+                                        <option value="07">07시</option>
+                                        <option value="08">08시</option>
+                                        <option value="09">09시</option>
+                                        <option value="10">10시</option>
+                                        <option value="11">11시</option>
+                                        <option value="12">12시</option>
+                                        <option value="13">13시</option>
+                                        <option value="14">14시</option>
+                                        <option value="15">15시</option>
+                                        <option value="16">16시</option>
+                                        <option value="17">17시</option>
+                                        <option value="18">18시</option>
+                                        <option value="19">19시</option>
+                                        <option value="20">20시</option>
+                                        <option value="21">21시</option>
+                                        <option value="22">22시</option>
+                                        <option value="23">23시</option>
+                                    </select>
+                                </label>
+                                <label for="start_min" class="form-select">
+                                    <select class="selSz01" name="down_min" id="close_min">
+                                        <option value="00">00분</option>
+                                        <option value="10">10분</option>
+                                        <option value="20">20분</option>
+                                        <option value="30">30분</option>
+                                        <option value="40">40분</option>
+                                        <option value="50">50분</option>
+                                    </select>
+                                </label>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">모바일티켓 이미지 <em class="text-red">*</em><p class="text-info">(◆◆px * ◆◆px 권장)</p></th>
+                        <td>
+                            <div class="form-file">
+                                <input type="file" id="fileUpload" class="e-file" accept=".jpg, .jpeg, .gif, .png" /><label for="fileUpload" class="button-static">파일첨부</label>
+                                <input type="text" class="name w500" value="filename_0178471648726.xls" title="파일명" readonly>
+                                <button type="button" class="button-danger">삭제</button>
+                                <div class="thumbnail">
+                                    <img src="../images/sample.png" alt="샘플이미지" style="width:200px; max-height:300px;">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">모바일티켓 삽입 정보 <em class="text-red">*</em></th>
+                        <td>
+                            <span class="form-radio"><input id="radio" type="radio" name="radio" checked><label for="radio">모바일티켓 이미지 + 티켓번호</label></span>
+                            <span class="form-radio"><input id="radio2" type="radio" name="radio"><label for="radio2">바코드</label></span>
+                            <span class="form-radio"><input id="radio3" type="radio" name="radio"><label for="radio3">QR코드</label></span>
+                            <span class="form-radio"><input id="radio4" type="radio" name="radio"><label for="radio4">모바일 스탬프</label></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">신분증 지참 여부</th>
+                        <td>
+                            <span class="form-radio"><input id="radio05" type="radio" name="radio2" checked><label for="radio05">티켓 발권, 입장 시 신분증 지참 필수</label></span>
+                            <span class="form-radio"><input id="radio06" type="radio" name="radio2"><label for="radio06">티켓 발권, 입장 시 신분증 지참 필수 아님</label></span>
+                        </td>
+                    </tr>
+                    <!-- 유료 -->
+                    <tr>
+                        <th scope="row">1인 구매 수량</th>
+                        <td>
+                            <label for="" class="form-select">
+                                <select name="" id="">
+                                    <option value="" selected>1매</option>
+                                    <option value="">2매</option>
+                                    <option value="">3매</option>
+                                </select>
+                            </label>
+                            <span class="text ml10">~</span>
+                            <label for="" class="form-select ml10">
+                                <select name="" id="">
+                                    <option value="">1매</option>
+                                    <option value="" selected>2매</option>
+                                    <option value="">3매</option>
+                                </select>
+                            </label>
+                        </td>
+                    </tr><!-- //유료 -->
+                    <!-- 무료 -->
+                    <tr>
+                        <th scope="row">1인 지급 수량</th>
+                        <td>
+                            <label for="" class="form-select">
+                                <select name="" id="">
+                                    <option value="" selected>1매</option>
+                                    <option value="">2매</option>
+                                    <option value="">3매</option>
+                                </select>
+                            </label>
+                        </td>
+                    </tr><!-- //무료 -->
+                    <tr>
+                        <th scope="row">예매/취소 장당 수수료 <em class="text-red">*</em></th>
+                        <td>
+                            <input type="text" class="form-input right w100" placeholder="숫자만 입력" /> 원
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <div class="area-button">
+        <a href="javascript:;" class="button-basic">취소</a>
+        <a href="javascript:;" class="button-submit">등록</a>
+        <span class="right">
+            <a href="javascript:;" class="button-normal">다음</a>
+        </span>
+    </div>
+
+</div><!-- //contents -->
+
+<hr class="layout" />
+
+<?php include "../include/footer.html"; ?>

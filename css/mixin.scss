@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Tadak';
+    font-weight: 400;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/TDTDTadakTadak.woff') format('woff'); }
+
+@font-face {
+    font-family: 'designhouse';
+    font-weight: 400;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/designhouseOTFLight00.woff') format('woff'); }
+
+@font-face {
+  font-family: 'skyer';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Skyer-Regular'),
+       url("../fonts/Skyer-Regular.woff2") format('woff2'),
+       url("../fonts/Skyer-Regular.woff") format('woff'),
+       url("../fonts/Skyer-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'tajaKR';
+  font-style: normal;
+  font-weight: 400;
+  src: local('KoreanTJ-L'),
+       url("../fonts/tajaL.woff2") format('woff2'),
+       url("../fonts/tajaL.woff") format('woff'),
+       url("../fonts/tajaL.ttf") format('truetype');
+}
+
+$font-tadak:'Tadak';
+$font-skyer:'skyer';
+$font-designhouse:'designhouse';
+$font-taja:'tajaKR';
+
+$bg_url: '../images/';
+
+@mixin bgProp {
+    background: {
+        repeat:no-repeat;
+        position:center;
+        size:cover;
+    }
+}
+
+@mixin afterClear {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+}
+
+@mixin mo {
+    @media screen and  (max-width: #{768px}) {
+        @content;
+    }
+}
+
+@mixin pcSmall{
+    @media screen and (min-width: #{769px}) and (max-width: #{1149px}) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media screen and (min-width: #{769px}) {
+        @content;
+    }
+}

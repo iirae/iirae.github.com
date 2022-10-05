@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="타이틀">
+    <meta property="og:url" content="메인 접속 url">
+    <meta property="og:image" content="카톡 미리보기 이미지 추가">
+    <meta property="og:description" content="홈페이지 설명">
+    <meta name="keywords" content="홈페이지 접속 키워드 적기">
+    <meta name="copyright" content="Copyright">
+    <meta name="naver-site-verification" content=""> <!-- *네이버에 사이트 등록하기*
+    네이버 웹마스터 도구에 접속하여 해당 과정을 거친 후 메타태그를 추가한다. http://webmastertool.naver.com -->
+    <title>MOJO WEBVIEW | IA</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../UI_DEV.ico">
+    <link href="./css/reset.css" rel="stylesheet" type="text/css">
+    <link href="./css/common.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        html {max-width:100%;}
+        h1 {padding:30px 5% 0; font-size:15px;}
+        body, .wrap, .container {width:100%;max-width:100%; color:#000; background:#fff;}
+        .container {padding:30px 5%; box-sizing:border-box}
+        table, th, td {border-collapse:collapse;border:1px solid #666;}
+        table {width:100%;table-layout:fixed;font-size:13px;}
+        thead th {background:#ddd;}
+        tbody th {background:#eee;}
+        table th, td {padding:7px; font-size:12px !important;}
+        td:first-child {padding-left:20px;}
+        td:first-child strong {margin-left:-10px;}
+        tbody:nth-of-type(even) td {background:#f6f6f6;}
+        tr:hover td {background:#e6e6e6;}
+        tr td a {color:#4A90E2;}
+        tr td a:visited {color:#864b70;}
+        tr.del td,
+        tr.del td a,
+        tr.del td span {color:#9a9a9a; text-decoration:line-through;}
+        .depth3 {display:inline-block; margin-left:8px;}
+        .depth3:before {display:inline-block; content:"┗"; margin-right:5px; color:#999;}
+        .center {text-align:center;}
+        ul {margin:0;}
+        a {color:#3d3d3d;}
+        a:hover {color:#4A90E2;}
+        .txtEn {display:inline-block; padding:1px 3px; font-size:11px; background:#ffc506; border-radius:3px;}
+        
+        .new::after{
+            content:"★NEW";
+            display:inline-block;
+            margin:-15px 0 0 3px;
+            color:#fd344f;
+            vertical-align:middle;
+        	-webkit-animation:blink 600ms ease-in-out infinite alternate;
+            animation:blink 600ms ease-in-out infinite alternate;
+        }
+        @-webkit-keyframes blink{
+            0% {opacity:0;}
+            30% {opacity:0.5;}
+            100% {opacity:1;}
+        }
+        @-moz-keyframes blink{
+            0% {opacity:0;}
+            30% {opacity:0.7;}
+            100% {opacity:1;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap" class="wrap">
+        <div id="header">
+            <h1>Mojo Live</h1>
+        </div>
+        <div id="container" class="container">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col style="width:15%;">
+                <col style="width:15%;">
+                <col style="width:15%;">
+                <col style="width:15%;">
+                <col style="width:10%;">
+                <col style="width:auto;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">menu</th>
+                    <th scope="col">1depth</th>
+                    <th scope="col">2depth</th>
+                    <th scope="col">3depth</th>
+                    <th scope="col">작업여부</th>
+                    <th scope="col">비고</th>
+                </tr>
+            </thead>
+            <!--<tbody>
+                <tr>
+                    <td></td>
+                    <td>index</td>
+                    <td><a href="#" target="_blank">main</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>-->
+            <tbody>
+                <tr>
+                    <td><strong>layout</strong></td>
+                    <td><a href="./layout.html" target="_blank">레이아웃</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>layer 기본 포함</td>
+                </tr>
+                <tr>
+                    <td><strong>404</strong></td>
+                    <td><a href="./wrong.html" target="_blank">404</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>common</strong></td>
+                    <td><a href="./common/policy.html" target="_blank">이용약관</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="./common/privacy.html" target="_blank">개인정보처리방침</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>event</strong></td>
+                    <td><a href="./event/comment.html" target="_blank">티져 사연 응모</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="./event/cover_dance.html" target="_blank">커버댄스</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>공연 정보</strong></td>
+                    <td>perform</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./perform/comingsoon.html" target="_blank">공연정보 coming soon</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./perform/all.html" target="_blank">공연 정보, 미디어, 관람톡톡</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./perform/information.html" target="_blank">공연 정보</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./perform/media.html" target="_blank">관련콘텐츠</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./perform/talk.html" target="_blank">관람톡톡</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>티켓예매</strong></td>
+                    <td>book_tickets</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./book_tickets/scheduled.html" target="_blank">공연일정 선택</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./book_tickets/check_profile.html" target="_blank">본인정보 확인</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./book_tickets/zone_free.html" target="_blank">구역 선택(응모)</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./book_tickets/zone.html" target="_blank">구역 선택(유료)</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./book_tickets/zone_plan.html" target="_blank">구역 확대보기</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./book_tickets/seats.html" target="_blank">공연 좌석 선택</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./book_tickets/pay.html" target="_blank">예매정보 확인 및 결제수단 선택</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>마이페이지</strong></td>
+                    <td>mypage</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./mypage/my_tickets.html" target="_blank">마이티켓 목록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td>앱뷰</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./mypage/my_tickets_detail.html" target="_blank">마이티켓</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>고객지원</strong></td>
+                    <td>support</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./support/inquiry.html" target="_blank">문의하기</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./support/inquiry_history.html" target="_blank">문의내역</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./support/inquiry_detail.html" target="_blank">문의내역 상세</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./support/notice.html" target="_blank">공지사항</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function PopWin(url, w, h, sb) {
+            var newWin;
+            var setting = "width="+w+", height="+h+", top=0, left=0, scrollbars="+sb;
+            newWin = window.open (url, "", setting);
+            newWin.focus();
+        }
+    </script>
+</body>
+</html>

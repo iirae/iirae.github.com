@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!-- [if lte 8]><html lang="ko" class="ie8"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ko"><!--<![endif]-->
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="타이틀">
+    <meta property="og:url" content="메인 접속 url">
+    <meta property="og:description" content="홈페이지 설명">
+    <meta name="keywords" content="홈페이지 접속 키워드 적기">
+    <meta name="copyright" content="Copyright">
+    <title>CW ADMIN</title>
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link href="//fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./css/reset.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/common.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./css/jquery-ui.css" rel="stylesheet" type="text/css" media="all">
+    
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</head>
+<body>
+    <div id="skipNavigation">
+        <a href="#nav">네비게이션 바로가기</a>
+        <a href="#contents">본문 바로가기</a>
+    </div>
+    
+    <div id="wrap" class="wrap">
+        <header id="header" class="header">
+            <div class="headTop">
+                <h1><a href="#">coinWalking ADMIN</a></h1>
+                <div class="myInfo">
+                    <strong class="userName">김운영자님</strong>
+                    <a href="#" class="btnNormal">로그아웃</a>
+                </div>
+            </div>
+            <nav id="nav" class="nav">
+                <ul>
+                    <li class="selected"><a href="#">회원관리</a>
+                        <ul>
+                            <li><a href="javascript:;">회원관리</a></li>
+                            <li><a href="javascript:;">계정 블럭</a></li>
+                            <li><a href="javascript:;">탈퇴 회원 관리</a></li>
+                            <li><a href="javascript:;">관리자 계정 관리</a></li>
+                        </ul>
+                    </li><!-- 메뉴 활성화 li에 class="selected" 추가 -->
+                    <li><a href="#">광고 관리</a>
+                        <ul>
+                            <li><a href="javascript:;">광고 등록 관리</a></li>
+                            <li><a href="javascript:;">노출 비율 관리</a></li>
+                            <li><a href="javascript:;">AdNob Link</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">컨텐츠 관리</a>
+                        <ul>
+                            <li><a href="javascript:;">푸시 발송</a></li>
+                            <li><a href="javascript:;">이벤트</a></li>
+                            <li><a href="javascript:;">친구 초대 관리</a></li>
+                            <li><a href="javascript:;">팝업 관리</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">코인 관리</a>
+                        <ul>
+                            <li><a href="javascript:;">코인 보유 현황</a></li>
+                            <li><a href="javascript:;">일별 적립 현황</a></li>
+                            <li><a href="javascript:;">코인 선물 현황</a></li>
+                            <li><a href="javascript:;">관리자 코인 지급</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">쇼핑 관리</a>
+                        <ul>
+                            <li><a href="javascript:;">카테고리 관리</a></li>
+                            <li><a href="javascript:;">상품 등록 관리</a></li>
+                            <li><a href="javascript:;">상품 판매 관리</a></li>
+                            <li><a href="javascript:;">구매 취소 요청</a></li>
+                            <li><a href="javascript:;">럭키드로우 응모</a></li>
+                            <li><a href="javascript:;">럭키드로우 퀴즈</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">고객센터</a>
+                        <ul>
+                            <li><a href="javascript:;">FAQ</a></li>
+                            <li><a href="javascript:;">문의 및 신고</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <hr class="layout" />
+        
+        <div id="container" class="container">
+        
+            <nav class="snb" id="snb">
+                <h2>회원관리</h2>
+                <ul class="depth2">
+                    <li class="selected"><a href="#">회원관리</a></li>
+                    <li><a href="#">계정 블럭</a></li>
+                    <li><a href="#">탈퇴 회원 관리</a></li>
+                    <li><a href="#">관리자 계정 관리</a></li>
+                </ul>
+            </nav>
+        
+            <hr class="layout" />
+            
+            <div id="contents" class="contents">
+            
+                <section class="section">
+                    <div class="titleArea">
+                        <h3>chart</h3>
+                    </div>
+                    
+                    <div class="mt30">
+                        <canvas id="myChart" style="height:50vh; width:100%"></canvas>
+                    </div>
+                </section>
+            
+            </div><!-- //contents -->
+            
+        </div><!-- //container -->
+    </div><!-- //wrap -->
+    
+    <script type="text/javascript" src="./js/chart.js"></script>
+    <script>
+        $(document).ready(function(){
+            //register custome positioner
+            Chart.Tooltip.positioners.custom = function(elements, position) {
+                if (!elements.length) {
+                  return false;
+                }
+                var offset = 0;
+                //adjust the offset left or right depending on the event position
+                if (elements[0]._chart.width / 2 > position.x) {
+                  offset = 15;
+                } else {
+                  offset = -12;
+                }
+                return {
+                  x: position.x + offset,
+                  y: position.y
+                }
+              };
+              
+            var showZeroPlugin = {
+                beforeRender: function (chartInstance) {
+                    var datasets = chartInstance.config.data.datasets;
+            
+                    for (var i = 0; i < datasets.length; i++) {
+                        var meta = datasets[i]._meta;
+                        // It counts up every time you change something on the chart so
+                        // this is a way to get the info on whichever index it's at
+                        var metaData = meta[Object.keys(meta)[0]];
+                        var bars = metaData.data;
+            
+                        for (var j = 0; j < bars.length; j++) {
+                            var model = bars[j]._model;
+            
+                            if (metaData.type === "horizontalBar" && model.base === model.x) {
+                                model.x = model.base + 2;
+                            } else if (model.base === model.y) {
+                                model.y = model.base - 2;
+                            }
+                        }
+                    }
+            
+                }
+            };
+            
+            Chart.pluginService.register(showZeroPlugin);
+            
+            var ctx = document.getElementById('myChart').getContext('2d');
+            
+            var gradientStroke = ctx.createLinearGradient(0, 500, 0, 100);
+            gradientStroke.addColorStop(0.2, "#f76b1c");
+            gradientStroke.addColorStop(1, "#fad961");
+            
+            var myChart = new Chart(ctx, {
+                responsive: true,
+                type: 'line',
+                data: {
+                    labels: ['', '', '', '', '', '', '6', '', '', '', '', '', '12', '', '', '', '', '', '18', '', '', '', '', '', '24'],
+                    datasets: [{
+                        label: 'person',
+                        data: [0, 0, 0, 0, 0, 0, 0, 612, 23, 148, 16, 0, 2, 571, 5, 37, 0, 56, 98, 760, 0, 0, 0, 0 ],
+                        backgroundColor: gradientStroke,
+                        borderColor: '#F76B1C',
+                        borderWidth: 1,
+                        pointRadius:3,
+                        pointHoverRadius:5,
+                        pointBorderColor: "#F76B1C",
+                        pointBackgroundColor: "#fff"
+                    }]
+                },
+                options: {
+                    borderColor: "#d8d8d8",
+                    showAllTooltips: true,
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                fontSize: 14,
+                                fontColor:"#7d7d7d",
+                                fontStyle:"400",
+                                autoSkip: false,
+                                maxRotation: 0
+                            },
+                            gridLines: {
+                                display: false
+                            },
+                            maxBarThickness: 17
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                fontSize: 14,
+                                fontColor:"#7d7d7d",
+                                beginAtZero : true,
+                                callback: function(value, index, values) {
+                                    if (Math.floor(value) === value) {
+                                        return value;
+                                    }
+                                }
+                            }
+                        }]
+                    },
+                    tooltips: {
+                        position: 'custom',
+                        bodyFontSize: 16,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return Number(tooltipItem.yLabel);
+                            }
+                        }
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            });
+            
+        });
+      
+    </script>
+</body>
+</html>

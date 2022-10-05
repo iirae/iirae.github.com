@@ -1,0 +1,47 @@
+<?php include "../inc/header.html"; ?>
+
+<div class="wrap white pInquiryWrite fixed" id="wrap">
+    <?php include "../inc/headbar.html"; ?>
+
+    <div class="contents" id="contents">
+        <h2 class="blind">고객문의 작성</h2>
+        
+        <section class="section reset inputArea">
+            <h3 class="mt0">제목</h3>
+            <div class="detail">
+                <p class="fText"><input type="text" maxlength="100" placeholder="제목을 입력해 주세요. (최대 100자)" /><span class="clear">&times;</span></p>
+            </div>
+            
+            <h3>내용</h3>
+            <div class="detail">
+                <div class="fTArea">
+                    <textarea name="" id="" cols="30" rows="7" maxlength="1000" placeholder="문의하실 내용을 입력해 주세요. (최대 1000자)"></textarea>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section agreeArea">
+            <dl>
+                <dt class="fChk">
+                    <input type="checkbox" id="agreeEmail" />
+                    <label for="agreeEmail">이메일 답변 수신을 동의합니다.</label>
+                </dt>
+                <dd class="pt10">
+                    <p class="fText"><input type="email" placeholder="yourmail@domain.com" /><span class="clear">&times;</span></p>
+                </dd>
+                <dt class="fChk">
+                    <input type="checkbox" id="agreeFollowDesc" />
+                    <label for="agreeFollowDesc">아래 내용에 동의합니다.</label>
+                </dt>
+                <dd>
+                    <p class="content">수집된 개인정보는 개인정보의 수집 및 이용 목적이 달성되면 관련 법령 또는 회사 내부 바침에 의해 보존할 필요가 있는 경우를 제외하고는 지체없이 파기합니다. 자세한 내용은 <a href="/Mymenu/Policy.html" class="txtLink">개인정보취급방침</a>을 참고해주세요.</p>
+                </dd>
+            </dl>
+        </section>
+        
+        <div class="btnArea fix">
+            <a href="javascript:;" class="btnStrong">등록하기</a><!-- 비활성화: disabled 클래스 추가 -->
+        </div>
+</div>
+
+<?php include "../inc/footer.html"; ?>

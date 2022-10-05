@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>DB869540-8DB5-41B2-823F-109DAED5DF36</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="05_화물관리" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="05_이전화물-복사하기_01" transform="translate(-305.000000, -97.000000)">
+            <g id="Search" transform="translate(20.000000, 92.000000)">
+                <g id="btn_navi_search" transform="translate(285.000000, 5.000000)">
+                    <rect id="Bounds" x="0" y="0" width="30" height="30"></rect>
+                    <g id="Shape" transform="translate(7.000000, 7.000000)">
+                        <rect id="Rectangle" fill="#222222" transform="translate(14.343592, 14.343592) rotate(-315.000000) translate(-14.343592, -14.343592) " x="10.3221456" y="13.5935922" width="8.04289322" height="1.5"></rect>
+                        <circle id="Oval" stroke="#222222" stroke-width="1.5" cx="7" cy="7" r="6.25"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

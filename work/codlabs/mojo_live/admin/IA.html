@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="타이틀">
+    <meta property="og:url" content="메인 접속 url">
+    <meta property="og:image" content="카톡 미리보기 이미지 추가">
+    <meta property="og:description" content="홈페이지 설명">
+    <meta name="keywords" content="홈페이지 접속 키워드 적기">
+    <meta name="copyright" content="Copyright">
+    <meta name="naver-site-verification" content=""> <!-- *네이버에 사이트 등록하기*
+    네이버 웹마스터 도구에 접속하여 해당 과정을 거친 후 메타태그를 추가한다. http://webmastertool.naver.com -->
+    <title>MOJO | IA</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/UI_DEV.ico">
+    <link href="./css/reset.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../Assets/weather-icons-master/css/weather-icons.css">
+    
+    <style type="text/css">
+        .header {padding:20px 0;}
+        .header:after {display:block; content:""; clear:both;}
+        .header h1 {float:left;}
+        .header .weather {float:left;}
+        
+        .weather {display:inline-block; padding:20px 30px; color:#FFC000; background:#414045; border-radius:5px;}
+        .weather h2 {margin:0;}
+        .weather p {margin:0;}
+        .weather .main i:before {font-size:32px;}
+        .weather .left {float:left;}
+        .weather .temp {float:right; margin-left:30px;}
+        .weather .now {display:block; margin:10px 0;font-weight:700; font-size:18px;}
+    </style>
+    
+    <style type="text/css">
+        #wrap {font-family:'Lato', Sans-serif;}
+        h1 {padding:30px 50px 15px;}
+        .container {min-width:1300px; padding:0 50px 50px;}
+        table, th, td {border-collapse:collapse;border:1px solid #666;}
+        table {width:100%;table-layout:fixed;font-size:13px;}
+        thead th {background:#ddd;}
+        tbody th {background:#eee;}
+        table th, td {padding:7px;}
+        td:first-child {padding-left:20px;}
+        td:first-child strong {margin-left:-10px;}
+        tbody:nth-of-type(even) td {background:#f6f6f6;}
+        tr:hover td {background:#e4e8ee;}
+        .center {text-align:center;}
+        ul {margin:0; padding-left:20px;}
+        .depth3 {display:inline-block; margin-left:8px;}
+        .depth3:before {display:inline-block; content:"┗"; margin-right:5px; color:#999;}
+        .tagMaster, .tagNormal , .tagEvery {display:inline-block; width:60px; padding:3px 5px; color:#fff; border:1px solid rgba(0,0,0,0.5); border-radius:3px;}
+        .tagMaster {background:#4285f4}
+        .tagNormal {background:#00a951}
+        .tagEvery {background:#758193}
+        .txtEm {color:#fa6362; font-weight:bold;}
+        .del td {color:#999; text-decoration:line-through; background:#e6e6e6}
+        .del td a {color:#999;}
+        .del td span[class*="tag"] {border-color:#999999; background:#b3b3b3;}
+        .del .ect {color:#333; text-decoration:none;}
+        .del .depth3 {text-decoration:line-through;}
+        td a {color:#31579e;}
+        tr:hover a, td a:hover {color:#4285f4; text-decoration:underline;}
+        
+        .new::after{
+            content:"★NEW";
+            display:inline-block;
+            margin:-15px 0 0 3px;
+            color:#fd344f;
+            vertical-align:middle;
+        	-webkit-animation:blink 600ms ease-in-out infinite alternate;
+            animation:blink 600ms ease-in-out infinite alternate;
+        }
+        @-webkit-keyframes blink{
+            0% {opacity:0;}
+            30% {opacity:0.5;}
+            100% {opacity:1;}
+        }
+        @-moz-keyframes blink{
+            0% {opacity:0;}
+            30% {opacity:0.7;}
+            100% {opacity:1;}
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header" class="header">
+            <h1>UI</h1>
+            
+            <section class="weather">
+                <div class="left">
+                    <h2 class="city">city</h2>
+                    <strong class="main"><i class="wi wi-day-sunny"></i></strong>
+                </div>
+                <div class="temp">
+                    <span class="now"></span>
+                    <p class="minMax"><span class="min"></span> / <span class="max"></span></p>
+                </div>
+            </section>
+            
+        </div>
+        <div id="container" class="container">
+        <table>
+            <caption></caption>
+            <colgroup>
+                <col style="width:150px;">
+                <col style="width:120px;">
+                <col style="width:180px;">
+                <col style="width:180px;">
+                <col style="width:80px;">
+                <col style="width:auto;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">menu</th>
+                    <th scope="col">1depth</th>
+                    <th scope="col">2depth</th>
+                    <th scope="col">3depth</th>
+                    <th scope="col">작업여부</th>
+                    <th scope="col">비고</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>로그인</strong></td>
+                    <td><a href="./temp.html" target="_blank">UI 템플릿</a></td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><strong>로그인</strong></td>
+                    <td><a href="./login.html" target="_blank">로그인</a></td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>공연정보 관리</strong></td>
+                    <td>perform</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./perform/list.html" target="_blank">공연정보 목록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./perform/create.html" target="_blank">공연목록 정보 (STEP 01)</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./perform/create_02.html" target="_blank">공연정보 생성 (STEP 02)</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./perform/create_contents.html" target="_blank">관련콘텐츠 생성</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="javascript:PopWin('./perform/popup_contents_list.html', '1000', '800', 'no')">[p] 관련 콘텐츠 추가</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>티켓 관리</strong></td>
+                    <td>ticket</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./ticket/list.html" target="_blank">티켓 목록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./ticket/bundle.html" target="_blank">공연별 티켓 목록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./ticket/register.html" target="_blank">공연별 티켓 생성</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./ticket/creat_seats.html" target="_blank">티켓 좌석 생성</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./ticket/distribution.html" target="_blank">배포티켓 관리</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./ticket/ticket_total.html" target="_blank">슈퍼콘서트 집계</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./ticket/ticket_applicants.html" target="_blank">슈퍼콘서트 응모자</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./ticket/ticket_winner.html" target="_blank">슈퍼콘서트 당첨자</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>콘텐츠 관리</strong></td>
+                    <td>contents</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./contents/list.html" target="_blank">콘텐츠 목록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./contents/register_vod.html" target="_blank">콘텐츠 등록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./contents/register_coverdance.html" target="_blank" class="new">커버 댄스 이벤트</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>회원 관리</strong></td>
+                    <td>member</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./member/list.html" target="_blank">회원 목록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./member/detail.html" target="_blank">회원 상세</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>팝업 관리</strong></td>
+                    <td>popup</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./popup/list.html" target="_blank">팝업 목록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./popup/write.html" target="_blank">팝업 등록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>푸쉬메시지 관리</strong></td>
+                    <td>push</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./push/list.html" target="_blank">푸쉬메시지 목록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./push/write.html" target="_blank">푸쉬메시지 등록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./push/read.html" target="_blank">푸쉬메시지 읽기</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>고객센터 관리</strong></td>
+                    <td>customer</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./customer/inquiry_list.html" target="_blank">1:1 문의</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./customer/inquiry_detail.html" target="_blank">1:1 문의 상세</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./customer/notice_list.html" target="_blank">공지사항</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./customer/notice_write.html" target="_blank">공지사항 등록</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./customer/notice_detail.html" target="_blank">공지사항 상세</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>통계</strong></td>
+                    <td>statistic</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./statistic/member.html" target="_blank">멤버쉽 현황</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="statistic/retension.html" target="_blank">재방문 현황</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="statistic/realtime.html" target="_blank">5분 동접 현황</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><strong>시스템 관리</strong></td>
+                    <td>management</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./management/administrator.html" target="_blank">운영자 권한 관리</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="./management/client_version.html" target="_blank">클라이언트 버전관리</a></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <!--<tbody>
+                <tr>
+                    <td><strong></strong></td>
+                    <td></td>
+                    <td><a href="" target="_blank"></a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><a href="" target="_blank"></a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>pop</td>
+                    <td></td>
+                    <td><a href="javascript:PopWin('./common/pop.html', '800', '597', 'no')">[p] 팝업</a></td>
+                    <td></td>
+                    <td>
+                        <ul>
+                            <li>설명</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>-->
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function PopWin(url, w, h, sb) {
+            var newWin;
+            var setting = "width="+w+", height="+h+", top=0, left=0, scrollbars="+sb;
+            newWin = window.open (url, "", setting);
+            newWin.focus();
+        }
+    </script>
+    
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script>
+    
+    $(document).ready(function(){
+        timerGetWeather(3600000);
+    });
+    
+    function timerGetWeather(timer) {
+        getWeather();
+        setInterval(function() {
+            getWeather();
+        }, timer);
+    
+    }
+    function getWeather() {
+        var dataUrl = "//api.openweathermap.org/data/2.5/weather?q=Seoul,KR&appid=b5f2c7c7d8a5f236e0f7076de9d1eadd&units=metric";
+        
+        $.ajax({
+            url:dataUrl,
+            dataType:"json",
+            type:"GET",
+            async:"false",
+            success:function(resp){
+                /*console.log("현재온도 : "+ (resp.main.temp) );
+                console.log("현재습도 : "+ resp.main.humidity);
+                console.log("날씨 : "+ resp.weather[0].main );
+                console.log("상세날씨설명 : "+ resp.weather[0].description );
+                console.log("날씨 이미지 : "+ resp.weather[0].icon );
+                console.log("바람   : "+ resp.wind.speed );
+                console.log("도시이름  : "+ resp.name );
+                console.log("구름  : "+ (resp.clouds.all) +"%" );*/
+                
+                var _icon = $('.main');
+                
+                switch(resp.weather[0].icon) {
+                    case '01d, 01n': //clear sky
+                        _icon.html('<i class=\"wi wi-day-sunny\"></i>');
+                        break;
+                    case '02d, 02n': //few clouds
+                        _icon.html('<i class=\"wi wi-cloud\"></i>');
+                        break;
+                    case '03d, 03n': //scattered clouds
+                        _icon.html('<i class=\"wi wi-cloudy\"></i>');
+                        break;
+                    case '04d, 04n': //broken clouds
+                        _icon.html('<i class=\"wi wi-cloudy-gusts\"></i>');
+                        break;
+                    case '09d': //drizzle
+                        _icon.html('<i class=\"wi wi-sprinkle\"></i>');
+                        break;
+                    case '10d': //rain
+                        _icon.html('<i class=\"wi wi-rain\"></i>');
+                        break;
+                    case '11d': //thunderstorm
+                        _icon.html('<i class=\"wi wi-thunderstorm\"></i>');
+                        break;
+                    case '13d': //snow
+                        _icon.html('<i class=\"wi wi-snow\"></i>');
+                        break;
+                    case '50d': //mist, fog
+                        _icon.html('<i class=\"wi wi-fog\"></i>');
+                        break;
+                }
+                
+                $('.city').html(resp.name);
+                $('.temp .now').html(resp.main.temp + '<i class="wi wi-celsius"></i>');
+                $('.temp .minMax').html(resp.main.temp_min + '<i class="wi wi-celsius"></i> / ' + resp.main.temp_max + '<i class="wi wi-celsius"></i>' );
+                
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

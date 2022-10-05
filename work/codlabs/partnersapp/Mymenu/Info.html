@@ -1,0 +1,93 @@
+<?php include "../inc/header.html"; ?>
+
+<div class="wrap white pUserInfo" id="wrap">
+    <?php include "../inc/headbar.html"; ?>
+
+    <div class="contents" id="contents">
+        <section class="section">
+            <h2 class="name">김배차</h2>
+            <p class="company">회사명</p>
+        </section>
+        
+        <section class="section">
+            <h3>계정 정보</h3>
+            <p class="email">hikim76@barotruck.com</p>
+            <p class="tel">010-3456-3556</p>
+        </section>
+        
+        <section class="section">
+            <h3>사업자 정보</h3>
+            <ul class="mFull">
+                <li>
+                    <strong class="title w100">화주업체명</strong>
+                    <div class="info">
+                        <p>유신하나테크</p>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title w100">사업자 번호</strong>
+                    <div class="info">
+                        <p class="txtNum">220-81-62517</p>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title w100">회사 전화번호 1</strong>
+                    <div class="info">
+                        <p class="txtNum">031-272-0535</p>
+                    </div>
+                </li>
+                <li>
+                    <strong class="title w100">회사 전화번호 2</strong>
+                    <div class="info">
+                        <p class="txtNum">031-272-0536</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <div class="btnArea mt10">
+            <a href="#layerChangeCompany" class="btnStatic eModal">다른 법인으로 로그인</a>
+        </div>
+    </div>
+    
+</div>
+
+<!-- layer: 다른 법인으로 로그인 -->
+<section class="layer changCompany" id="layerChangeCompany" style="display:none;"><!-- style="display:none; opacity:1;" -->
+    <div class="inner">
+        <div class="header">
+            <h2>다른 법인으로 로그인</h2>
+        </div>
+        <div class="content">
+            <h3>법인 로그인 선택</h3>
+            <ul class="companyList">
+                <li class="current"><span class="inside">가나물류</span></li>
+                <li><a href="#layerInputPW" class="inside eModal">조아물류</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <a href="javascript:;" class="btnBasic eClose">닫기</a>
+        </div>
+    </div>
+</section><!-- //layer: 다른 법인으로 로그인 -->
+
+<!-- layer: 다른 법인으로 로그인 > 비밀번호 입력 -->
+<section class="layer inputPW" id="layerInputPW" style="display:none;"><!-- style="display:none; opacity:1;" -->
+    <div class="inner">
+        <div class="header">
+            <h2>$(회사명) 로그인</h2>
+        </div>
+        <div class="content">
+            <h3>비밀번호 입력</h3>
+            <p class="fText"><input type="password" placeholder="비밀번호를 입력하세요." maxlength="32" /><span class="clear">×</span></p>
+        </div>
+        
+        <div class="footer even">
+            <a href="javascript:;" class="btnBasic eClose">닫기</a>
+            <a href="javascript:;" class="btnStrong">확인</a>
+        </div>
+    </div>
+</section><!-- //layer: 다른 법인으로 로그인 > 비밀번호 입력 -->
+
+<?php include "../inc/footer.html"; ?>

@@ -1,0 +1,343 @@
+<?php include "../include/header.html"; ?>
+
+<hr class="layout" />
+
+<div class="contents" id="contents">
+
+    <div class="area-title">
+        <h3>공연정보 생성</h3>
+    </div>
+
+    <section class="section area-toggle open">
+        <div class="area-title">
+            <h4>기본 정보</h4>
+        </div>
+        
+        <div class="content">
+            <div class="table-layout">
+                <table>
+                    <caption>기본 정보 입력</caption>
+                    <colgroup>
+                        <col style="width:170px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">상단 배경 <em class="text-red" title="필수">*</em> <p class="text-info">(1,080px * 570px 권장)</p></th>
+                            <td>
+                                <div class="form-file">
+                                    <input type="file" id="fileUpload1" class="e-file" accept=".jpg, .jpeg, .gif, .png" /><label for="fileUpload1" class="button-static">파일첨부</label>
+                                    <input type="text" class="name w500" value="filename_0178471648726.xls" title="파일명" readonly>
+                                    <button type="button" class="button-danger">삭제</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">상단 썸네일 <em class="text-red" title="필수">*</em> <p class="text-info">(378px * 486px 권장)</p></th>
+                            <td>
+                                <div class="form-file">
+                                    <input type="file" id="fileUpload2" class="e-file" accept=".jpg, .jpeg, .gif, .png" /><label for="fileUpload2" class="button-static">파일첨부</label>
+                                    <input type="text" class="name w500" value="filename_0178471648726.xls" title="파일명" readonly>
+                                    <button type="button" class="button-danger">삭제</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">공연명 <em class="text-red" title="필수">*</em></th>
+                            <td><input type="text" class="form-input w100per" title="공연명 입력" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">공연 일시 <em class="text-red" title="필수">*</em></th>
+                            <td>
+                                <div class="picker-date" id="openDate">
+                                    <input type="text" id="datepicker" name="" class="form-input w120 e-pick_date from">
+                                    <label for="open_hour" class="form-select">
+                                        <select class="selSz01" name="up_hour" id="open_hour">
+                                            <option value="00">00시</option>
+                                            <option value="01">01시</option>
+                                            <option value="02">02시</option>
+                                            <option value="03">03시</option>
+                                            <option value="04">04시</option>
+                                            <option value="05">05시</option>
+                                            <option value="06">06시</option>
+                                            <option value="07">07시</option>
+                                            <option value="08">08시</option>
+                                            <option value="09">09시</option>
+                                            <option value="10">10시</option>
+                                            <option value="11">11시</option>
+                                            <option value="12">12시</option>
+                                            <option value="13">13시</option>
+                                            <option value="14">14시</option>
+                                            <option value="15">15시</option>
+                                            <option value="16">16시</option>
+                                            <option value="17">17시</option>
+                                            <option value="18">18시</option>
+                                            <option value="19">19시</option>
+                                            <option value="20">20시</option>
+                                            <option value="21">21시</option>
+                                            <option value="22">22시</option>
+                                            <option value="23">23시</option>
+                                        </select>
+                                    </label>
+                                    <label for="start_min" class="form-select">
+                                        <select class="selSz01" name="down_min" id="start_min">
+                                            <option value="00">00분</option>
+                                            <option value="10">10분</option>
+                                            <option value="20">20분</option>
+                                            <option value="30">30분</option>
+                                            <option value="40">40분</option>
+                                            <option value="50">50분</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <span class="text">~</span>
+                                <div class="picker-date" id="endDate">
+                                    <input type="text" id="datepicker2" name="" class="form-input w120 e-pick_date to">
+                                    <label for="open_hour" class="form-select">
+                                        <select class="selSz01" name="up_hour" id="end_hour">
+                                            <option value="00">00시</option>
+                                            <option value="01">01시</option>
+                                            <option value="02">02시</option>
+                                            <option value="03">03시</option>
+                                            <option value="04">04시</option>
+                                            <option value="05">05시</option>
+                                            <option value="06">06시</option>
+                                            <option value="07">07시</option>
+                                            <option value="08">08시</option>
+                                            <option value="09">09시</option>
+                                            <option value="10">10시</option>
+                                            <option value="11">11시</option>
+                                            <option value="12">12시</option>
+                                            <option value="13">13시</option>
+                                            <option value="14">14시</option>
+                                            <option value="15">15시</option>
+                                            <option value="16">16시</option>
+                                            <option value="17">17시</option>
+                                            <option value="18">18시</option>
+                                            <option value="19">19시</option>
+                                            <option value="20">20시</option>
+                                            <option value="21">21시</option>
+                                            <option value="22">22시</option>
+                                            <option value="23">23시</option>
+                                        </select>
+                                    </label>
+                                    <label for="start_min" class="form-select">
+                                        <select class="selSz01" name="down_min" id="end_min">
+                                            <option value="00">00분</option>
+                                            <option value="10">10분</option>
+                                            <option value="20">20분</option>
+                                            <option value="30">30분</option>
+                                            <option value="40">40분</option>
+                                            <option value="50">50분</option>
+                                        </select>
+                                    </label>
+                                </div>
+                                <span class="ml20">(공연 시간: <input type="text" class="form-input w100" placeholder="숫자만 입력" /> 분)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">공연장 주소 <em class="text-red" title="필수">*</em></th>
+                            <td>
+                                <div class="wrap-address">
+                                    <span class="box-button">
+                                        <a href="#" class="button-static">주소검색</a>
+                                    </span>
+                                    <span class="area-input">
+                                        <input type="text" class="form-input" readonly />
+                                        <input type="text" class="form-input" />
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">공연장명 <em class="text-red" title="필수">*</em></th>
+                            <td><input type="text" class="form-input w100per" title="공연장명 입력"/></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">공연 장르</th>
+                            <td>
+                                <span class="form-radio"><input id="genre01" type="radio" name="genre" checked><label for="genre01">콘서트</label></span>
+                                <span class="form-radio"><input id="genre02" type="radio" name="genre"><label for="genre02">뮤지컬</label></span>
+                                <span class="form-radio"><input id="genre03" type="radio" name="genre"><label for="genre03">연극</label></span>
+                                <span class="form-radio"><input id="genre04" type="radio" name="genre"><label for="genre04">클래식</label></span>
+                                <span class="form-radio"><input id="genre05" type="radio" name="genre"><label for="genre05">체험</label></span>
+                                <span class="form-radio"><input id="genre06" type="radio" name="genre"><label for="genre06">콘테스트</label></span>
+                                <span class="form-radio"><input id="genre07" type="radio" name="genre"><label for="genre07">박람회</label></span>
+                                <span class="form-radio"><input id="genre08" type="radio" name="genre"><label for="genre08">기타</label></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">공연 등급</th>
+                            <td>
+                                <span class="form-radio"><input id="grade01" type="radio" name="grade" checked><label for="grade01">전체 관람가</label></span>
+                                <span class="form-radio"><input id="grade02" type="radio" name="grade"><label for="grade02">미취학아동 입장불가</label></span>
+                                <span class="form-radio"><input id="grade03" type="radio" name="grade"><label for="grade03">만 7세 이상</label></span>
+                                <span class="form-radio"><input id="grade04" type="radio" name="grade"><label for="grade04">만 8세 이상</label></span>
+                                <span class="form-radio"><input id="grade05" type="radio" name="grade"><label for="grade05">만 16세 이상</label></span>
+                                <span class="form-radio"><input id="grade06" type="radio" name="grade"><label for="grade06">만 19세 이상</label></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section area-toggle open perform">
+        <div class="area-title">
+            <h4>상세 정보 <span class="text-small">(스케쥴/알립니다/티켓가격/기획사 정보/좌석 배치도/상세내용이미지)</span></h4>
+        </div>
+        
+        <div class="content">
+            <div class="table-layout">
+                <table>
+                    <caption>상세 정보 입력</caption>
+                    <colgroup>
+                        <col style="width:170px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">스케쥴 <em class="text-red" title="필수">*</em></th>
+                            <td>
+                                <div class="editor">
+                                    <textarea name="content" class="summernote" value="">
+                                        <h3 class="title">스케쥴</h3> <h4 class="title-sub">공연 당일 안내</h4> <ul class="desc schedule"> <li>공연 시작 시간 : 2019년 10월 06일(일) 오후 7시</li><li>현장 티켓 교환 : 공연 당일, 오전 9시 ~ 오후 4시</li><li>공연장 입장 : 오후 4시 ~ 6시 30분</li></ul> <h4 class="title-sub">초대권 응모 신청 기간</h4> <ul class="desc"> <li>1차 : 2019년 8월 28일(수) 오후 1시 ~ 9월 6일(금) 오후 1시(10일간 응모 가능)</li><li>2차 : 추후 별도 공지 후 진행 예정</li></ul> <div class="box"> <p class="desc">2회차에 거쳐 초대권 응모 신청을 받아 당첨자 분들께 확정된 공연 구역 정보가 포함된 모바일 티켓을 발급해드립니다.</p></div><h4 class="title-sub">당첨자 발표 및 모바일티켓 발급 기간</h4> <ul class="desc"> <li>1차 : 2019년 9월 11일 오후 1시부터 MOJO Live 앱에서 확인 가능합니다.</li></ul> <div class="box"> <p class="desc">※ 공정한 티켓 예매 문화 정착을 위해 당첨은 프로그램에 의한 랜덤 추첨으로 진행되며, 각 회차별 당첨자 발표일에 MOJO Live 앱으로 모바일 티켓을 발급해 드립니다. <br>(MOJO Live 앱 푸시 알림 및 SMS로 당첨 여부와 티켓 발급 안내)</p><p class="desc text-red">※ 당첨자 선정 시 응모하신 관람 구역으로 확정되며, 구역 내 좌석은 공연 당일 구역별 선착순입니다.</p></div><a href="javascript:;" class="button-more e-more"><span>더보기</span></a>
+                                    </textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">알립니다 <em class="text-red" title="필수">*</em></th>
+                            <td>
+                                <div class="editor">
+                                    <textarea name="content" class="summernote" value=""></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">티켓 가격 <em class="text-red" title="필수">*</em></th>
+                            <td>
+                                <div class="editor">
+                                    <textarea name="content" class="summernote" value=""></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">기획사 정보 <em class="text-red" title="필수">*</em></th>
+                            <td>
+                                <div class="editor">
+                                    <textarea name="content" class="summernote" value=""></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">좌석도 이미지</th>
+                            <td>
+                                <div class="form-file">
+                                    <input type="file" id="fileUpload3" class="e-file" accept=".jpg, .jpeg, .gif, .png" /><label for="fileUpload3" class="button-static">파일첨부</label>
+                                    <input type="text" class="name w500" value="filename_0178471648726.xls" title="파일명">
+                                    <button type="button" class="button-danger">삭제</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">상세 내용 이미지</th>
+                            <td>
+                                <div class="form-file">
+                                    <input type="file" id="fileUpload4" class="e-file" accept=".jpg, .jpeg, .gif, .png" /><label for="fileUpload4" class="button-static">파일첨부</label>
+                                    <input type="text" class="name w500" value="filename_0178471648726.xls" title="파일명">
+                                    <button type="button" class="button-danger">삭제</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section area-toggle">
+        <div class="area-title">
+            <h4>예매/취소수수료/개인정보 제3자 제공 정책</h4>
+        </div>
+        
+        <div class="content" style="display:none">
+            <div class="table-layout">
+                <table>
+                    <caption>예매/취소수수료/개인정보 제3자 제공 정책 입력</caption>
+                    <colgroup>
+                        <col style="width:170px">
+                        <col style="width:auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">예매 특별 약관 <em class="text-red" title="필수">*</em></th>
+                            <td>
+                                <div class="editor">
+                                    <textarea name="content" class="summernote" value=""></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">취소수수료/환불 정책 <em class="text-red" title="필수">*</em></th>
+                            <td>
+                                <div class="editor">
+                                    <textarea name="content" class="summernote" value=""></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">개인정보 제3자 제공 동의 <em class="text-red" title="필수">*</em></th>
+                            <td>
+                                <div class="editor">
+                                    <textarea name="content" class="summernote" value=""></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <div class="area-button">
+        <a href="./create.html" class="button-normal">취소</a>
+        <a href="./list.html" class="button-submit">등록</a>
+    </div>
+
+</div><!-- //contents -->
+
+<script>
+
+    $( function() {
+    
+        //editor
+        $('.summernote').summernote({
+            lang: 'ko-KR',
+            tabsize: 2,
+            height: 150,
+            focus: true,
+            toolbar: [
+                ['view', ['fullscreen', 'codeview', 'help']],
+                ['table', ['table']]
+            ],
+            callbacks: {
+                onPaste: function(e) {
+                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                    
+                    e.preventDefault();
+                
+                    setTimeout( function(){
+                        document.execCommand( 'insertText', false, bufferText );
+                    }, 10 );
+                }
+            }
+        });
+        
+    });
+</script>
+
+<hr class="layout" />
+
+<?php include "../include/footer.html"; ?>

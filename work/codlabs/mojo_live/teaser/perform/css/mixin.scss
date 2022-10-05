@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+// vw 사이즈 계산
+@function calcVw($target) {
+    @return ($target / 3.6) * 1vw;
+}
+
+// rem 사이즈 계산
+@function calcRem($target) {
+    @return ($target / 16) * 1rem;
+}
+
+// % 사이즈 계산
+@function calcPer($target) {
+    @return ($target / 360) * 100%;
+}
+
+//color
+$white_001: #fff;
+
+$gray_001: #f3f3f3;
+$gray_002: #d6d6d6;
+$gray_003: #a9a9a9;
+$gray_004: #797979;
+$gray_005: #424242;
+
+$black_001: #121212;
+$black_002: #181818;
+$black_003: #272727;
+
+$red_001:#fd344f;
+$red_002:#f65037;
+
+$pink_001:#ff98a6;
+$pink_002:#fb4f81;
+
+$blue_001:#4a90e2;
+
+$black_op_85:rgba(39,39,39,0.85);
+$black_op_75:rgba(18, 18, 18, 0.75);
+$red_op_65:rgba(253, 52, 79, 0.65);
+
+$bg_url: "../images/";
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}
+
+// size
+$mobile_l:414px;
+$mobile_s:320px;
+
+@mixin mo {
+    @media screen and  (max-width: #{$mobile_l}) {
+        @content;
+    }
+}
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $mobile_l) { @content; }
+  }
+  @else if $media == screen {
+    @media only screen and (min-width: $mobile_l + 1) { @content; }
+  }
+}
+
+@mixin vwPx($prop, $size) {
+    #{$prop}:($size) + px;
+    #{$prop}:calcVw($size);
+}
+
+@mixin rem($prop, $size) {
+    #{$prop}:calcRem($size);
+}
+
+@mixin bgProp {
+    background: {
+        repeat:no-repeat;
+        position:center;
+        size:cover;
+    }
+}
+
+@mixin afterClear {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+}
+
+@mixin pseudo($display, $width, $height, $backgroundImage) {
+    display: $display;
+    content:"";
+    width:($width) + px;
+    height:($height) + px;
+    background: {
+        image:url($backgroundImage);
+        position:center;
+        size:cover;
+        repeat:no-repeat;
+    }
+    vertical-align:middle;
+}
+
+@mixin mediaPseudo($width, $height) {
+    width:calcVw($width);
+    height:calcVw($height);
+}
+

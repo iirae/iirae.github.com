@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="coinWalking">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta name="referrer" content="always">
+    <link rel="canonical" href="">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <h1>Friends</h1>
+            <a href="javascript:window.history.back();" class="btnBack" title="back"></a>
+        </header>
+        
+        <div class="container pFriendsRequest" id="container">
+        
+            <div class="contents" id="contents">
+            
+                <ul class="tab col4">
+                    <li><a href="./friends_mine.html">Friend</a></li>
+                    <li><a href="./friends_recommend.html">Recommend</a></li>
+                    <li class="selected"><a href="javascript:;">Request</a></li>
+                    <li><a href="./friends_invite.html">Invite</a></li>
+                </ul>
+                
+                <section class="nothing">
+                    <h2 class="blind">Friends List</h2>
+                
+                    <p class="desc">You have no friend request. <br>Try requesting friend invite instead!</p>
+                    <a href="javascript:;" class="btnStrong">Recommended Friend List</a>
+                </section>
+                
+                <section class="people">
+                    <div class="titleArea">
+                        <h2 class="blind">Friends List</h2>
+                        <p class="desc">You have received <strong>25</strong> friend requests.</p>
+                    </div>
+                
+                    <div class="list">
+                        <div class="one">
+                            <span class="image"><img src="../images/_img_profile.jpg" alt=""/></span>
+                            <div class="info">
+                                <span class="nickname">sdhehsgdjtragergsrjtjyttkjdd</span>
+                            </div>
+                            <div class="button">
+                                <a href="#layerAccept" class="btnEmphasis eLayer">Accept</a>
+                                <a href="#layerRefuse" class="btnBasic eLayer">Decline</a>
+                            </div>
+                        </div><!-- //one 반복 -->
+                        <div class="one">
+                            <span class="image"><img src="../images/_img_profile.jpg" alt=""/></span>
+                            <div class="info">
+                                <span class="nickname">jtjyttkjdd</span>
+                            </div>
+                            <div class="button">
+                                <a href="#layerAccept" class="btnEmphasis eLayer">Accept</a>
+                                <a href="#layerRefuse" class="btnBasic eLayer">Decline</a>
+                            </div>
+                        </div><!-- //one 반복 -->
+                        <div class="one">
+                            <span class="image"><img src="../images/_img_profile.jpg" alt=""/></span>
+                            <div class="info">
+                                <span class="nickname">sgdjtragergsrjtjyttkjdd</span>
+                            </div>
+                            <div class="button">
+                                <a href="#layerAccept" class="btnEmphasis eLayer">Accept</a>
+                                <a href="#layerRefuse" class="btnBasic eLayer">Decline</a>
+                            </div>
+                        </div><!-- //one 반복 -->
+                        <div class="one">
+                            <span class="image"><img src="../images/_img_profile.jpg" alt=""/></span>
+                            <div class="info">
+                                <span class="nickname">kjdd</span>
+                            </div>
+                            <div class="button">
+                                <a href="#layerAccept" class="btnEmphasis eLayer">Accept</a>
+                                <a href="#layerRefuse" class="btnBasic eLayer">Decline</a>
+                            </div>
+                        </div><!-- //one 반복 -->
+                    </div>
+                    <div class="btnArea">
+                        <a href="javascript:;" class="btnMore">More</a>
+                    </div>
+                </section>
+                
+            </div><!-- //contents -->
+        </div><!-- //container -->
+        
+        <!-- layer: 친구 Accept -->
+        <div class="layer layerAccept" id="layerAccept" style="display:none;">
+            <div class="inner">
+                <div class="titleArea">
+                    <h2>Accept friend request</h2>
+                </div>
+                <div class="content">
+                    <p class="desc">Would you like to accept friend request from <strong>_friendnickname</strong>?</p>
+                </div>
+                <div class="btnArea">
+                    <a href="javascript:;" class="btnNormal eClose">No</a>
+                    <a href="javascript:;" class="btnStrong">Yes</a>
+                </div>
+            </div>
+        </div><!-- // layer -->
+        
+        <!-- layer: 친구 Decline -->
+        <div class="layer layerRefuse" id="layerRefuse" style="display:none;">
+            <div class="inner">
+                <div class="titleArea">
+                    <h2>Decline friend request</h2>
+                </div>
+                <div class="content">
+                    <p class="desc">Would you like to decline friend request from <strong>_friendnickname</strong>?</p>
+                </div>
+                <div class="btnArea">
+                    <a href="javascript:;" class="btnNormal eClose">No</a>
+                    <a href="javascript:;" class="btnStrong">Yes</a>
+                </div>
+            </div>
+        </div><!-- // layer -->
+        
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var _body = $("body");
+        
+            //레이어 열기
+            _body.on('click', '.eLayer', function (e) {
+                var targetLayer = $($(e.currentTarget).attr("href"));
+                modalLayerOpen(targetLayer);
+                e.preventDefault();
+            });
+            
+            // 레이어 닫기
+            _body.on('click', '.layer .eClose', function (e) {
+                layer_close($(this));
+                e.preventDefault();
+            });
+
+        
+            _body.on("click", ".eTrigger", function(e){
+                var _target = $(e.target);
+                $(".tooltip").removeClass("open");
+                _target.parent().addClass("open");
+            });
+            
+            _body.on("click", function(e) {
+                //var _tooltip = $(".tooltip");
+                if( $(".tooltip").is(e.target) ) {
+                    if( $(".tooltip").hasClass("open") ) {
+                        console.log("1");
+                        $(".tooltip").removeClass("open");
+                    }
+                }
+            });
+            
+            
+        });
+      
+    </script>
+</body>
+</html>

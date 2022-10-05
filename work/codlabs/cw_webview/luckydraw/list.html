@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="coinWalking">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta name="referrer" content="always">
+    <link rel="canonical" href="">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <h1>Lucky Draw</h1>
+            <a href="javascript:window.history.back();" class="btnBack" title="back"></a>
+        </header>
+        
+        <div class="container pJackpotList" id="container">
+            <div class="congrats">
+                <div class="inner" id="verticalSlide">
+                    <div class="list">
+                        <a href="#layerApply" class="item eLayer">
+                            <span class="image"><img src="../images/_img_goods03.png" alt="Product Image" style="width:54px;" /></span><!-- 개발 시 style삭제 -->
+                            <p class="text">
+                                <span class="in">sdhehsgdjtragergsrjtjyttkjdd has won JIO Phone 1.5 GB/DAY PACKS.</span>
+                            </p>
+                        </a><!-- //item -->
+                        <a href="#layerApply" class="item eLayer">
+                            <span class="image"><img src="../images/_img_goods04.png" alt="Product Image" style="height:54px;" /></span><!-- 개발 시 style삭제 -->
+                            <p class="text">
+                                <span class="in">sdhehsgdjtragergsrjtjyttkjdd has won JIO Phone.</span>
+                            </p>
+                        </a><!-- //item -->
+                        <a href="#layerApply" class="item eLayer">
+                            <span class="image"><img src="../images/_img_goods02.png" alt="Product Image" style="height:54px;" /></span><!-- 개발 시 style삭제 -->
+                            <p class="text">
+                                <span class="in">sdhehs has won JIO Phone.</span>
+                            </p>
+                        </a><!-- //item -->
+                    </div>
+                </div>
+            </div>
+        
+            <div class="contents" id="contents">
+                <h2 class="conTitle">Prizes that '<span>sdhehsgdjtragergsrjtjyttkjdd</span>' may enter. <span>10</span> Prizes</h2>
+                
+                <div class="prdList">
+                    <a href="./detail.html" class="item">
+                        <span class="image"><img src="../images/_img_goods01.png" alt="product image"/></span>
+                        <div class="info">
+                            <strong class="name">product name</strong>
+                            <div class="setCoin">
+                                <span class="icon" title="my balance"></span>
+                                <strong class="coin">23</strong>
+                            </div>
+                            <p class="text">345,299 people have entered.</p>
+                        </div>
+                    </a><!-- //item 반복 -->
+                    <a href="./detail.html" class="item">
+                        <span class="image"><img src="../images/_img_goods02.png" alt="product image"/></span>
+                        <div class="info">
+                            <strong class="name">product name product name product name</strong>
+                            <div class="setCoin">
+                                <span class="icon" title="my balance"></span>
+                                <strong class="coin">230</strong>
+                            </div>
+                            <p class="text">345,299 people have entered.</p>
+                        </div>
+                    </a><!-- //item 반복 -->
+                    <a href="#layerChargeCoin" class="item eLayer">
+                        <span class="image"><img src="../images/_img_goods03.png" alt="product image"/></span>
+                        <div class="info">
+                            <strong class="name">product name product name product name product name</strong>
+                            <div class="setCoin">
+                                <span class="icon" title="my balance"></span>
+                                <strong class="coin">5,230</strong>
+                            </div>
+                            <p class="text">345,299 people have entered.</p>
+                        </div>
+                    </a><!-- //item 반복 -->
+                </div>
+                
+            </div><!-- //contents -->
+        </div><!-- //container -->
+        
+        <!-- layer: 코인부족 -->
+        <div class="layer layerChargeCoin" id="layerChargeCoin" style="display:none;">
+          <div class="inner">
+              <div class="titleArea">
+                  <h2>Insufficient Coins</h2>
+              </div>
+              <div class="content">
+                  <ul class="coinInfo">
+                      <li><em class="tit">Balance</em><span class="coin">1,400</span></li>
+                      <li><em class="tit">Coins required</em><span class="coin txtRed">59,800</span></li>
+                  </ul>
+                  <p class="desc">Get more coins by either Recommendation to friends, Earn Free Coins or Add Coins in Store.</p>
+                  <ul class="btnList">
+                      <li><a href="../mypage/friends_invite.html" class="btnStrong">Recommendation</a></li>
+                      <li><a href="../freebee/list.html" class="btnStrong">Earn Free Coins</a></li>
+                      <li><a href="javascript:;" class="btnStrong">Add Coins in Store</a></li>
+                  </ul>
+              </div>
+              <div class="btnArea">
+                  <a href="javascript:;" class="btnNormal eClose">Dismiss</a>
+              </div>
+          </div>
+        </div><!-- // layer -->
+        
+    </div>
+
+    <script type="text/javascript" src="../js/jquery.touchslider.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //당첨 정보 슬라이더
+            var slideItem = $("#verticalSlide");
+            verticalSlide(slideItem, 2500);
+            
+            //레이어 열기
+            $('body').on('click', '.eLayer', function (e) {
+                var targetLayer = $($(e.currentTarget).attr("href"));
+                modalLayerOpen(targetLayer);
+                e.preventDefault();
+            });
+            
+            // 레이어 닫기
+            $('body').on('click', '.layer .eClose', function (e) {
+                layer_close($(this));
+                e.preventDefault();
+            });
+            
+            
+        });
+      
+    </script>
+</body>
+</html>

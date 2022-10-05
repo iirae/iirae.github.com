@@ -1,0 +1,96 @@
+<?php include "../include/header.html"; ?>
+
+<hr class="layout" />
+
+<div class="contents" id="contents">
+
+    <div class="area-title">
+        <h3>공지사항</h3>
+    </div>
+    
+    <div class="table-layout">
+        <table>
+            <caption>공지 상세 내용</caption>
+            <colgroup>
+                <col style="width:160px">
+                <col style="width:auto">
+                <col style="width:160px">
+                <col style="width:auto">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row">제목</th>
+                    <td colspan="3">[공지] 08월 서비스 점검 일정 안내</td>
+                </tr>
+                <tr>
+                    <th scope="row">게시여부</th>
+                    <td><span class="text-blue">게시</span></td>
+                    <th scope="row">공지언어</th>
+                    <td>한국어/영어</td>
+                </tr>
+                <tr>
+                    <th scope="row">등록자</th>
+                    <td>fhlahj</td>
+                    <th scope="row">등록일시</th>
+                    <td>2019.08.05 08:49:25</td>
+                </tr>
+                <tr>
+                    <th scope="row">최종 수정자</th>
+                    <td>fhjlahgjwhgu</td>
+                    <th scope="row">최종 수정일시</th>
+                    <td>2019.08.05 08:49:25</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="clear">
+                        <div class="board-content">
+                            <p>앱을 지웠다 새로 설치하고,  이전 버전으로 앱을
+                            설치하여 실행하려고 해도 계속 에러 메시지만
+                            나와요.</p>
+                            <br>
+                            <p>어떡해야 하죠?</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="area-button">
+        <a href="./notice_list.html" class="button-basic">목록</a>
+        <a href="./notice_write.html" class="button-submit">수정</a>
+    </div>
+    
+</div><!-- //contents -->
+
+<hr class="layout" />
+
+<script>
+
+    $( function() {
+    
+        //editor
+        $('.summernote').summernote({
+            lang: 'ko-KR',
+            tabsize: 2,
+            height: 450,
+            focus: true,
+            toolbar: [
+                ['view', ['fullscreen', 'codeview', 'help']],
+                ['table', ['table']]
+            ],
+            callbacks: {
+                onPaste: function(e) {
+                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                    
+                    e.preventDefault();
+                
+                    setTimeout( function(){
+                        document.execCommand( 'insertText', false, bufferText );
+                    }, 10 );
+                }
+            }
+        });
+        
+    });
+</script>
+<?php include "../include/footer.html"; ?>

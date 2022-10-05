@@ -1,0 +1,185 @@
+<?php include "../include/header.html"; ?>
+
+<hr class="layout" />
+
+<div class="contents" id="contents">
+
+    <div class="area-title">
+        <h3>푸쉬메시지 관리</h3>
+    </div>
+    
+    <div class="table-layout">
+        <table>
+            <caption>푸쉬메시지 작성</caption>
+            <colgroup>
+                <col style="width:160px">
+                <col style="width:300px">
+                <col style="width:auto">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row">언어 설정 <em class="text-red" title="필수">*</em></th>
+                    <td colspan="2">
+                        <span class="form-radio"><input id="ko" type="radio" name="lang" checked><label for="ko">한국어</label></span>
+                        <span class="form-radio"><input id="en" type="radio" name="lang"><label for="en">영어</label></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">발송 구분 <em class="text-red" title="필수">*</em></th>
+                    <td colspan="2">
+                        <span class="form-radio"><input id="radio11" type="radio" name="radio1" checked><label for="radio11">공지</label></span>
+                        <span class="form-radio"><input id="event" type="radio" name="radio1"><label for="event">이벤트</label></span>
+                        <span class="form-radio"><input id="ticket" type="radio" name="radio1"><label for="ticket">티켓</label></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">OS 설정 <em class="text-red" title="필수">*</em></th>
+                    <td colspan="2">
+                        <span class="form-radio"><input id="radio12" type="radio" name="radio2" checked><label for="radio12">전체</label></span>
+                        <span class="form-radio"><input id="aos" type="radio" name="radio2"><label for="aos">Android</label></span>
+                        <span class="form-radio"><input id="ios" type="radio" name="radio2"><label for="ios">iOS</label></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">제목 <em class="text-red" title="필수">*</em></th>
+                    <td colspan="2"><input type="text" class="form-input w100per"/></td>
+                </tr>
+                <tr>
+                    <th scope="row">발송 유형</th>
+                    <td colspan="2">
+                        <span class="form-radio"><input id="radio" type="radio" name="radio" checked><label for="radio">일반형</label></span>
+                        <span class="form-radio"><input id="radio2" type="radio" name="radio"><label for="radio2">이미지형</label></span>
+                        <span class="text-info ml30">* IOS는 일반형으로 발송됩니다.</span>
+                    </td>
+                </tr>
+                <!-- 이미지형 선택 시 노출 -->
+                <tr>
+                    <th scope="row">푸시 이미지 <em class="text-red" title="필수">*</em><p class="text-info mt5">(사이즈: 1280 * 626)</p></th>
+                    <td colspan="2">
+                        <span class="form-file">
+                            <input type="file" id="fileUpload" class="e-file" accept=".jpg, .jpeg, .gif, .png" /><label for="fileUpload" class="button-static">파일첨부</label>
+                            <input type="text" class="name w500" value="filename_0178471648726.xls" title="파일명" readonly />
+                            <button class="button-danger" type="button">삭제</button>
+                        </span>
+                    </td>
+                </tr><!-- //이미지형 선택 시 노출 -->
+                <tr>
+                    <th scope="row">예약발송일시 <em class="text-red" title="필수">*</em></th>
+                    <td colspan="2">
+                        <div class="picker-date" id="openDate">
+                            <input type="text" id="datepicker" name="" class="form-input w120 e-pick_date">
+                            <label for="open_hour" class="form-select">
+                                <select class="selSz01" name="up_hour" id="open_hour">
+                                    <option value="00">00시</option>
+                                    <option value="01">01시</option>
+                                    <option value="02">02시</option>
+                                    <option value="03">03시</option>
+                                    <option value="04">04시</option>
+                                    <option value="05">05시</option>
+                                    <option value="06">06시</option>
+                                    <option value="07">07시</option>
+                                    <option value="08">08시</option>
+                                    <option value="09">09시</option>
+                                    <option value="10">10시</option>
+                                    <option value="11">11시</option>
+                                    <option value="12">12시</option>
+                                    <option value="13">13시</option>
+                                    <option value="14">14시</option>
+                                    <option value="15">15시</option>
+                                    <option value="16">16시</option>
+                                    <option value="17">17시</option>
+                                    <option value="18">18시</option>
+                                    <option value="19">19시</option>
+                                    <option value="20">20시</option>
+                                    <option value="21">21시</option>
+                                    <option value="22">22시</option>
+                                    <option value="23">23시</option>
+                                </select>
+                            </label>
+                            <label for="start_min" class="form-select">
+                                <select class="selSz01" name="down_min" id="start_min">
+                                    <option value="00">00분</option>
+                                    <option value="10">10분</option>
+                                    <option value="20">20분</option>
+                                    <option value="30">30분</option>
+                                    <option value="40">40분</option>
+                                    <option value="50">50분</option>
+                                </select>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">발송 대상 <em class="text-red" title="필수">*</em></th>
+                    <td>
+                        <label class="form-select" for="">
+                            <select name="" id="">
+                                <option value="">전체</option>
+                                <option value="">엑셀등록</option>
+                                <option value="">타겟 설정</option>
+                            </select>
+                        </label>
+                        <!-- 엑셀등록 선택 시 노출 -->
+                        <a href="javascript:;" class="button-normal icon-excel">엑셀양식 다운로드</a>
+                        <!-- //엑셀등록 선택 시 노출 -->
+                    </td>
+                    <td class="clear-left">
+                        <!-- 엑셀등록 선택 시 노출 -->
+                        <strong class="text">발송 대상 수:</strong> <span class="text-red">4,569</span>
+                        <div class="box">
+                            <span class="form-file mt10">
+                                <input type="text" class="name w500" value="filename_0178471648726.xls" title="파일명" readonly />
+                                <input type="file" id="fileUpload2" class="e-file" accept=".xls, .xlsx" /><label for="fileUpload2" class="button-static icon-excel">파일첨부</label>
+                            </span>
+                        </div>
+                        <!-- //엑셀등록 선택 시 노출 -->
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">타겟 연령</th>
+                    <td colspan="2">
+                        <span class="form-radio"><input id="age1" type="radio" name="age" checked><label for="age1">전체</label></span>
+                        <span class="form-radio"><input id="age2" type="radio" name="age"><label for="age2">10대</label></span>
+                        <span class="form-radio"><input id="age3" type="radio" name="age"><label for="age3">20대</label></span>
+                        <span class="form-radio"><input id="age4" type="radio" name="age"><label for="age4">30대</label></span>
+                        <span class="form-radio"><input id="age5" type="radio" name="age"><label for="age5">40대</label></span>
+                        <span class="form-radio"><input id="age6" type="radio" name="age"><label for="age6">50대</label></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">타겟 성별</th>
+                    <td colspan="2">
+                        <span class="form-radio"><input id="gender1" type="radio" name="gender" checked><label for="gender1">전체</label></span>
+                        <span class="form-radio"><input id="gender2" type="radio" name="gender"><label for="gender2">선택안함</label></span>
+                        <span class="form-radio"><input id="gender3" type="radio" name="gender"><label for="gender3">남성</label></span>
+                        <span class="form-radio"><input id="gender4" type="radio" name="gender"><label for="gender4">여성</label></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">메시지 내용 <em class="text-red" title="필수">*</em></th>
+                    <td colspan="2">
+                        <div class="form-textarea">
+                            <textarea name="" id="" cols="30" rows="10" maxlength="1000"></textarea>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="area-button">
+        <a href="./list.html" class="button-basic">목록</a>
+        <a href="./read.html" class="button-submit">등록</a>
+    </div>
+    
+</div><!-- //contents -->
+
+<hr class="layout" />
+
+<script>
+
+    $( function() {
+    
+    });
+</script>
+<?php include "../include/footer.html"; ?>

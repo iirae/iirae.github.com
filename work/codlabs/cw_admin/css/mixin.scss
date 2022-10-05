@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+// font-family
+$font-noto: "NotoSansKR", sans-serif;
+
+//color
+$white: #fff;
+
+$black_001: #000;
+$black_002: #212227;
+$black_003: #25262B;
+$black_004: #2C2E32;
+$black_005: #2F3033;
+$black_006: #343538;
+$black_007: #3A3B40;
+$black_008: #56575e;
+
+$gray_001: #696A6C;
+$gray_002: #949496;
+$gray_003: #BFBFC0;
+
+$blue_001:#2a3954;
+$blue_002:#579ee5;
+$blue_003:#e6f1fe;
+
+$red_001:#ef5350;
+$red_002:#ef5350;
+
+$yellow_001:#fffceb;
+
+$kakao: #FFEB00;
+
+$bg_url: "../images/";
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}
+
+@mixin afterClear {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin pseudo($display, $width, $height, $backgroundImage) {
+    display: $display;
+    content:"";
+    width:($width) + px;
+    height:($height) + px;
+    background: {
+        image:url($backgroundImage);
+        position:center;
+        size:cover;
+        repeat:no-repeat;
+    }
+    vertical-align:middle;
+}
+

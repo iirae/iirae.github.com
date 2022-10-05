@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>10F940B7-4BBB-4D20-AEA6-54686048F216</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="04_홈" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="04_홈_01" transform="translate(-10.000000, -31.000000)">
+            <g id="Toolbar" transform="translate(0.000000, 21.000000)">
+                <g id="btn_navi_menu" transform="translate(10.000000, 10.000000)">
+                    <rect id="Bounds" x="0" y="0" width="30" height="30"></rect>
+                    <g id="Shape" transform="translate(6.000000, 8.000000)">
+                        <rect id="Rectangle" fill="#000000" x="0" y="12.5" width="18" height="1.5"></rect>
+                        <rect id="Rectangle" fill="#222222" x="0" y="6.25" width="18" height="1.5"></rect>
+                        <rect id="Rectangle" fill="#222222" x="0" y="0" width="18" height="1.5"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
