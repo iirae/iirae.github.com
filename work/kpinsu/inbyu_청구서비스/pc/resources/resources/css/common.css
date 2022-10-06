@@ -242,42 +242,6 @@ input[type=radio] {
   background-image: url("../img/ico_radio_on.svg");
 }
 
-.form-file {
-  overflow: hidden;
-  position: relative;
-  width: 100px;
-  height: 100px;
-  border: solid 1px #333;
-}
-.form-file input + label {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-.form-file img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-.form-file .btn-delete {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -25px 0 0 -25px;
-  width: 50px;
-  height: 50px;
-  background: green;
-}
-
-.list-file {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 /**
  * safe-area-inset 처리
  * $dir - 방향(all, top, right, bottom, left, 생략가능)
@@ -306,12 +270,11 @@ input[type=radio] {
   background-size: cover;
 }
 .btn-primary, .btn-secondary, .btn-normal {
-  padding: 0 20px;
-  width: auto;
-  height: 30px;
-  line-height: 30px;
-  font-size: 14px;
-  font-weight: 500;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 17px;
+  font-weight: 700;
   border-radius: 2px;
 }
 .btn-primary {
@@ -331,18 +294,10 @@ input[type=radio] {
   background: #e9ecef;
 }
 
-.footer, .area-button {
+.area-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-.footer .btn-primary, .footer .btn-secondary, .footer .btn-normal, .area-button .btn-primary, .area-button .btn-secondary, .area-button .btn-normal {
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  font-size: 17px;
-  font-weight: 700;
-  border-radius: 2px;
 }
 
 /**
@@ -352,14 +307,6 @@ input[type=radio] {
  * $value - 더해질 값(생략가능)
  * $percent - height나 width값 계산 시(예 100%)
  */
-.dimmed {
-  z-index: 110;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 .layer {
   display: none;
   z-index: 100;
@@ -369,10 +316,9 @@ input[type=radio] {
   right: 0;
   bottom: 0;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .layer .container {
-  z-index: 120;
-  position: relative;
   margin: 0 auto;
   width: 100%;
   max-width: 720px;
@@ -417,6 +363,9 @@ input[type=radio] {
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
   width: 100%;
+}
+.layer.center {
+  background: rgba(0, 0, 0, 0.5);
 }
 .layer.center .container {
   position: absolute;
@@ -469,136 +418,6 @@ input[type=radio] {
   padding: 10px 0 0;
 }
 
-/*  epass indicator ====================================================== */
-.md-indicator > span {
-  display: block;
-  margin: 0 auto;
-  background: transparent;
-  -webkit-animation: load8 0.6s infinite linear;
-          animation: load8 0.6s infinite linear;
-  -webkit-transition: background-color 0.2s ease-in-out 0s;
-  transition: background-color 0.2s ease-in-out 0s;
-}
-
-.md-indicator {
-  display: none;
-  position: fixed;
-  top: 50%;
-  right: 50%;
-  width: 300px;
-  margin-top: -34px;
-  margin-right: -156px;
-  text-align: center;
-  visibility: visible;
-  z-index: -1;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
-  opacity: 0;
-  -webkit-transition: z-index 0s linear 0.4s, visibility 0s linear 0s, opacity 0.4s linear 0s, -webkit-transform 0.4s ease-in-out 0s;
-  transition: z-index 0s linear 0.4s, visibility 0s linear 0s, opacity 0.4s linear 0s, -webkit-transform 0.4s ease-in-out 0s;
-  transition: z-index 0s linear 0.4s, visibility 0s linear 0s, opacity 0.4s linear 0s, transform 0.4s ease-in-out 0s;
-  transition: z-index 0s linear 0.4s, visibility 0s linear 0s, opacity 0.4s linear 0s, transform 0.4s ease-in-out 0s, -webkit-transform 0.4s ease-in-out 0s;
-}
-.md-indicator > span {
-  position: relative;
-  text-indent: -9999em;
-  font-size: 10px;
-}
-.is-indicator .md-indicator {
-  z-index: 1000;
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: z-index 0s linear 0s, visibility 0s linear 0s, opacity 0.4s linear 0s, -webkit-transform 0.4s ease-in-out 0s;
-  transition: z-index 0s linear 0s, visibility 0s linear 0s, opacity 0.4s linear 0s, -webkit-transform 0.4s ease-in-out 0s;
-  transition: z-index 0s linear 0s, visibility 0s linear 0s, opacity 0.4s linear 0s, transform 0.4s ease-in-out 0s;
-  transition: z-index 0s linear 0s, visibility 0s linear 0s, opacity 0.4s linear 0s, transform 0.4s ease-in-out 0s, -webkit-transform 0.4s ease-in-out 0s;
-}
-.is-indicator .md-indicator > span {
-  border: 7px solid rgb(255, 255, 255);
-  border-left: 7px solid rgba(255, 255, 255, 0.2);
-}
-.is-indicator-short .md-indicator {
-  z-index: 1000;
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: z-index 0s linear 0s, visibility 0s linear 0s, opacity 0.2s linear 0s, -webkit-transform 0.2s ease-in-out 0s;
-  transition: z-index 0s linear 0s, visibility 0s linear 0s, opacity 0.2s linear 0s, -webkit-transform 0.2s ease-in-out 0s;
-  transition: z-index 0s linear 0s, visibility 0s linear 0s, opacity 0.2s linear 0s, transform 0.2s ease-in-out 0s;
-  transition: z-index 0s linear 0s, visibility 0s linear 0s, opacity 0.2s linear 0s, transform 0.2s ease-in-out 0s, -webkit-transform 0.2s ease-in-out 0s;
-}
-.is-indicator-short .md-indicator > span {
-  border: 7px solid rgba(0, 0, 0, 0.2);
-  border-left: 7px solid rgb(0, 0, 0);
-}
-
-.no-ie.is-indicator .md-indicator::before {
-  color: #fff;
-}
-
-.no-ie.is-indicator-short .md-indicator::before {
-  color: #000;
-}
-
-.no-ie .md-indicator::before {
-  content: "loading";
-  content: var(--site-name);
-  font-size: 12px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  color: #fff;
-}
-
-.md-indicator > span {
-  display: none;
-}
-
-.md-indicator > span:first-child {
-  display: block;
-}
-
-.md-indicator > span,
-.md-indicator > span:after {
-  width: 74px;
-  height: 74px;
-  border-radius: 100%;
-}
-
-@-webkit-keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-.blind {
-  overflow: hidden;
-  position: absolute;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  width: 1px;
-  height: 1px;
-  color: transparent;
-}
-
 .notch {
   position: fixed;
   left: 0;
@@ -610,27 +429,4 @@ input[type=radio] {
 
 pre {
   white-space: pre-wrap;
-}
-
-.bundle-sign .sign {
-  overflow: hidden;
-  z-index: 1;
-  position: relative;
-  width: 300px;
-  height: 200px;
-  border: solid 1px #333;
-}
-.bundle-sign .sign::before {
-  z-index: -1;
-  content: "서 명";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  line-height: 200px;
-  text-align: center;
-}
-.bundle-sign .inner {
-  position: relative;
 }

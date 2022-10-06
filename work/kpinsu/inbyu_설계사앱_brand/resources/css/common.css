@@ -4,21 +4,18 @@
   font-weight: 300;
   src: url("../fonts/NotoSansKR-Light.woff2") format("woff2"), url("../fonts/NotoSansKR-Light.woff") format("woff"), url("../fonts/NotoSansKR-Light.ttf") format("truetype");
 }
-
 @font-face {
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/NotoSansKR-Regular.woff2") format("woff2"), url("../fonts/NotoSansKR-Regular.woff") format("woff"), url("../fonts/NotoSansKR-Regular.ttf") format("truetype");
 }
-
 @font-face {
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 500;
   src: url("../fonts/NotoSansKR-Medium.woff2") format("woff2"), url("../fonts/NotoSansKR-Medium.woff") format("woff"), url("../fonts/NotoSansKR-Medium.ttf") format("truetype");
 }
-
 /* reset */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button, figure {
   margin: 0;
@@ -38,7 +35,7 @@ blockquote, q {
 }
 
 blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -73,11 +70,11 @@ input, button {
   -webkit-border-radius: 0;
 }
 
-input[type='checkbox'] {
+input[type=checkbox] {
   -webkit-appearance: checkbox;
 }
 
-input[type='search']::-webkit-search-cancel-button {
+input[type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 
@@ -170,12 +167,10 @@ body.overlay, body.is-layer-opened {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-
 .wrap .header h1 {
   margin: 0 auto;
   max-width: 1200px;
 }
-
 .wrap .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -188,7 +183,6 @@ body.overlay, body.is-layer-opened {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-
 @media screen and (max-width: 1023px) {
   .PC, .PC-IB {
     display: none !important;
@@ -204,7 +198,6 @@ body.overlay, body.is-layer-opened {
     padding-bottom: 50px;
   }
 }
-
 @media screen and (min-width: 1024px) {
   .PC {
     display: block !important;
@@ -219,7 +212,6 @@ body.overlay, body.is-layer-opened {
     height: calc(100vh - 234px);
   }
 }
-
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
   .header h1 {
     padding: 0 100px;
@@ -228,11 +220,9 @@ body.overlay, body.is-layer-opened {
     height: calc(100vh - 214px);
   }
 }
-
 .p-brand .visual img {
   width: 100%;
 }
-
 .p-brand .subject {
   z-index: 10;
   position: relative;
@@ -248,28 +238,23 @@ body.overlay, body.is-layer-opened {
           justify-content: center;
   padding: 0 24px;
 }
-
 .p-brand .desc {
   font-size: 28px;
   color: #212529;
   line-height: 1.5;
   font-weight: 500;
 }
-
 .p-brand .desc strong {
   font-weight: 700;
 }
-
 .p-brand .button a {
   display: inline-block;
 }
-
 .p-brand .info {
   margin-top: 6px;
   color: #444b52;
   font-weight: 500;
 }
-
 @media screen and (max-width: 1023px) {
   .p-brand .contents {
     text-align: right;
@@ -290,13 +275,11 @@ body.overlay, body.is-layer-opened {
     font-size: 13px;
   }
 }
-
 @media screen and (max-width: 320px) {
   .p-brand .desc {
     font-size: 26px;
   }
 }
-
 @media screen and (min-width: 1024px) {
   .p-brand .header {
     padding-top: 30px;
@@ -346,7 +329,6 @@ body.overlay, body.is-layer-opened {
     font-size: 14px;
   }
 }
-
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .p-brand .visual {
     padding-right: 210px;
@@ -475,7 +457,6 @@ pre {
     letter-spacing: -0.04em;
   }
 }
-
 @media screen and (min-width: 1024px) {
   .common-kpinsu.footer {
     padding-bottom: 24px;
@@ -561,7 +542,6 @@ pre {
     text-align: left;
   }
 }
-
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
   .common-kpinsu.footer .terms ul, .common-kpinsu.footer .company, .common-kpinsu.footer .copyright {
     padding: 0 100px;

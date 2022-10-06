@@ -14,9 +14,78 @@
     <meta property="og:url" content="https://iirae.github.io/">
     <meta property="og:image" content="https://iirae.github.io/images/logo.png">
     <title>kimdohee's portfolio</title>
-    <link rel="shortcut icon" href="./images/favicon.ico">
+    <link rel="shortcut icon" href="./resources/images/favicon.ico">
     
     <link rel="stylesheet" type="text/css" href="./resources/css/common.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let httpRequest;
+
+            httpRequest = new XMLHttpRequest();
+
+            httpRequest.open('GET', '/work/works.json', true);
+
+            // POST 형식으로 데이터를 보내려면 리퀘스트에 마임타입 설정 필요
+            // httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            httpRequest.onload = function() {
+                try {
+                    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                        if(this.status >= 200 && this.status < 400) {
+                            let resp = JSON.parse(httpRequest.responseText);
+
+                            console.error(resp.companies[0].lulumedic.project);
+
+                            fnProject(resp.companies[0].lulumedic);
+                            
+                        } else {
+
+                        }
+                    }
+                }
+                catch(e) {
+                    console.error('Caught Exception: ' + e.description);
+                }
+            }
+
+            httpRequest.onerror = function() {
+
+            }
+
+            httpRequest.send();
+
+
+            let itemList = document.getElementById('projectList');
+
+            // let itemHtml = `<div class="one">
+            //     <div class="area-image">
+            //         <div class="image"><img src="" alt=""><span class="phone"></span></div>
+            //     </div>
+            //     <div class="area-text">
+            //         <h3 class="project-title">설계사앱</h3>
+            //         <ul>
+            //             <li>런칭 전 대외비</li>
+            //             <li>하이브리드앱을 위한 페이지 전체 UI개발 진행중</li>
+            //         </ul>
+            //     </div>
+            // </div>`;
+
+            let itemHtml = `<div class="one">`;
+
+            if(true) {
+                itemHtml = `<div class="one">`;
+            }
+
+            itemList.innerHTML = itemHtml;
+
+        });
+
+        function fnProject(projects) {
+            console.error(projects);
+        }
+
+    </script>
 </head>
 <body>
     <div class="wrap" id="wrap"><!-- 어두운 섹션 theme-black -->
@@ -32,31 +101,37 @@
         </header>
         
         <div class="contents" id="contents">
-            <section class="section project" id="finenuts">
+            <section class="section project" id="lulumedic">
                 <h2 class="title"><span class="ordinal">I</span>룰루메딕</h2>
                 <div class="info">
                     <h3 class="sub-title">Year</h3>
                     <p class="content">2020 ~ 2021</p>
                 </div>
-                <div class="area-image">
-                    <div class="image"><img src="./resources/images/iphone.png" alt="빈 이미지"/></div>
-                </div>
-                <div class="area-text">
-                    <h3 class="project-title">설계사앱</h3>
-                    <ul>
-                        <li>런칭 전 대외비</li>
-                        <li>하이브리드앱을 위한 페이지 전체 UI개발 진행중</li>
-                    </ul>
-                </div>
-                <div class="area-image">
-                    <div class="image"><img src="./resources/images/project/inbyu_kfb.png" alt="kfb 이미지"/></div>
-                </div>
-                <div class="area-text">
-                    <h3 class="project-title">KFB</h3>
-                    <ul>
-                        <li>사업자들을 위한 보험판매를 위한 플랫폼</li>
-                        <li>유지보수, 신규 기능 및 상품 UI개발</li>
-                    </ul>
+                <div class="list" id="projectList">
+                    <div class="one">
+                        <div class="area-image">
+                            <div class="image"><img src="./resources/images/iphone.png" alt="빈 이미지"/></div>
+                        </div>
+                        <div class="area-text">
+                            <h3 class="project-title">설계사앱</h3>
+                            <ul>
+                                <li>런칭 전 대외비</li>
+                                <li>하이브리드앱을 위한 페이지 전체 UI개발 진행중</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="one">
+                        <div class="area-image">
+                            <div class="image"><img src="./resources/images/project/inbyu_kfb.png" alt="kfb 이미지"/></div>
+                        </div>
+                        <div class="area-text">
+                            <h3 class="project-title">KFB</h3>
+                            <ul>
+                                <li>사업자들을 위한 보험판매를 위한 플랫폼</li>
+                                <li>유지보수, 신규 기능 및 상품 UI개발</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="move"><a href="./b2link.html" class="btn-next">Past Project →</a></div>
@@ -68,5 +143,6 @@
             <p class="desc">Interactive UI & Responsive Web</p>
         </footer>
     </div>
+
 </body>
 </html>

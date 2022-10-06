@@ -1,15 +1,8 @@
-@-webkit-keyframes spinner {
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-@keyframes spinner {
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-} url("../fonts/NotoSansKR-Light.woff") format("woff");
+@font-face {
+  font-family: "NotoSansKR";
+  font-style: normal;
+  font-weight: 300;
+  src: local("NotoSansKR-Light"), url("../fonts/NotoSansKR-Light.otf") format("opentype"), url("../fonts/NotoSansKR-Light.ttf") format("truetype"), url("../fonts/NotoSansKR-Light.woff") format("woff");
 }
 @font-face {
   font-family: "NotoSansKR";

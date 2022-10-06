@@ -9,7 +9,6 @@ a {color:#565656;}
 
 .wrap {
     display:flex;
-    display:-webkit-flex;
     flex-direction:column;
     min-width:320px;
     min-height:100%;
@@ -41,6 +40,9 @@ a {color:#565656;}
         width:3rem;
         font-size:1rem;
         line-height:1;
+        img {
+            max-width: 100%;
+        }
     }
     .nav {
         ul {

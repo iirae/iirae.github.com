@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/**
+ * safe-area-inset 처리
+ * $dir - 방향(all, top, right, bottom, left, 생략가능)
+ * $ios - env, constant
+ * $value - 더해질 값(생략가능)
+ * $percent - height나 width값 계산 시(예 100%)
+ */

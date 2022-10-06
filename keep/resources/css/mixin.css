@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Tadak";
+  font-weight: 400;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/TDTDTadakTadak.woff") format("woff");
+}
+@font-face {
+  font-family: "designhouse";
+  font-weight: 400;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/designhouseOTFLight00.woff") format("woff");
+}
+@font-face {
+  font-family: "skyer";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Skyer-Regular"), url("../fonts/Skyer-Regular.woff2") format("woff2"), url("../fonts/Skyer-Regular.woff") format("woff"), url("../fonts/Skyer-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "tajaKR";
+  font-style: normal;
+  font-weight: 400;
+  src: local("KoreanTJ-L"), url("../fonts/tajaL.woff2") format("woff2"), url("../fonts/tajaL.woff") format("woff"), url("../fonts/tajaL.ttf") format("truetype");
+}
