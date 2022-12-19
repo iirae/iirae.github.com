@@ -1,7 +1,7 @@
 
 html, body, button,input[type*="text"], input[type*="tel"]  {
     font-size:16px;
-    line-height:1.67;
+    line-height:1.5;
     font-family:$font-designhouse, 'Noto Sans KR', 'Lato', 'Malgun Gothic', Helvetica, Arial, sans-serif;
     color:#565656;
 }
@@ -24,6 +24,7 @@ a {color:#565656;}
     }
 }
 .header {
+    z-index: 100;
     position:fixed;
     top:0;
     left:0;
@@ -34,7 +35,7 @@ a {color:#565656;}
     margin:0 auto;
     padding:1rem 2rem;
     justify-content:space-between;
-    background:rgba(255,255,255,0.5);
+    background:rgba(255,255,255,0.8);
     box-sizing:border-box;
     .logo {
         width:3rem;

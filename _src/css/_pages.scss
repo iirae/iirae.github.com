@@ -2,23 +2,23 @@
 // intro
 .intro {
     .description {
-        z-index:1;
-        position:relative;
-        width:95%;
-        max-width:500px;
-        margin:0 auto;
-        text-align:center;
+        z-index: 1;
+        position: relative;
+        width: 95%;
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
         &::after {
-            z-index:-1;
-            opacity:0.3;
-            position:absolute;
-            top:-40%;
-            left:45%;
-            display:block;
-            content:"";
-            width:100%;
-            height:300px;
-            background-image:url($bg_url + "bg_intro.jpg");
+            z-index: -1;
+            opacity: 0.3;
+            position: absolute;
+            top: -40%;
+            left: 45%;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 300px;
+            background-image: url($bg_url + "bg_intro.jpg");
             @include bgProp;
         }
     }
@@ -47,36 +47,36 @@
 
 // company
 .company {
-    width:100%;
-    max-width:600px;
-    margin:0 auto;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
     .list {
-        padding-left:20px;
-        font-size:1rem;
-        list-style:upper-roman;
-        transform:rotateX(0deg) rotateY(0deg) translateZ(0);
+        padding-left: 20px;
+        font-size: 1rem;
+        list-style: upper-roman;
+        transform: rotateX(0deg) rotateY(0deg) translateZ(0);
         &:hover {
             li {
-                opacity:0.5;
+                opacity: 0.5;
             }
         }
         li {
-            line-height:1;
-            transition:transform .3s, opacity .3s;
+            line-height: 1;
+            transition: transform .3s, opacity .3s;
             & + li {
-                margin-top:2rem;
+                margin-top: 2rem;
             }
             &:hover {
-                opacity:1;
-                transform:rotateX(3deg) rotateY(-2deg) translateZ(20px);
+                opacity: 1;
+                transform: rotateX(3deg) rotateY(-2deg) translateZ(20px);
             }
             a {
-                font-size:2rem;
+                font-size: 2rem;
             }
             .info {
-                display:block;
-                font-size:1rem;
-                line-height:1;
+                display: block;
+                font-size: 1rem;
+                line-height: 1;
             }
         }
     }
@@ -85,32 +85,70 @@
 .project {
     //background:radial-gradient(at left top, #2945F7, #9122EE);
     .title, .info {
-        max-width:1150px;
-        margin:0 auto;
+        max-width: 1150px;
+        margin: 0 auto;
     }
     .title {
-        padding:15vh 0 0;
-        font-size:3.5rem;
+        padding: 10vh 0 0;
+        font-size: 3rem;
         .ordinal {
-            display:block;
-            margin-bottom:5vh;
-            font-size:1rem;
+            display: block;
+            margin-bottom: 5vh;
+            font-size: 1rem;
             &::before {
-                display:inline-block;
-                content:"";
-                width:20%;
-                height:1px;
-                margin:-10px 10px 0 0;
-                vertical-align:middle;
-                background-color:#565656;
+                display: inline-block;
+                content: "";
+                width: 20%;
+                height: 1px;
+                margin: -10px 10px 0 0;
+                vertical-align: middle;
+                background-color: #565656;
             }
         }
     }
     .info {
-        margin-bottom:3rem;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        margin-bottom: 3rem;
+        &::before {
+            content: "";
+            display: block;
+            margin-bottom: 8px;
+            width: 100%;
+            height: 3px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--color-point);
+        }
+        .sub-title {
+            &::before {
+                content: "";
+                display: block;
+                width: 100%;
+            }
+            &::after {
+                content: "_ ";
+            }
+        }
     }
     .project-title {
-        margin-bottom:1rem;
+        margin-bottom: 1rem;
+        &::before {
+            content: "";
+            display: block;
+            margin-bottom: 8px;
+            width: 40px;
+            height: 3px;
+            background: var(--color-point);
+        }
     }
 }
-

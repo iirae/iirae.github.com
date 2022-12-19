@@ -123,9 +123,13 @@ pre {
   white-space: pre-wrap;
 }
 
+:root {
+  --color-point: #f93854;
+}
+
 html, body, button, input[type*=text], input[type*=tel] {
   font-size: 16px;
-  line-height: 1.67;
+  line-height: 1.5;
   font-family: "designhouse", "Noto Sans KR", "Lato", "Malgun Gothic", Helvetica, Arial, sans-serif;
   color: #565656;
 }
@@ -157,6 +161,7 @@ a {
 }
 
 .header {
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
@@ -171,7 +176,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.8);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -363,8 +368,8 @@ a {
   margin: 0 auto;
 }
 .project .title {
-  padding: 15vh 0 0;
-  font-size: 3.5rem;
+  padding: 10vh 0 0;
+  font-size: 3rem;
 }
 .project .title .ordinal {
   display: block;
@@ -381,10 +386,52 @@ a {
   background-color: #565656;
 }
 .project .info {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   margin-bottom: 3rem;
+}
+.project .info::before {
+  content: "";
+  display: block;
+  margin-bottom: 8px;
+  width: 100%;
+  height: 3px;
+}
+.project .info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--color-point);
+}
+.project .info .sub-title::before {
+  content: "";
+  display: block;
+  width: 100%;
+}
+.project .info .sub-title::after {
+  content: "_ ";
 }
 .project .project-title {
   margin-bottom: 1rem;
+}
+.project .project-title::before {
+  content: "";
+  display: block;
+  margin-bottom: 8px;
+  width: 40px;
+  height: 3px;
+  background: var(--color-point);
 }
 
 .text-underline {
@@ -408,6 +455,9 @@ a {
 .area-image .image {
   max-width: 850px;
   margin: 0 auto;
+}
+.area-image .image img {
+  max-width: 100%;
 }
 .area-text {
   max-width: 850px;
